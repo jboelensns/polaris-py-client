@@ -128,26 +128,6 @@
       ], 
       "type": "object"
     }, 
-    "ArpListObject": {
-      "properties": {
-        "address": {
-          "type": "string"
-        }, 
-        "device_name": {
-          "type": "string"
-        }, 
-        "is_agent_cache": {
-          "type": "boolean"
-        }, 
-        "mac": {
-          "type": "string"
-        }, 
-        "port": {
-          "type": "string"
-        }
-      }, 
-      "type": "object"
-    }, 
     "BGPCommunityObject": {
       "properties": {
         "description": {
@@ -2615,6 +2595,13 @@
             "name": "device_name", 
             "required": false, 
             "type": "string"
+          }, 
+          {
+            "description": "Application name", 
+            "in": "query", 
+            "name": "application", 
+            "required": false, 
+            "type": "string"
           }
         ], 
         "responses": {
@@ -2622,7 +2609,7 @@
             "description": "Success", 
             "schema": {
               "items": {
-                "$ref": "#/definitions/ArpListObject"
+                "$ref": "#/definitions/AgentInventoryObject"
               }, 
               "type": "array"
             }
@@ -2650,6 +2637,13 @@
             "name": "device_name", 
             "required": false, 
             "type": "string"
+          }, 
+          {
+            "description": "Application name", 
+            "in": "query", 
+            "name": "application", 
+            "required": false, 
+            "type": "string"
           }
         ], 
         "responses": {
@@ -2657,7 +2651,7 @@
             "description": "Success", 
             "schema": {
               "items": {
-                "$ref": "#/definitions/ArpListObject"
+                "$ref": "#/definitions/AgentInventoryObject"
               }, 
               "type": "array"
             }
@@ -3860,6 +3854,13 @@
             "name": "device_name", 
             "required": false, 
             "type": "string"
+          }, 
+          {
+            "description": "Application name", 
+            "in": "query", 
+            "name": "application", 
+            "required": false, 
+            "type": "string"
           }
         ], 
         "responses": {
@@ -3867,7 +3868,7 @@
             "description": "Success", 
             "schema": {
               "items": {
-                "$ref": "#/definitions/ArpListObject"
+                "$ref": "#/definitions/AgentInventoryObject"
               }, 
               "type": "array"
             }
@@ -3890,18 +3891,22 @@
           }, 
           {
             "in": "body", 
-            "name": "body"
+            "name": "body", 
+            "schema": {
+              "items": {
+                "properties": {
+                  "device_name": "string", 
+                  "is_agent_cache": "boolean"
+                }, 
+                "type": "object"
+              }, 
+              "type": "array"
+            }
           }
         ], 
         "responses": {
           "200": {
-            "description": "Success", 
-            "schema": {
-              "items": {
-                "$ref": "#/definitions/ArpListObject"
-              }, 
-              "type": "array"
-            }
+            "description": "Success"
           }
         }, 
         "summary": "ArpRoute.post", 
@@ -8927,7 +8932,7 @@
             }
           }
         }, 
-        "security": [], 
+        "security": [ { "ApiKey": [] }],
         "summary": "PopRoute.get", 
         "tags": [
           "Pop"
