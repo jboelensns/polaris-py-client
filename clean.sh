@@ -5,7 +5,6 @@ rm -rf git_push.sh
 rm -rf out
 rm -rf polarisapi
 rm -rf README.md
-rm -rf requirements.txt
 rm -rf setup.py
 rm -rf swagger_client
 rm -rf polarisgenclient
