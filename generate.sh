@@ -43,6 +43,12 @@ docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /loc
 cp include/* $PKG_NAME/
 sudo sed -i 's/PKG_NAME/polarisgenclient/g' $PKG_NAME/*.py
 
-# the requirements are written by the generator every time
-# we want to keep our requirements
-cp requirements.all requirements.txt
+# cleanup generated stuff we don't care about
+set +e
+rm -r .swagger-codegen/
+rm travis.yml
+rm config.json
+rm git_push.sh
+rm test-requirements.txt
+rm -r test/
+rm tox.ini

@@ -12,5 +12,5 @@ rm -rf swagger_client.egg-info
 rm -rf test
 rm -rf test-requirements.txt
 rm -rf tox.ini
-rm -rf .swagg*
+rm -rf .swagger-codegen
 rm -rf .trav*
