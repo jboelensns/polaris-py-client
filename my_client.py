@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 import json
 import yaml
-from swagger_client import api_client
-from swagger_client import configuration
-from swagger_client.api import PopApi
+from polarisapi import api_client
+from polarisapi import configuration
+from polarisapi.api import PopApi, IpamPrefixApi
 
 import base64
 import datetime
@@ -18,7 +18,6 @@ DEFAULT_ENV_ACCESS_ID = 'POLARIS_ACCESS_ID'
 DEFAULT_ENV_SECRET_TOKEN = 'POLARIS_SECRET_TOKEN'
 
 LOG = logging.getLogger(__name__)
-
 
 
 def jwt_header(access_id=None, secret_token=None, alg=DEFAULT_ALG,
@@ -57,31 +56,61 @@ def jwt_header(access_id=None, secret_token=None, alg=DEFAULT_ALG,
         return None
 
 
-def auth_func(config):
-    print(config)
+class JwtHelper():
+
+    def __init__(self, access_id=None, secret_token=None, header="X-Polaris-Signed",
+                 jwt_func=None, config=None):
+
+        self.access_id = access_id
+        self.secret_token = secret_token
+        self.header = header
+        self.jwt_func = jwt_func
+        self.config = config
+
+    def get_config(self):
+        if self.config is not None:
+            return self.config
+
+        config = configuration.Configuration()
+        config.host = "https://api.polaris.nskope.net/api/v0.1"
+        config.api_key[self.header] = self.get_jwt_str()
+        config.refresh_api_key_hook = self.on_refresh_api_key_hook
+        config.verify_ssl = False
+        self.config = config
+
+        return config
+
+    def get_jwt_str(self):
+        return self.jwt_func(access_id=self.access_id, secret_token=self.secret_token)
+
+    def on_refresh_api_key_hook(self, configuration):
+        if self.jwt_func:
+            configuration.api_key[self.header] = self.get_jwt_str()
+
 
 def main():
-    config = configuration.Configuration()
-    config.host = "https://api.polaris.nskope.net"
-    config.verify_ssl = False
-    config.refresh_api_key_hook = auth_func
-
     with open("/home/jboelens/.polaris.yml", "r") as f:
         polaris_cfg = yaml.load(f)
 
     access_id = polaris_cfg["access_id"]
     secret_token = polaris_cfg["secret_token"]
+    helper = JwtHelper(access_id=access_id, secret_token=secret_token, jwt_func=jwt_header)
 
-    header_name = "X-Polaris-Signed"
-    header_value = jwt_header(access_id=access_id, secret_token=secret_token)
-    client = api_client.ApiClient(config, header_name, header_value, cookie)
+    config = configuration.Configuration()
+    config.host = "https://api.polaris.nskope.net"
+    config.host = "http://localhost:8989"
+    #config.host = "https://api.polaris.nskope.net/api/v0.1"
+    config.api_key[helper.header] = helper.get_jwt_str()
+    config.refresh_api_key_hook = helper.on_refresh_api_key_hook
+    config.verify_ssl = False
 
-    pop_api = PopApi(client)
-    results = pop_api.api_v01_pop_get()
-    for result in results:
-        json_str = json.dumps(result.to_dict())
-        print(json_str)
-        break
+    ipam_client = IpamPrefixApi(api_client.ApiClient(config))
+    results = ipam_client.api_v01_ipam_prefix_id_get(232)
+    print(results)
+    # for result in results:
+    #     json_str = json.dumps(result.to_dict())
+    #     print(json_str)
+    #     break
 
 
 if __name__ == '__main__':
