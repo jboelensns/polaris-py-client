@@ -1,4 +1,4 @@
-#!/bin.bash
+#!/bin/bash
 rm -rf config.json
 rm -rf docs
 rm -rf git_push.sh

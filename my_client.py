@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import yaml
 from swagger_client import api_client
 from swagger_client import configuration
 from swagger_client.api import PopApi
@@ -65,8 +66,11 @@ def main():
     config.verify_ssl = False
     config.refresh_api_key_hook = auth_func
 
-    access_id = "930a92f6-5a78-4ca2-84c2-a488215b79ee"
-    secret_token = "82dac3c6-d601-4f47-bb2f-903673435622"
+    with open("/home/jboelens/.polaris.yml", "r") as f:
+        polaris_cfg = yaml.load(f)
+
+    access_id = polaris_cfg["access_id"]
+    secret_token = polaris_cfg["secret_token"]
 
     header_name = "X-Polaris-Signed"
     header_value = jwt_header(access_id=access_id, secret_token=secret_token)
