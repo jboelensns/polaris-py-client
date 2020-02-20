@@ -8,6 +8,7 @@ rm -rf README.md
 rm -rf requirements.txt
 rm -rf setup.py
 rm -rf swagger_client
+rm -rf polarisgenclient
 rm -rf swagger_client.egg-info
 rm -rf test
 rm -rf test-requirements.txt

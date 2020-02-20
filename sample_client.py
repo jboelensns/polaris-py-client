@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import os
 import yaml
-from polarisapi import api_client
-from polarisapi.api import IpamPrefixApi
+from polarisgenclient import api_client
+from polarisgenclient.api import IpamPrefixApi
 
-from polarisapi.config_helper import ConfigHelper
+from polarisgenclient.config_helper import ConfigHelper
 
 def main():
 

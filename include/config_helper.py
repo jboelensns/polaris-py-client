@@ -1,5 +1,5 @@
-from polarisapi.configuration import Configuration
-from polarisapi.jwt import jwt_header
+from PKG_NAME.configuration import Configuration
+from PKG_NAME.jwt import jwt_header
 
 
 class ConfigHelper():

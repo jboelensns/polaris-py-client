@@ -28,3 +28,6 @@ echo "{\"packageVersion\": $VERSION, \"projectName\": \"$PROJ_NAME\",\"packageNa
 
 cat config.json
 docker run --rm -v ${PWD}:/local swaggerapi/swagger-codegen-cli generate -i /local/apispec_1.json -l python -o /local/ -c /local/config.json
+
+cp include/* $PKG_NAME/
+sudo sed -i 's/PKG_NAME/polarisgenclient/g' $PKG_NAME/*.py
