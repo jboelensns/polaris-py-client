@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+# TODO: operationId's need to be added to each endpoint
 #
 # generate.sh
 # 
@@ -24,7 +25,7 @@ else
     URL=$1
     # example URL="https://api.polaris.nskope.net/apispec_1.json"
 	FILENAME="$(basename -- $URL)"
-	rm $FILENAME || true
+    mv $FILENAME "$FILENAME.old" || true
 	wget --no-check-certificate $URL
 fi
 
@@ -46,7 +47,7 @@ sudo sed -i 's/PKG_NAME/polarisgenclient/g' $PKG_NAME/*.py
 # cleanup generated stuff we don't care about
 set +e
 rm -r .swagger-codegen/
-rm travis.yml
+rm .travis.yml
 rm config.json
 rm git_push.sh
 rm test-requirements.txt

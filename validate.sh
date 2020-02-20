@@ -25,7 +25,7 @@ else
     URL=$1
     # example URL="https://api.polaris.nskope.net/apispec_1.json"
 	FILENAME="$(basename -- $URL)"
-	rm $FILENAME || true
+    mv $FILENAME "$FILENAME.old" || true
 	wget --no-check-certificate $URL
 fi
 
