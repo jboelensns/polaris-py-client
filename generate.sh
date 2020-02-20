@@ -24,13 +24,13 @@ else
     URL=$1
     # example URL="https://api.polaris.nskope.net/apispec_1.json"
 	FILENAME="$(basename -- $URL)"
-	rm $FILENAME
+	rm $FILENAME || true
 	wget --no-check-certificate $URL
 fi
 
 echo "Generating file from $URL ($FILENAME)"
 
-VERSION=$(/usr/bin/jq '.info.version' $FILENAME.json | perl -pe 's/(\d*.\d*.\d*)-(\d*)-(.*)/$1+$2.$3/' )
+VERSION=$(/usr/bin/jq '.info.version' $FILENAME | perl -pe 's/(\d*.\d*.\d*)-(\d*)-(.*)/$1+$2.$3/' )
 PKG_NAME="polarisgenclient"
 PROJ_NAME="polaris-gen-client"
 
