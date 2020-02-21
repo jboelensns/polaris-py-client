@@ -33,13 +33,13 @@ class DeviceBulkApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_bulk_sync_post(self, device_name, **kwargs):  # noqa: E501
+    def device_bulk_sync_post(self, device_name, **kwargs):  # noqa: E501
         """DeviceBulkSyncRoute.post  # noqa: E501
 
         Dispatch real time bulk Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_bulk_sync_post(device_name, async_req=True)
+        >>> thread = api.device_bulk_sync_post(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,18 +50,18 @@ class DeviceBulkApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_bulk_sync_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_bulk_sync_post_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_bulk_sync_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_bulk_sync_post_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_bulk_sync_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def device_bulk_sync_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """DeviceBulkSyncRoute.post  # noqa: E501
 
         Dispatch real time bulk Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_bulk_sync_post_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_bulk_sync_post_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,14 +82,14 @@ class DeviceBulkApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_bulk_sync_post" % key
+                    " to method device_bulk_sync_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_bulk_sync_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_bulk_sync_post`")  # noqa: E501
 
         collection_formats = {}
 

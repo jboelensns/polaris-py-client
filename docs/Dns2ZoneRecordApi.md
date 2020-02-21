@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_dns2_zone_zone_id_records_get**](Dns2ZoneRecordApi.md#api_v01_dns2_zone_zone_id_records_get) | **GET** /api/v0.1/dns2/zone/{zone_id}/records | Dns2ZoneRecordRoute.get
+[**dns2_zone_record_get**](Dns2ZoneRecordApi.md#dns2_zone_record_get) | **GET** /api/v0.1/dns2/zone/{zone_id}/records | Dns2ZoneRecordRoute.get
 
 
-# **api_v01_dns2_zone_zone_id_records_get**
-> DnsZoneRecordObject api_v01_dns2_zone_zone_id_records_get(zone_id)
+# **dns2_zone_record_get**
+> DnsZoneRecordObject dns2_zone_record_get(zone_id)
 
 Dns2ZoneRecordRoute.get
 
@@ -32,10 +32,10 @@ zone_id = 'zone_id_example' # str |
 
 try:
     # Dns2ZoneRecordRoute.get
-    api_response = api_instance.api_v01_dns2_zone_zone_id_records_get(zone_id)
+    api_response = api_instance.dns2_zone_record_get(zone_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling Dns2ZoneRecordApi->api_v01_dns2_zone_zone_id_records_get: %s\n" % e)
+    print("Exception when calling Dns2ZoneRecordApi->dns2_zone_record_get: %s\n" % e)
 ```
 
 ### Parameters

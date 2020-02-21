@@ -4,14 +4,14 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_pop_name_metadata_delete**](PopMetadataApi.md#api_v01_pop_name_metadata_delete) | **DELETE** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.delete
-[**api_v01_pop_name_metadata_get**](PopMetadataApi.md#api_v01_pop_name_metadata_get) | **GET** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.get
-[**api_v01_pop_name_metadata_post**](PopMetadataApi.md#api_v01_pop_name_metadata_post) | **POST** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.post
-[**api_v01_pop_name_metadata_put**](PopMetadataApi.md#api_v01_pop_name_metadata_put) | **PUT** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.put
+[**pop_metadata_delete**](PopMetadataApi.md#pop_metadata_delete) | **DELETE** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.delete
+[**pop_metadata_get**](PopMetadataApi.md#pop_metadata_get) | **GET** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.get
+[**pop_metadata_post**](PopMetadataApi.md#pop_metadata_post) | **POST** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.post
+[**pop_metadata_put**](PopMetadataApi.md#pop_metadata_put) | **PUT** /api/v0.1/pop/{name}/metadata | PopMetadataRoute.put
 
 
-# **api_v01_pop_name_metadata_delete**
-> api_v01_pop_name_metadata_delete(name)
+# **pop_metadata_delete**
+> pop_metadata_delete(name)
 
 PopMetadataRoute.delete
 
@@ -35,9 +35,9 @@ name = 'name_example' # str | Pop name
 
 try:
     # PopMetadataRoute.delete
-    api_instance.api_v01_pop_name_metadata_delete(name)
+    api_instance.pop_metadata_delete(name)
 except ApiException as e:
-    print("Exception when calling PopMetadataApi->api_v01_pop_name_metadata_delete: %s\n" % e)
+    print("Exception when calling PopMetadataApi->pop_metadata_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -61,8 +61,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_pop_name_metadata_get**
-> api_v01_pop_name_metadata_get(name)
+# **pop_metadata_get**
+> pop_metadata_get(name)
 
 PopMetadataRoute.get
 
@@ -86,9 +86,9 @@ name = 'name_example' # str | Pop name
 
 try:
     # PopMetadataRoute.get
-    api_instance.api_v01_pop_name_metadata_get(name)
+    api_instance.pop_metadata_get(name)
 except ApiException as e:
-    print("Exception when calling PopMetadataApi->api_v01_pop_name_metadata_get: %s\n" % e)
+    print("Exception when calling PopMetadataApi->pop_metadata_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -112,8 +112,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_pop_name_metadata_post**
-> api_v01_pop_name_metadata_post(name, pop_parameters=pop_parameters)
+# **pop_metadata_post**
+> pop_metadata_post(name, pop_parameters=pop_parameters)
 
 PopMetadataRoute.post
 
@@ -138,9 +138,9 @@ pop_parameters = polarisgenclient.PopParameters() # PopParameters | Pop metadata
 
 try:
     # PopMetadataRoute.post
-    api_instance.api_v01_pop_name_metadata_post(name, pop_parameters=pop_parameters)
+    api_instance.pop_metadata_post(name, pop_parameters=pop_parameters)
 except ApiException as e:
-    print("Exception when calling PopMetadataApi->api_v01_pop_name_metadata_post: %s\n" % e)
+    print("Exception when calling PopMetadataApi->pop_metadata_post: %s\n" % e)
 ```
 
 ### Parameters
@@ -165,8 +165,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_pop_name_metadata_put**
-> api_v01_pop_name_metadata_put(name, body=body)
+# **pop_metadata_put**
+> pop_metadata_put(name, body=body)
 
 PopMetadataRoute.put
 
@@ -191,9 +191,9 @@ body = polarisgenclient.Body21() # Body21 | Pop metadata object. (optional)
 
 try:
     # PopMetadataRoute.put
-    api_instance.api_v01_pop_name_metadata_put(name, body=body)
+    api_instance.pop_metadata_put(name, body=body)
 except ApiException as e:
-    print("Exception when calling PopMetadataApi->api_v01_pop_name_metadata_put: %s\n" % e)
+    print("Exception when calling PopMetadataApi->pop_metadata_put: %s\n" % e)
 ```
 
 ### Parameters

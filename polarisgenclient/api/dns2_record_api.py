@@ -33,12 +33,12 @@ class Dns2RecordApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_dns2_record_zone_name_post(self, zone, name, **kwargs):  # noqa: E501
-        """Dns2RecordRoute.get  # noqa: E501
+    def dns2_record_post(self, zone, name, **kwargs):  # noqa: E501
+        """Dns2RecordRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_record_zone_name_post(zone, name, async_req=True)
+        >>> thread = api.dns2_record_post(zone, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class Dns2RecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns2_record_zone_name_post_with_http_info(zone, name, **kwargs)  # noqa: E501
+            return self.dns2_record_post_with_http_info(zone, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns2_record_zone_name_post_with_http_info(zone, name, **kwargs)  # noqa: E501
+            (data) = self.dns2_record_post_with_http_info(zone, name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns2_record_zone_name_post_with_http_info(self, zone, name, **kwargs):  # noqa: E501
-        """Dns2RecordRoute.get  # noqa: E501
+    def dns2_record_post_with_http_info(self, zone, name, **kwargs):  # noqa: E501
+        """Dns2RecordRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_record_zone_name_post_with_http_info(zone, name, async_req=True)
+        >>> thread = api.dns2_record_post_with_http_info(zone, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,18 +82,18 @@ class Dns2RecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns2_record_zone_name_post" % key
+                    " to method dns2_record_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'zone' is set
         if ('zone' not in params or
                 params['zone'] is None):
-            raise ValueError("Missing the required parameter `zone` when calling `api_v01_dns2_record_zone_name_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `zone` when calling `dns2_record_post`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_dns2_record_zone_name_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `dns2_record_post`")  # noqa: E501
 
         collection_formats = {}
 

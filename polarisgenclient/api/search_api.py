@@ -33,12 +33,12 @@ class SearchApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_search_get(self, search_input, **kwargs):  # noqa: E501
+    def search_get(self, search_input, **kwargs):  # noqa: E501
         """SearchRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_search_get(search_input, async_req=True)
+        >>> thread = api.search_get(search_input, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class SearchApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_search_get_with_http_info(search_input, **kwargs)  # noqa: E501
+            return self.search_get_with_http_info(search_input, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_search_get_with_http_info(search_input, **kwargs)  # noqa: E501
+            (data) = self.search_get_with_http_info(search_input, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_search_get_with_http_info(self, search_input, **kwargs):  # noqa: E501
+    def search_get_with_http_info(self, search_input, **kwargs):  # noqa: E501
         """SearchRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_search_get_with_http_info(search_input, async_req=True)
+        >>> thread = api.search_get_with_http_info(search_input, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class SearchApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_search_get" % key
+                    " to method search_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'search_input' is set
         if ('search_input' not in params or
                 params['search_input'] is None):
-            raise ValueError("Missing the required parameter `search_input` when calling `api_v01_search_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `search_input` when calling `search_get`")  # noqa: E501
 
         collection_formats = {}
 

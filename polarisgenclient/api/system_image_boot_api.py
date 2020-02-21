@@ -33,12 +33,12 @@ class SystemImageBootApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_system_image_boot_mac_address_get(self, mac_address, **kwargs):  # noqa: E501
+    def system_image_boot_get(self, mac_address, **kwargs):  # noqa: E501
         """SystemImageBootRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_system_image_boot_mac_address_get(mac_address, async_req=True)
+        >>> thread = api.system_image_boot_get(mac_address, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class SystemImageBootApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_system_image_boot_mac_address_get_with_http_info(mac_address, **kwargs)  # noqa: E501
+            return self.system_image_boot_get_with_http_info(mac_address, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_system_image_boot_mac_address_get_with_http_info(mac_address, **kwargs)  # noqa: E501
+            (data) = self.system_image_boot_get_with_http_info(mac_address, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_system_image_boot_mac_address_get_with_http_info(self, mac_address, **kwargs):  # noqa: E501
+    def system_image_boot_get_with_http_info(self, mac_address, **kwargs):  # noqa: E501
         """SystemImageBootRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_system_image_boot_mac_address_get_with_http_info(mac_address, async_req=True)
+        >>> thread = api.system_image_boot_get_with_http_info(mac_address, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class SystemImageBootApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_system_image_boot_mac_address_get" % key
+                    " to method system_image_boot_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'mac_address' is set
         if ('mac_address' not in params or
                 params['mac_address'] is None):
-            raise ValueError("Missing the required parameter `mac_address` when calling `api_v01_system_image_boot_mac_address_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `mac_address` when calling `system_image_boot_get`")  # noqa: E501
 
         collection_formats = {}
 

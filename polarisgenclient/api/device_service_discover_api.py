@@ -33,51 +33,43 @@ class DeviceServiceDiscoverApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_name_service_discover_get(self, name, service_name, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.get  # noqa: E501
+    def device_service_discover_bulk_post(self, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverBulkRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_discover_get(name, service_name, async_req=True)
+        >>> thread = api.device_service_discover_bulk_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: Device name (required)
-        :param str service_name: Service name (required)
-        :param str ip_address: IP Address
-        :param int port: Port
-        :param str protocol: Protocol
+        :param Body2 body: Device Service Discover object
         :return: list[DeviceServiceDiscoverObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
+            return self.device_service_discover_bulk_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_name_service_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
+            (data) = self.device_service_discover_bulk_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_name_service_discover_get_with_http_info(self, name, service_name, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.get  # noqa: E501
+    def device_service_discover_bulk_post_with_http_info(self, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverBulkRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_discover_get_with_http_info(name, service_name, async_req=True)
+        >>> thread = api.device_service_discover_bulk_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str name: Device name (required)
-        :param str service_name: Service name (required)
-        :param str ip_address: IP Address
-        :param int port: Port
-        :param str protocol: Protocol
+        :param Body2 body: Device Service Discover object
         :return: list[DeviceServiceDiscoverObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'service_name', 'ip_address', 'port', 'protocol']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -88,26 +80,208 @@ class DeviceServiceDiscoverApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_discover_get" % key
+                    " to method device_service_discover_bulk_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/device/service/discover/bulk', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[DeviceServiceDiscoverObject]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def device_service_discover_get(self, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_discover_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str ip_address: IP Address
+        :param int port: Port
+        :param str protocol: Protocol
+        :return: list[DeviceServiceDiscoverObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.device_service_discover_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.device_service_discover_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def device_service_discover_get_with_http_info(self, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_discover_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str ip_address: IP Address
+        :param int port: Port
+        :param str protocol: Protocol
+        :return: list[DeviceServiceDiscoverObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ip_address', 'port', 'protocol']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method device_service_discover_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'ip_address' in params:
+            query_params.append(('ip_address', params['ip_address']))  # noqa: E501
+        if 'port' in params:
+            query_params.append(('port', params['port']))  # noqa: E501
+        if 'protocol' in params:
+            query_params.append(('protocol', params['protocol']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/device/service/discover', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[DeviceServiceDiscoverObject]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def device_service_discover_get_by_name(self, name, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_discover_get_by_name(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: Device name (required)
+        :param str ip_address: IP Address
+        :param int port: Port
+        :param str protocol: Protocol
+        :return: list[DeviceServiceDiscoverObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.device_service_discover_get_by_name_with_http_info(name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.device_service_discover_get_by_name_with_http_info(name, **kwargs)  # noqa: E501
+            return data
+
+    def device_service_discover_get_by_name_with_http_info(self, name, **kwargs):  # noqa: E501
+        """DeviceServiceDiscoverRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_discover_get_by_name_with_http_info(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: Device name (required)
+        :param str ip_address: IP Address
+        :param int port: Port
+        :param str protocol: Protocol
+        :return: list[DeviceServiceDiscoverObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'ip_address', 'port', 'protocol']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method device_service_discover_get_by_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_discover_get`")  # noqa: E501
-        # verify the required parameter 'service_name' is set
-        if ('service_name' not in params or
-                params['service_name'] is None):
-            raise ValueError("Missing the required parameter `service_name` when calling `api_v01_device_name_service_discover_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `device_service_discover_get_by_name`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
-        if 'service_name' in params:
-            path_params['service_name'] = params['service_name']  # noqa: E501
 
         query_params = []
         if 'ip_address' in params:
@@ -142,12 +316,12 @@ class DeviceServiceDiscoverApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_name_service_service_name_discover_get(self, name, service_name, **kwargs):  # noqa: E501
+    def device_service_discover_get_by_service(self, name, service_name, **kwargs):  # noqa: E501
         """DeviceServiceDiscoverRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_service_name_discover_get(name, service_name, async_req=True)
+        >>> thread = api.device_service_discover_get_by_service(name, service_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -162,17 +336,17 @@ class DeviceServiceDiscoverApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_service_name_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
+            return self.device_service_discover_get_by_service_with_http_info(name, service_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_name_service_service_name_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
+            (data) = self.device_service_discover_get_by_service_with_http_info(name, service_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_name_service_service_name_discover_get_with_http_info(self, name, service_name, **kwargs):  # noqa: E501
+    def device_service_discover_get_by_service_with_http_info(self, name, service_name, **kwargs):  # noqa: E501
         """DeviceServiceDiscoverRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_service_name_discover_get_with_http_info(name, service_name, async_req=True)
+        >>> thread = api.device_service_discover_get_by_service_with_http_info(name, service_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -197,18 +371,18 @@ class DeviceServiceDiscoverApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_service_name_discover_get" % key
+                    " to method device_service_discover_get_by_service" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_service_name_discover_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `device_service_discover_get_by_service`")  # noqa: E501
         # verify the required parameter 'service_name' is set
         if ('service_name' not in params or
                 params['service_name'] is None):
-            raise ValueError("Missing the required parameter `service_name` when calling `api_v01_device_name_service_service_name_discover_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `service_name` when calling `device_service_discover_get_by_service`")  # noqa: E501
 
         collection_formats = {}
 
@@ -251,210 +425,12 @@ class DeviceServiceDiscoverApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_service_discover_bulk_post(self, **kwargs):  # noqa: E501
+    def device_service_discover_post(self, **kwargs):  # noqa: E501
         """DeviceServiceDiscoverRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_bulk_post(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Body2 body: Device Service Discover object
-        :return: list[DeviceServiceDiscoverObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_device_service_discover_bulk_post_with_http_info(**kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_device_service_discover_bulk_post_with_http_info(**kwargs)  # noqa: E501
-            return data
-
-    def api_v01_device_service_discover_bulk_post_with_http_info(self, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_bulk_post_with_http_info(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param Body2 body: Device Service Discover object
-        :return: list[DeviceServiceDiscoverObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_service_discover_bulk_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/device/service/discover/bulk', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[DeviceServiceDiscoverObject]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_device_service_discover_get(self, name, service_name, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_get(name, service_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: Device name (required)
-        :param str service_name: Service name (required)
-        :param str ip_address: IP Address
-        :param int port: Port
-        :param str protocol: Protocol
-        :return: list[DeviceServiceDiscoverObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_device_service_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_device_service_discover_get_with_http_info(name, service_name, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_device_service_discover_get_with_http_info(self, name, service_name, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_get_with_http_info(name, service_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: Device name (required)
-        :param str service_name: Service name (required)
-        :param str ip_address: IP Address
-        :param int port: Port
-        :param str protocol: Protocol
-        :return: list[DeviceServiceDiscoverObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'service_name', 'ip_address', 'port', 'protocol']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_service_discover_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_service_discover_get`")  # noqa: E501
-        # verify the required parameter 'service_name' is set
-        if ('service_name' not in params or
-                params['service_name'] is None):
-            raise ValueError("Missing the required parameter `service_name` when calling `api_v01_device_service_discover_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-        if 'service_name' in params:
-            path_params['service_name'] = params['service_name']  # noqa: E501
-
-        query_params = []
-        if 'ip_address' in params:
-            query_params.append(('ip_address', params['ip_address']))  # noqa: E501
-        if 'port' in params:
-            query_params.append(('port', params['port']))  # noqa: E501
-        if 'protocol' in params:
-            query_params.append(('protocol', params['protocol']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/device/service/discover', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[DeviceServiceDiscoverObject]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_device_service_discover_post(self, **kwargs):  # noqa: E501
-        """DeviceServiceDiscoverRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_post(async_req=True)
+        >>> thread = api.device_service_discover_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -465,17 +441,17 @@ class DeviceServiceDiscoverApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_service_discover_post_with_http_info(**kwargs)  # noqa: E501
+            return self.device_service_discover_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_service_discover_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.device_service_discover_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_service_discover_post_with_http_info(self, **kwargs):  # noqa: E501
+    def device_service_discover_post_with_http_info(self, **kwargs):  # noqa: E501
         """DeviceServiceDiscoverRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_service_discover_post_with_http_info(async_req=True)
+        >>> thread = api.device_service_discover_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -496,7 +472,7 @@ class DeviceServiceDiscoverApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_service_discover_post" % key
+                    " to method device_service_discover_post" % key
                 )
             params[key] = val
         del params['kwargs']

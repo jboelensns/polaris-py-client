@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_ipam_prefix_request_nextip_post**](IpamNextIPApi.md#api_v01_ipam_prefix_request_nextip_post) | **POST** /api/v0.1/ipam/prefix/request/nextip | IpamRequestNextIPRoute.post
+[**ipam_request_next_ip_post**](IpamNextIPApi.md#ipam_request_next_ip_post) | **POST** /api/v0.1/ipam/prefix/request/nextip | IpamRequestNextIPRoute.post
 
 
-# **api_v01_ipam_prefix_request_nextip_post**
-> Prefix api_v01_ipam_prefix_request_nextip_post(next_ip_request=next_ip_request)
+# **ipam_request_next_ip_post**
+> Prefix ipam_request_next_ip_post(next_ip_request=next_ip_request)
 
 IpamRequestNextIPRoute.post
 
@@ -32,10 +32,10 @@ next_ip_request = polarisgenclient.NextIpRequest() # NextIpRequest | IPAM Reques
 
 try:
     # IpamRequestNextIPRoute.post
-    api_response = api_instance.api_v01_ipam_prefix_request_nextip_post(next_ip_request=next_ip_request)
+    api_response = api_instance.ipam_request_next_ip_post(next_ip_request=next_ip_request)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IpamNextIPApi->api_v01_ipam_prefix_request_nextip_post: %s\n" % e)
+    print("Exception when calling IpamNextIPApi->ipam_request_next_ip_post: %s\n" % e)
 ```
 
 ### Parameters

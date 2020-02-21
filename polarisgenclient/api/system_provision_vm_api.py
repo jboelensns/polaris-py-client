@@ -33,12 +33,12 @@ class SystemProvisionVmApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_system_provision_vm_post(self, **kwargs):  # noqa: E501
+    def system_provision_post(self, **kwargs):  # noqa: E501
         """SystemProvisionRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_system_provision_vm_post(async_req=True)
+        >>> thread = api.system_provision_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class SystemProvisionVmApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_system_provision_vm_post_with_http_info(**kwargs)  # noqa: E501
+            return self.system_provision_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_system_provision_vm_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.system_provision_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_system_provision_vm_post_with_http_info(self, **kwargs):  # noqa: E501
+    def system_provision_post_with_http_info(self, **kwargs):  # noqa: E501
         """SystemProvisionRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_system_provision_vm_post_with_http_info(async_req=True)
+        >>> thread = api.system_provision_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,7 +80,7 @@ class SystemProvisionVmApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_system_provision_vm_post" % key
+                    " to method system_provision_post" % key
                 )
             params[key] = val
         del params['kwargs']

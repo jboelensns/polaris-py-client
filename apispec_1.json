@@ -2402,15 +2402,7 @@
     }, 
     "/api/v0.1/agent/inventory": {
       "get": {
-        "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "AgentInventoryGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2431,6 +2423,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "AgentInventoryPost", 
         "parameters": [
           {
             "description": "Agent inventory object", 
@@ -2457,6 +2450,7 @@
     }, 
     "/api/v0.1/agent/inventory/history": {
       "get": {
+        "operationId": "AgentInventoryHistoryGet", 
         "parameters": [
           {
             "description": "Device name", 
@@ -2507,6 +2501,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "AgentInventoryHistoryPost", 
         "parameters": [
           {
             "description": "Agent inventory object", 
@@ -2536,6 +2531,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "AgentInventoryHistoryDelete", 
         "parameters": [
           {
             "description": "UUID1 string", 
@@ -2570,6 +2566,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "AgentInventoryHistoryPut", 
         "parameters": [
           {
             "description": "UUID1 string", 
@@ -2603,22 +2600,7 @@
     }, 
     "/api/v0.1/arp": {
       "get": {
-        "parameters": [
-          {
-            "description": "address", 
-            "in": "path", 
-            "name": "address", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "ArpGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2638,18 +2620,12 @@
     }, 
     "/api/v0.1/arp/{address}": {
       "get": {
+        "operationId": "ArpGetByAddress", 
         "parameters": [
           {
             "description": "address", 
             "in": "path", 
             "name": "address", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
             "required": false, 
             "type": "string"
           }
@@ -2676,6 +2652,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "AuthJwtPost", 
         "parameters": [
           {
             "description": "Validate JWT signature", 
@@ -2712,22 +2689,7 @@
     }, 
     "/api/v0.1/bgp": {
       "get": {
-        "parameters": [
-          {
-            "description": "BgpProcess device_name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "BgpProcess as_number", 
-            "in": "path", 
-            "name": "as_number", 
-            "required": false, 
-            "type": "integer"
-          }
-        ], 
+        "operationId": "BgpProcessGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2745,6 +2707,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpProcessPost", 
         "parameters": [
           {
             "description": "BgpProcess object", 
@@ -2771,15 +2734,7 @@
     }, 
     "/api/v0.1/bgp/community": {
       "get": {
-        "parameters": [
-          {
-            "description": "Community name", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "BgpCommunityGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2797,6 +2752,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpCommunityPost", 
         "parameters": [
           {
             "description": "BGP community object.", 
@@ -2823,6 +2779,7 @@
     }, 
     "/api/v0.1/bgp/community/{name}": {
       "get": {
+        "operationId": "BgpCommunityGetByName", 
         "parameters": [
           {
             "description": "Community name", 
@@ -2849,6 +2806,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpCommunityPut", 
         "parameters": [
           {
             "description": "Community name", 
@@ -2898,6 +2856,7 @@
     }, 
     "/api/v0.1/bgp/community/{name}/value/{value}": {
       "delete": {
+        "operationId": "BgpCommunityDelete", 
         "parameters": [
           {
             "description": "BGP community name", 
@@ -2930,15 +2889,7 @@
     }, 
     "/api/v0.1/bgp/neighbor": {
       "get": {
-        "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "BgpNeighborGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2955,29 +2906,7 @@
     }, 
     "/api/v0.1/bgp/neighbor/process": {
       "get": {
-        "parameters": [
-          {
-            "description": "BgpNeighborProcess device_name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "BgpNeighborProcess as_number", 
-            "in": "path", 
-            "name": "as_number", 
-            "required": false, 
-            "type": "integer"
-          }, 
-          {
-            "description": "BgpNeighborProcess ip address", 
-            "in": "path", 
-            "name": "ip_address", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "BgpNeighborProcessGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -2995,6 +2924,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpNeighborProcessPost", 
         "parameters": [
           {
             "description": "BgpNeighborProcess object", 
@@ -3021,15 +2951,7 @@
     }, 
     "/api/v0.1/capture/group": {
       "get": {
-        "parameters": [
-          {
-            "description": "UUIDv1 session id", 
-            "in": "query", 
-            "name": "session_id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "CaptureGroupGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -3050,6 +2972,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureGroupPost", 
         "parameters": [
           {
             "description": "CaptureGroupObject", 
@@ -3079,6 +3002,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureGroupDelete", 
         "parameters": [
           {
             "description": "UUID1 string", 
@@ -3105,6 +3029,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureGroupPut", 
         "parameters": [
           {
             "description": "UUID1 string", 
@@ -3138,14 +3063,8 @@
     }, 
     "/api/v0.1/capture/session": {
       "get": {
+        "operationId": "CaptureSessionGet", 
         "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "UUIDv1 session id", 
             "in": "query", 
@@ -3181,6 +3100,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureSessionPost", 
         "parameters": [
           {
             "description": "CaptureSessionObject", 
@@ -3207,6 +3127,7 @@
     }, 
     "/api/v0.1/capture/session/{device_name}": {
       "get": {
+        "operationId": "CaptureSessionGetByDevice", 
         "parameters": [
           {
             "description": "Device name", 
@@ -3252,6 +3173,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureSessionDelete", 
         "parameters": [
           {
             "description": "Device name", 
@@ -3292,6 +3214,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "CaptureSessionPut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -3339,15 +3262,7 @@
     }, 
     "/api/v0.1/change/history": {
       "get": {
-        "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "ChangeHistoryGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -3367,15 +3282,7 @@
     }, 
     "/api/v0.1/client/version/": {
       "get": {
-        "parameters": [
-          {
-            "description": "client name", 
-            "in": "path", 
-            "name": "client_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "ClientVersionGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -3393,6 +3300,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ClientVersionPost", 
         "parameters": [
           {
             "description": "ClientVersion object", 
@@ -3419,6 +3327,7 @@
     }, 
     "/api/v0.1/client/version/{client_name}": {
       "delete": {
+        "operationId": "ClientVersionDelete", 
         "parameters": [
           {
             "description": "Client version name", 
@@ -3442,6 +3351,7 @@
         ]
       }, 
       "get": {
+        "operationId": "ClientVersionGetByName", 
         "parameters": [
           {
             "description": "client name", 
@@ -3468,6 +3378,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ClientVersionPut", 
         "parameters": [
           {
             "description": "client name", 
@@ -3518,14 +3429,8 @@
     }, 
     "/api/v0.1/device": {
       "get": {
+        "operationId": "DeviceGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "Device POP", 
             "in": "query", 
@@ -3566,21 +3471,8 @@
     }, 
     "/api/v0.1/device/service/discover": {
       "get": {
+        "operationId": "DeviceServiceDiscoverGet", 
         "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "Service name", 
-            "in": "path", 
-            "name": "service_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "IP Address", 
             "in": "query", 
@@ -3623,6 +3515,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceServiceDiscoverPost", 
         "parameters": [
           {
             "description": "Device Service Discover object", 
@@ -3652,6 +3545,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceServiceDiscoverBulkPost", 
         "parameters": [
           {
             "description": "Device Service Discover object", 
@@ -3681,7 +3575,7 @@
             }
           }
         }, 
-        "summary": "DeviceServiceDiscoverRoute.post", 
+        "summary": "DeviceServiceDiscoverBulkRoute.post", 
         "tags": [
           "DeviceServiceDiscover"
         ]
@@ -3689,6 +3583,7 @@
     }, 
     "/api/v0.1/device/{device_name}": {
       "get": {
+        "operationId": "DeviceGetByName", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -3738,6 +3633,7 @@
     "/api/v0.1/device/{device_name}/agent": {
       "post": {
         "description": "Register device agent", 
+        "operationId": "DeviceAgentPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -3771,6 +3667,7 @@
     }, 
     "/api/v0.1/device/{device_name}/agent/inventory": {
       "get": {
+        "operationId": "AgentInventoryGetByDevice", 
         "parameters": [
           {
             "description": "Device name", 
@@ -3799,6 +3696,7 @@
     }, 
     "/api/v0.1/device/{device_name}/agent/inventory/history": {
       "get": {
+        "operationId": "AgentInventoryHistoryGet", 
         "parameters": [
           {
             "description": "Device name", 
@@ -3848,14 +3746,8 @@
     }, 
     "/api/v0.1/device/{device_name}/arp": {
       "get": {
+        "operationId": "ArpGetByDevice", 
         "parameters": [
-          {
-            "description": "address", 
-            "in": "path", 
-            "name": "address", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "Device FQDN", 
             "in": "path", 
@@ -3882,6 +3774,7 @@
       }, 
       "post": {
         "description": "Dispatch real time ARP scan", 
+        "operationId": "ArpPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -3918,6 +3811,7 @@
     }, 
     "/api/v0.1/device/{device_name}/arp/agent": {
       "post": {
+        "operationId": "ArpAgentPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -3955,8 +3849,35 @@
         ]
       }
     }, 
+    "/api/v0.1/device/{device_name}/bgp": {
+      "get": {
+        "operationId": "BgpProcessGetByDevice", 
+        "parameters": [
+          {
+            "description": "BgpProcess device_name", 
+            "in": "path", 
+            "name": "device_name", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/BgpProcessObject"
+            }
+          }
+        }, 
+        "summary": "BgpProcessRoute.get", 
+        "tags": [
+          "BgpProcess"
+        ]
+      }
+    }, 
     "/api/v0.1/device/{device_name}/bgp/neighbor": {
       "get": {
+        "operationId": "BgpNeighborGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -3981,6 +3902,7 @@
       }, 
       "post": {
         "description": "Dispatch real time ARP scan", 
+        "operationId": "BgpNeighborPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4009,6 +3931,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpProcessDelete", 
         "parameters": [
           {
             "description": "BgpProcess device_name", 
@@ -4038,10 +3961,42 @@
           "BgpProcess"
         ]
       }, 
+      "get": {
+        "operationId": "BgpProcessGetByAs", 
+        "parameters": [
+          {
+            "description": "BgpProcess device_name", 
+            "in": "path", 
+            "name": "device_name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "BgpProcess as_number", 
+            "in": "path", 
+            "name": "as_number", 
+            "required": false, 
+            "type": "integer"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/BgpProcessObject"
+            }
+          }
+        }, 
+        "summary": "BgpProcessRoute.get", 
+        "tags": [
+          "BgpProcess"
+        ]
+      }, 
       "put": {
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpProcessPut", 
         "parameters": [
           {
             "description": "BgpProcess device_name", 
@@ -4085,6 +4040,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpNeighborProcessDelete", 
         "parameters": [
           {
             "description": "BgpNeighborProcess device_name", 
@@ -4122,6 +4078,7 @@
         ]
       }, 
       "get": {
+        "operationId": "BgpNeighborProcessGetByAs", 
         "parameters": [
           {
             "description": "BgpNeighborProcess device_name", 
@@ -4162,6 +4119,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpNeighborProcessPut", 
         "parameters": [
           {
             "description": "BgpNeighborProcess device_name", 
@@ -4210,6 +4168,7 @@
     "/api/v0.1/device/{device_name}/bulk/sync": {
       "post": {
         "description": "Dispatch real time bulk Device scan", 
+        "operationId": "DeviceBulkSyncPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4242,6 +4201,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceChangePost", 
         "parameters": [
           {
             "description": "Device name", 
@@ -4274,6 +4234,7 @@
     }, 
     "/api/v0.1/device/{device_name}/change/history": {
       "get": {
+        "operationId": "ChangeHistoryGetByDeviceByDevice", 
         "parameters": [
           {
             "description": "Device name", 
@@ -4305,6 +4266,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DhcpHelperProcessDelete", 
         "parameters": [
           {
             "description": "DhcpHelperProcess device_name", 
@@ -4342,6 +4304,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DhcpHelperProcessGetByDevice", 
         "parameters": [
           {
             "description": "DhcpHelperProcess device_name", 
@@ -4368,6 +4331,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DhcpHelperProcessPut", 
         "parameters": [
           {
             "description": "DhcpHelperProcess device_name", 
@@ -4402,6 +4366,7 @@
     "/api/v0.1/device/{device_name}/discover": {
       "post": {
         "description": "Dispatch real time Device scan", 
+        "operationId": "DevicePost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4427,6 +4392,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DuplicateIpGetByName", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4462,6 +4428,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "GtmWideIpAliasConfigGet", 
         "parameters": [
           {
             "description": "device name", 
@@ -4489,6 +4456,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "HypervisorGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4521,19 +4489,13 @@
     }, 
     "/api/v0.1/device/{device_name}/interface": {
       "get": {
+        "operationId": "DeviceInterfaceGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
             "in": "path", 
             "name": "device_name", 
             "required": true, 
-            "type": "string"
-          }, 
-          {
-            "description": "Device interface port", 
-            "in": "path", 
-            "name": "port", 
-            "required": false, 
             "type": "string"
           }
         ], 
@@ -4549,6 +4511,7 @@
       }, 
       "post": {
         "description": "Dispatch real time interface scan", 
+        "operationId": "DeviceInterfacePost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4577,6 +4540,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceInterfaceAlarmGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4602,6 +4566,7 @@
     }, 
     "/api/v0.1/device/{device_name}/interface/{port}": {
       "get": {
+        "operationId": "DeviceInterfaceGetByPort", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4634,6 +4599,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceInterfaceAddressGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4666,6 +4632,7 @@
     }, 
     "/api/v0.1/device/{device_name}/lldp/neighbor": {
       "get": {
+        "operationId": "LldpNeighborGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4697,6 +4664,7 @@
       }, 
       "post": {
         "description": "Dispatch real time LLDP neighbor scan", 
+        "operationId": "LldpNeighborPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4722,18 +4690,12 @@
     }, 
     "/api/v0.1/device/{device_name}/mac": {
       "get": {
+        "operationId": "MacGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
             "in": "path", 
             "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "address", 
-            "in": "path", 
-            "name": "address", 
             "required": false, 
             "type": "string"
           }, 
@@ -4765,6 +4727,7 @@
       }, 
       "post": {
         "description": "Dispatch real time Mac scan", 
+        "operationId": "MacRoute", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4795,6 +4758,7 @@
     }, 
     "/api/v0.1/device/{device_name}/ospf/neighbor": {
       "get": {
+        "operationId": "OspfNeighborGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4826,6 +4790,7 @@
       }, 
       "post": {
         "description": "Dispatch real time OSPF neighbor scan", 
+        "operationId": "OspfNeighborPost", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4848,6 +4813,7 @@
     }, 
     "/api/v0.1/device/{device_name}/validate/{validate_name}": {
       "get": {
+        "operationId": "DeviceValidateGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -4885,18 +4851,12 @@
     }, 
     "/api/v0.1/device/{device_name}/validation/history": {
       "get": {
+        "operationId": "ValidationHistoryGetByDevice", 
         "parameters": [
           {
             "description": "Device name", 
             "in": "path", 
             "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "username", 
-            "in": "path", 
-            "name": "username", 
             "required": false, 
             "type": "string"
           }
@@ -4923,6 +4883,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanDelete", 
         "parameters": [
           {
             "description": "Device name", 
@@ -4953,6 +4914,7 @@
         ]
       }, 
       "get": {
+        "operationId": "VlanGetByNum", 
         "parameters": [
           {
             "description": "Device name", 
@@ -4986,6 +4948,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanRoutePut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5029,6 +4992,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanInterfaceDelete", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5066,6 +5030,7 @@
         ]
       }, 
       "get": {
+        "operationId": "VlanInterfaceGetByNum", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5106,6 +5071,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanInterfacePut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5153,19 +5119,13 @@
     }, 
     "/api/v0.1/device/{name}/service": {
       "get": {
+        "operationId": "DeviceServiceGet", 
         "parameters": [
           {
             "description": "DeviceService name", 
             "in": "path", 
             "name": "name", 
             "required": true, 
-            "type": "string"
-          }, 
-          {
-            "description": "DeviceService id", 
-            "in": "path", 
-            "name": "id", 
-            "required": false, 
             "type": "string"
           }, 
           {
@@ -5193,6 +5153,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceServicePost", 
         "parameters": [
           {
             "in": "path", 
@@ -5224,18 +5185,12 @@
     }, 
     "/api/v0.1/device/{name}/service/discover": {
       "get": {
+        "operationId": "DeviceServiceDiscoverGetByName", 
         "parameters": [
           {
             "description": "Device name", 
             "in": "path", 
             "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "Service name", 
-            "in": "path", 
-            "name": "service_name", 
             "required": false, 
             "type": "string"
           }, 
@@ -5283,6 +5238,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceServiceDelete", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5313,6 +5269,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DeviceServiceGetById", 
         "parameters": [
           {
             "description": "DeviceService name", 
@@ -5353,6 +5310,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceServicePut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5393,6 +5351,7 @@
     }, 
     "/api/v0.1/device/{name}/service/{service_name}/discover": {
       "get": {
+        "operationId": "DeviceServiceDiscoverGetByService", 
         "parameters": [
           {
             "description": "Device name", 
@@ -5449,15 +5408,7 @@
     }, 
     "/api/v0.1/dhcp/helper": {
       "get": {
-        "parameters": [
-          {
-            "description": "DhcpHelperProcess device_name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DhcpHelperProcessGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -5475,6 +5426,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DhcpHelperProcessPost", 
         "parameters": [
           {
             "description": "DhcpHelperProcess object", 
@@ -5501,22 +5453,7 @@
     }, 
     "/api/v0.1/dns/record/a": {
       "get": {
-        "parameters": [
-          {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "fqdn", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "ip address", 
-            "in": "path", 
-            "name": "ip", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DnsARecordGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -5531,6 +5468,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsARecordPost", 
         "parameters": [
           {
             "description": "Dns object.", 
@@ -5578,6 +5516,7 @@
     }, 
     "/api/v0.1/dns/record/a/{fqdn}/{ip}": {
       "delete": {
+        "operationId": "DnsARecordDelete", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5605,6 +5544,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsARecordGetByIp", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5635,6 +5575,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsARecordPut", 
         "parameters": [
           {
             "description": "ip", 
@@ -5678,7 +5619,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "DnsARecordRoute.post", 
+        "summary": "DnsARecordRoute.put", 
         "tags": [
           "DnsARecord"
         ]
@@ -5686,22 +5627,7 @@
     }, 
     "/api/v0.1/dns/record/aaaa": {
       "get": {
-        "parameters": [
-          {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "fqdn", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "ip address", 
-            "in": "path", 
-            "name": "ip", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DnsAAAARecordGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -5716,6 +5642,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsAAAARecordPost", 
         "parameters": [
           {
             "description": "Dns object.", 
@@ -5763,6 +5690,7 @@
     }, 
     "/api/v0.1/dns/record/aaaa/{fqdn}/{ip}": {
       "delete": {
+        "operationId": "DnsAAAARecordDelete", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5790,6 +5718,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsAAAARecordGetByIp", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5820,6 +5749,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsAAAARecordPut", 
         "parameters": [
           {
             "description": "ip", 
@@ -5863,7 +5793,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "DnsAAAARecordRoute.post", 
+        "summary": "DnsAAAARecordRoute.put", 
         "tags": [
           "DnsAAAARecord"
         ]
@@ -5871,17 +5801,11 @@
     }, 
     "/api/v0.1/dns/record/cname": {
       "get": {
+        "operationId": "DnsCNAMERecordGet", 
         "parameters": [
           {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "fqdn", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
             "description": "canonical name", 
-            "in": "path", 
+            "in": "query", 
             "name": "canonical", 
             "required": false, 
             "type": "string"
@@ -5901,6 +5825,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsCNAMERecordPost", 
         "parameters": [
           {
             "description": "Dns CNAME object.", 
@@ -5948,6 +5873,7 @@
     }, 
     "/api/v0.1/dns/record/cname/{fqdn}": {
       "delete": {
+        "operationId": "DnsCNAMERecordDelete", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5968,6 +5894,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsCNAMERecordGetByFQDN", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -5978,7 +5905,7 @@
           }, 
           {
             "description": "canonical name", 
-            "in": "path", 
+            "in": "query", 
             "name": "canonical", 
             "required": false, 
             "type": "string"
@@ -5998,6 +5925,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsCNAMERecordPut", 
         "parameters": [
           {
             "description": "ip", 
@@ -6041,7 +5969,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "DnsCNAMERecordRoute.post", 
+        "summary": "DnsCNAMERecordRoute.put", 
         "tags": [
           "DnsCNAMERecord"
         ]
@@ -6049,14 +5977,8 @@
     }, 
     "/api/v0.1/dns/record/host": {
       "get": {
+        "operationId": "DnsHOSTRecordGet", 
         "parameters": [
-          {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "fqdn", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "ipv4 address", 
             "in": "query", 
@@ -6086,6 +6008,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsHOSTRecordPost", 
         "parameters": [
           {
             "description": "Dns HOST object.", 
@@ -6142,6 +6065,7 @@
     }, 
     "/api/v0.1/dns/record/host/{fqdn}": {
       "delete": {
+        "operationId": "DnsHostRecordDelete", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6162,6 +6086,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsHOSTRecordGetByFQDN", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6199,6 +6124,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsHOSTRecordPut", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6244,7 +6170,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "DnsHOSTRecordRoute.post", 
+        "summary": "DnsHOSTRecordRoute.put", 
         "tags": [
           "DnsHOSTRecord"
         ]
@@ -6252,22 +6178,7 @@
     }, 
     "/api/v0.1/dns/record/ptr": {
       "get": {
-        "parameters": [
-          {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "fqdn", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "ip address", 
-            "in": "path", 
-            "name": "ip", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DnsPTRRecordGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -6282,6 +6193,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsPTRRecordPost", 
         "parameters": [
           {
             "description": "Dns object.", 
@@ -6329,6 +6241,7 @@
     }, 
     "/api/v0.1/dns/record/ptr/{fqdn}/{ip}": {
       "delete": {
+        "operationId": "DnsPTRRecordDelete", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6356,6 +6269,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsPTRRecordGetByIp", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6386,6 +6300,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsPTRRecordPut", 
         "parameters": [
           {
             "description": "ip", 
@@ -6437,15 +6352,7 @@
     }, 
     "/api/v0.1/dns/zone/reverse": {
       "delete": {
-        "parameters": [
-          {
-            "description": "fqdn", 
-            "in": "path", 
-            "name": "cidr", 
-            "required": true, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DnsReverseZoneDelete", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -6463,6 +6370,7 @@
         ]
       }, 
       "get": {
+        "operationId": "DnsReverseRecordGet", 
         "parameters": [
           {
             "description": "cidr", 
@@ -6490,7 +6398,7 @@
             }
           }
         }, 
-        "summary": "DnsHOSTRecordRoute.get", 
+        "summary": "DnsReverseRecordRoute.get", 
         "tags": [
           "DnsHOSTRecord"
         ]
@@ -6499,6 +6407,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DnsReverseZonePost", 
         "parameters": [
           {
             "description": "Dns HOST object.", 
@@ -6539,6 +6448,7 @@
     }, 
     "/api/v0.1/dns/zone/reverse/{cidr}": {
       "delete": {
+        "operationId": "DnsReverseZoneDeleteByCIDR", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6567,6 +6477,7 @@
     }, 
     "/api/v0.1/dns2/record/{zone}/{name}": {
       "delete": {
+        "operationId": "Dns2ARecordDelete", 
         "parameters": [
           {
             "description": "zone for record", 
@@ -6579,20 +6490,6 @@
             "description": "name for fqdn", 
             "in": "path", 
             "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "type of record to delete", 
-            "in": "path", 
-            "name": "type", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "ip address", 
-            "in": "path", 
-            "name": "ip", 
             "required": false, 
             "type": "string"
           }
@@ -6611,6 +6508,7 @@
         ]
       }, 
       "get": {
+        "operationId": "Dns2ARecordGet", 
         "parameters": [
           {
             "description": "fqdn", 
@@ -6644,6 +6542,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "Dns2RecordPost", 
         "parameters": [
           {
             "in": "path", 
@@ -6666,7 +6565,7 @@
             }
           }
         }, 
-        "summary": "Dns2RecordRoute.get", 
+        "summary": "Dns2RecordRoute.post", 
         "tags": [
           "Dns2Record"
         ]
@@ -6674,6 +6573,7 @@
     }, 
     "/api/v0.1/dns2/record/{zone}/{name}/{type}/{ip}": {
       "delete": {
+        "operationId": "Dns2ARecordDeleteByIp", 
         "parameters": [
           {
             "description": "zone for record", 
@@ -6723,14 +6623,7 @@
         "consumes": [
           "application/json"
         ], 
-        "parameters": [
-          {
-            "in": "path", 
-            "name": "zone_id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "Dns2ZoneRouteGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -6750,6 +6643,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "Dns2ZoneRouteGetById", 
         "parameters": [
           {
             "in": "path", 
@@ -6777,6 +6671,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "Dns2ZoneRecordGet", 
         "parameters": [
           {
             "in": "path", 
@@ -6804,14 +6699,8 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DuplicateIpGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "IP address", 
             "in": "query", 
@@ -6836,15 +6725,7 @@
     }, 
     "/api/v0.1/gtm/dc": {
       "get": {
-        "parameters": [
-          {
-            "description": "datacenter name", 
-            "in": "path", 
-            "name": "hostname", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "GtmGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -6858,6 +6739,7 @@
     }, 
     "/api/v0.1/gtm/dc/{hostname}": {
       "get": {
+        "operationId": "GtmGetByName", 
         "parameters": [
           {
             "description": "datacenter name", 
@@ -6880,6 +6762,7 @@
     }, 
     "/api/v0.1/gtm/geoip/{hostname}": {
       "get": {
+        "operationId": "GtmGeoIpGet", 
         "parameters": [
           {
             "description": "GTM FQDN", 
@@ -6900,6 +6783,7 @@
         ]
       }, 
       "post": {
+        "operationId": "GtmGeoIpPost", 
         "parameters": [
           {
             "description": "GTM FQDN", 
@@ -6922,6 +6806,7 @@
     }, 
     "/api/v0.1/gtm/region": {
       "get": {
+        "operationId": "GtmRegionGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -6935,19 +6820,13 @@
     }, 
     "/api/v0.1/gtm/region/resolve/{country}": {
       "get": {
+        "operationId": "GtmRegionResolveGet", 
         "parameters": [
           {
             "description": "2-letter Country code", 
             "in": "path", 
             "name": "country", 
             "required": true, 
-            "type": "string"
-          }, 
-          {
-            "description": "optional State or Province name", 
-            "in": "path", 
-            "name": "state", 
-            "required": false, 
             "type": "string"
           }
         ], 
@@ -6956,7 +6835,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "GtmRegionRoute.post", 
+        "summary": "GtmRegionResolveRoute.get", 
         "tags": [
           "IpamGeoIp"
         ]
@@ -6964,6 +6843,7 @@
     }, 
     "/api/v0.1/gtm/region/resolve/{country}/{state}": {
       "get": {
+        "operationId": "GtmRegionGetResolveByState", 
         "parameters": [
           {
             "description": "2-letter Country code", 
@@ -6985,7 +6865,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "GtmRegionRoute.post", 
+        "summary": "GtmRegionResolveRoute.get", 
         "tags": [
           "IpamGeoIp"
         ]
@@ -6993,6 +6873,7 @@
     }, 
     "/api/v0.1/gtm/topo": {
       "get": {
+        "operationId": "GtmTopologyGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -7010,6 +6891,7 @@
           "application/json"
         ], 
         "description": "Create a new topology record", 
+        "operationId": "GtmTopologyPost", 
         "parameters": [
           {
             "description": "topo object", 
@@ -7073,6 +6955,7 @@
           "application/json"
         ], 
         "description": "Remove topology record", 
+        "operationId": "GtmTopologyDelete", 
         "parameters": [
           {
             "description": "topo object", 
@@ -7125,7 +7008,7 @@
             }
           }
         }, 
-        "summary": "GtmTopologyDeleteRoute.post", 
+        "summary": "GtmTopologyRoute.delete", 
         "tags": [
           "IpamGeoIp"
         ]
@@ -7133,15 +7016,7 @@
     }, 
     "/api/v0.1/gtm/wideip": {
       "get": {
-        "parameters": [
-          {
-            "description": "wideip hostname", 
-            "in": "path", 
-            "name": "wideip", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "GtmWideIpGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -7155,6 +7030,7 @@
     }, 
     "/api/v0.1/gtm/wideip/{wideip}": {
       "get": {
+        "operationId": "GtmWideIpGetByIp", 
         "parameters": [
           {
             "description": "wideip hostname", 
@@ -7177,6 +7053,7 @@
     }, 
     "/api/v0.1/host/bgp/neighbor": {
       "get": {
+        "operationId": "HostBgpNeighborGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -7210,6 +7087,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "HostBgpNeighborPost", 
         "parameters": [
           {
             "description": "Host BGP Neighbor object.", 
@@ -7236,6 +7114,7 @@
     }, 
     "/api/v0.1/host/bgp/neighbor/device/{device_name}/application/{application}": {
       "delete": {
+        "operationId": "HostBgpNeighborDelete", 
         "parameters": [
           {
             "description": "Device name FQDN", 
@@ -7273,6 +7152,7 @@
         ]
       }, 
       "put": {
+        "operationId": "HostBgpNeighborPut", 
         "parameters": [
           {
             "description": "Device name FQDN", 
@@ -7312,6 +7192,7 @@
     }, 
     "/api/v0.1/host/bgp/neighbor/prefix": {
       "get": {
+        "operationId": "HostBgpNeighborPrefixGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -7348,6 +7229,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "HostBgpNeighborPrefixPost", 
         "parameters": [
           {
             "description": "Host BGP Neighbor Prefix object", 
@@ -7374,6 +7256,7 @@
     }, 
     "/api/v0.1/host/bgp/neighbor/prefix/device/{device_name}": {
       "delete": {
+        "operationId": "HostBgpNeighborPrefixDelete", 
         "parameters": [
           {
             "description": "Device name FQDN", 
@@ -7421,6 +7304,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "HostBgpNeighborPrefixPut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -7464,14 +7348,8 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "HypervisorGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "MAC address", 
             "in": "query", 
@@ -7499,15 +7377,7 @@
         "consumes": [
           "application/json"
         ], 
-        "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "DeviceInterfaceAlarmGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -7527,6 +7397,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DeviceInterfaceAddressGet", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -7559,6 +7430,7 @@
     }, 
     "/api/v0.1/ipam/geo/feed.csv": {
       "delete": {
+        "operationId": "IpamGeoFeedDelete", 
         "responses": {
           "200": {
             "description": "The resource was deleted successfully"
@@ -7570,6 +7442,7 @@
         ]
       }, 
       "get": {
+        "operationId": "IpamGeoFeedGet", 
         "responses": {
           "200": {
             "description": "Success"
@@ -7583,6 +7456,7 @@
     }, 
     "/api/v0.1/ipam/geo/provider": {
       "get": {
+        "operationId": "IpamGeoProviderGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -7602,6 +7476,7 @@
     }, 
     "/api/v0.1/ipam/geo/provider/{name}/resolve/{ip}": {
       "post": {
+        "operationId": "IpamGeoProviderPost", 
         "parameters": [
           {
             "description": "GeoIp provider name", 
@@ -7638,6 +7513,7 @@
     }, 
     "/api/v0.1/ipam/geo/provider/{name}/resolve/{ip}/{network}": {
       "post": {
+        "operationId": "IpamGeoProviderPostByNetwork", 
         "parameters": [
           {
             "description": "GeoIp provider name", 
@@ -7674,6 +7550,7 @@
     }, 
     "/api/v0.1/ipam/pool": {
       "get": {
+        "operationId": "IpamPoolGet", 
         "parameters": [
           {
             "description": "IPAM pool id", 
@@ -7728,6 +7605,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamPoolPost", 
         "parameters": [
           {
             "description": "IPAM Pool object.", 
@@ -7754,6 +7632,7 @@
     }, 
     "/api/v0.1/ipam/pool/cache": {
       "get": {
+        "operationId": "IpamPoolCacheGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -7770,6 +7649,7 @@
     }, 
     "/api/v0.1/ipam/pool/{id}": {
       "delete": {
+        "operationId": "IpamPoolDelete", 
         "parameters": [
           {
             "description": "IPAM pool id", 
@@ -7796,6 +7676,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamPoolPut", 
         "parameters": [
           {
             "description": "IPAM pool id", 
@@ -7821,7 +7702,7 @@
             }
           }
         }, 
-        "summary": "IpamPoolRoute.post", 
+        "summary": "IpamPoolRoute.put", 
         "tags": [
           "IpamPool"
         ]
@@ -7829,6 +7710,7 @@
     }, 
     "/api/v0.1/ipam/prefix": {
       "get": {
+        "operationId": "IpamPrefixGet", 
         "parameters": [
           {
             "description": "IPAM prefix IP family", 
@@ -7917,6 +7799,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamPrefixPost", 
         "parameters": [
           {
             "description": "IPAM Prefix object.", 
@@ -7978,6 +7861,7 @@
     }, 
     "/api/v0.1/ipam/prefix/cache": {
       "get": {
+        "operationId": "IpamPrefixCacheGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -7997,6 +7881,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamPrefixRequestPost", 
         "parameters": [
           {
             "description": "IPAM Prefix Request object.", 
@@ -8095,6 +7980,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamRequestNextIPPost", 
         "parameters": [
           {
             "description": "IPAM Request Next IP object.", 
@@ -8148,6 +8034,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamUtilizationPost", 
         "parameters": [
           {
             "in": "query", 
@@ -8175,6 +8062,7 @@
           "application/json"
         ], 
         "description": "Delete a IPAM Prefix object.", 
+        "operationId": "IpamPrefixDelete", 
         "parameters": [
           {
             "description": "IPAM Prefix id.", 
@@ -8202,6 +8090,7 @@
         ]
       }, 
       "get": {
+        "operationId": "IpamPrefixGetById", 
         "parameters": [
           {
             "description": "IPAM prefix id", 
@@ -8228,6 +8117,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamPrefixPut", 
         "parameters": [
           {
             "description": "IPAM Prefix id.", 
@@ -8302,6 +8192,7 @@
     }, 
     "/api/v0.1/ipam/profile/{name}": {
       "get": {
+        "operationId": "IpamPoolGet", 
         "parameters": [
           {
             "description": "IPAM profile name", 
@@ -8327,6 +8218,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamProfileDeployPost", 
         "parameters": [
           {
             "description": "name", 
@@ -8372,6 +8264,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpamProfileRevertPost", 
         "parameters": [
           {
             "description": "name", 
@@ -8414,22 +8307,7 @@
     }, 
     "/api/v0.1/ipfilter": {
       "get": {
-        "parameters": [
-          {
-            "description": "IpFilter name", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "IpFilter id", 
-            "in": "path", 
-            "name": "id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "IpFilterGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -8447,6 +8325,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterPost", 
         "parameters": [
           {
             "description": "IpFilter object", 
@@ -8473,15 +8352,7 @@
     }, 
     "/api/v0.1/ipfilter/rule": {
       "get": {
-        "parameters": [
-          {
-            "description": "IpFilter id", 
-            "in": "path", 
-            "name": "ip_filter_id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "IpFilterRuleGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -8499,6 +8370,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterRulePost", 
         "parameters": [
           {
             "description": "IpFilterRule object", 
@@ -8525,6 +8397,7 @@
     }, 
     "/api/v0.1/ipfilter/{ip_filter_id}/rule": {
       "get": {
+        "operationId": "IpFilterRuleGetById", 
         "parameters": [
           {
             "description": "IpFilter id", 
@@ -8553,6 +8426,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterRuleDelete", 
         "parameters": [
           {
             "description": "IpFilter id name", 
@@ -8593,6 +8467,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterRulePut", 
         "parameters": [
           {
             "description": "IpFilterRule id", 
@@ -8638,11 +8513,38 @@
         ]
       }
     }, 
+    "/api/v0.1/ipfilter/{name}": {
+      "get": {
+        "operationId": "IpFilterGetByName", 
+        "parameters": [
+          {
+            "description": "IpFilter name", 
+            "in": "path", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/IpFilterObject"
+            }
+          }
+        }, 
+        "summary": "IpFilterRoute.get", 
+        "tags": [
+          "IpFilter"
+        ]
+      }
+    }, 
     "/api/v0.1/ipfilter/{name}/id/{id}": {
       "delete": {
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterDelete", 
         "parameters": [
           {
             "description": "IpFilter name", 
@@ -8672,10 +8574,42 @@
           "IpFilter"
         ]
       }, 
+      "get": {
+        "operationId": "IpFilterGetById", 
+        "parameters": [
+          {
+            "description": "IpFilter name", 
+            "in": "path", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "IpFilter id", 
+            "in": "path", 
+            "name": "id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/IpFilterObject"
+            }
+          }
+        }, 
+        "summary": "IpFilterRoute.get", 
+        "tags": [
+          "IpFilter"
+        ]
+      }, 
       "put": {
         "consumes": [
           "application/json"
         ], 
+        "operationId": "IpFilterPut", 
         "parameters": [
           {
             "description": "IpFilter name", 
@@ -8716,14 +8650,8 @@
     }, 
     "/api/v0.1/lldp/neighbor": {
       "get": {
+        "operationId": "LldpNeighborGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "Device interface port", 
             "in": "query", 
@@ -8751,6 +8679,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "LoginPost", 
         "parameters": [
           {
             "description": "Login object", 
@@ -8777,21 +8706,8 @@
     }, 
     "/api/v0.1/mac": {
       "get": {
+        "operationId": "MacGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "address", 
-            "in": "path", 
-            "name": "address", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "Mac Address", 
             "in": "query", 
@@ -8821,14 +8737,8 @@
     }, 
     "/api/v0.1/mac/{address}": {
       "get": {
+        "operationId": "MacGetByAddress", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "address", 
             "in": "path", 
@@ -8868,6 +8778,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "DuplicateIpMonitoringGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -8884,14 +8795,8 @@
     }, 
     "/api/v0.1/ospf/neighbor": {
       "get": {
+        "operationId": "OspfNeighborGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "Device interface port", 
             "in": "query", 
@@ -8916,6 +8821,7 @@
     }, 
     "/api/v0.1/pop": {
       "get": {
+        "operationId": "PopGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -8943,6 +8849,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "PopPost", 
         "parameters": [
           {
             "description": "Pop object.", 
@@ -9001,6 +8908,7 @@
     }, 
     "/api/v0.1/pop/{name}": {
       "delete": {
+        "operationId": "PopDelete", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9021,6 +8929,7 @@
         ]
       }, 
       "get": {
+        "operationId": "PopGetByName", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9051,6 +8960,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "PopPut", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9081,6 +8991,7 @@
     }, 
     "/api/v0.1/pop/{name}/metadata": {
       "delete": {
+        "operationId": "PopMetadataDelete", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9101,6 +9012,7 @@
         ]
       }, 
       "get": {
+        "operationId": "PopMetadataGet", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9124,6 +9036,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "PopMetadataPost", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9170,6 +9083,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "PopMetadataPut", 
         "parameters": [
           {
             "description": "Pop name", 
@@ -9215,22 +9129,7 @@
     }, 
     "/api/v0.1/routemap": {
       "get": {
-        "parameters": [
-          {
-            "description": "RouteMap name", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "RouteMap id", 
-            "in": "path", 
-            "name": "id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "RouteMapGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -9248,6 +9147,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "RouteMapPost", 
         "parameters": [
           {
             "description": "RouteMap object", 
@@ -9274,15 +9174,7 @@
     }, 
     "/api/v0.1/routemap/bgp": {
       "get": {
-        "parameters": [
-          {
-            "description": "RouteMap id", 
-            "in": "path", 
-            "name": "route_map_id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "BgpRouteMapGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -9300,6 +9192,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpRouteMapPost", 
         "parameters": [
           {
             "description": "BgpRouteMap object", 
@@ -9324,11 +9217,38 @@
         ]
       }
     }, 
+    "/api/v0.1/routemap/{name}": {
+      "get": {
+        "operationId": "RouteMapGetByName", 
+        "parameters": [
+          {
+            "description": "RouteMap name", 
+            "in": "path", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/RouteMapObject"
+            }
+          }
+        }, 
+        "summary": "RouteMapRoute.get", 
+        "tags": [
+          "RouteMap"
+        ]
+      }
+    }, 
     "/api/v0.1/routemap/{name}/id/{id}": {
       "delete": {
         "consumes": [
           "application/json"
         ], 
+        "operationId": "RouteMapDelete", 
         "parameters": [
           {
             "description": "RouteMap name", 
@@ -9358,10 +9278,42 @@
           "RouteMap"
         ]
       }, 
+      "get": {
+        "operationId": "RouteMapGetById", 
+        "parameters": [
+          {
+            "description": "RouteMap name", 
+            "in": "path", 
+            "name": "name", 
+            "required": false, 
+            "type": "string"
+          }, 
+          {
+            "description": "RouteMap id", 
+            "in": "path", 
+            "name": "id", 
+            "required": false, 
+            "type": "string"
+          }
+        ], 
+        "responses": {
+          "200": {
+            "description": "Success", 
+            "schema": {
+              "$ref": "#/definitions/RouteMapObject"
+            }
+          }
+        }, 
+        "summary": "RouteMapRoute.get", 
+        "tags": [
+          "RouteMap"
+        ]
+      }, 
       "put": {
         "consumes": [
           "application/json"
         ], 
+        "operationId": "RouteMapPut", 
         "parameters": [
           {
             "description": "RouteMap name", 
@@ -9402,6 +9354,7 @@
     }, 
     "/api/v0.1/routemap/{route_map_id}/bgp": {
       "get": {
+        "operationId": "BgpRouteMapGetById", 
         "parameters": [
           {
             "description": "RouteMap id", 
@@ -9430,6 +9383,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpRouteMapDelete", 
         "parameters": [
           {
             "description": "RouteMap id", 
@@ -9470,6 +9424,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "BgpRouteMapPut", 
         "parameters": [
           {
             "description": "RouteMap id", 
@@ -9517,6 +9472,7 @@
     }, 
     "/api/v0.1/search": {
       "get": {
+        "operationId": "SearchGet", 
         "parameters": [
           {
             "description": "Host, IP Address, or MAC", 
@@ -9539,6 +9495,7 @@
     }, 
     "/api/v0.1/service": {
       "get": {
+        "operationId": "ServiceGet", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9572,6 +9529,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ServicePost", 
         "parameters": [
           {
             "description": "Service object", 
@@ -9601,6 +9559,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ServiceDelete", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9634,6 +9593,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ServicePut", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9674,6 +9634,7 @@
     }, 
     "/api/v0.1/service/{name}/id/{id}/metadata": {
       "delete": {
+        "operationId": "ServiceMetadataDelete", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9707,6 +9668,7 @@
         ]
       }, 
       "get": {
+        "operationId": "ServiceMetadataGet", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9743,6 +9705,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ServiceMetadataPost", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9802,6 +9765,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ServiceMetadataPut", 
         "parameters": [
           {
             "description": "Service name", 
@@ -9860,15 +9824,7 @@
     }, 
     "/api/v0.1/system/image": {
       "get": {
-        "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "SystemImageGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -9886,6 +9842,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImagePost", 
         "parameters": [
           {
             "description": "SystemImage object", 
@@ -9912,22 +9869,7 @@
     }, 
     "/api/v0.1/system/image/boot/history": {
       "get": {
-        "parameters": [
-          {
-            "description": "name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "id", 
-            "in": "path", 
-            "name": "id", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "SystemImageBootHistoryGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -9945,6 +9887,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageBootHistoryPost", 
         "parameters": [
           {
             "description": "SystemImageBootHistory object", 
@@ -9974,6 +9917,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageBootHistoryDelete", 
         "parameters": [
           {
             "description": "name", 
@@ -10004,18 +9948,12 @@
         ]
       }, 
       "get": {
+        "operationId": "SystemImageBootHistoryGetByDevice", 
         "parameters": [
           {
             "description": "name", 
             "in": "path", 
             "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "id", 
-            "in": "path", 
-            "name": "id", 
             "required": false, 
             "type": "string"
           }
@@ -10036,6 +9974,7 @@
     }, 
     "/api/v0.1/system/image/boot/history/{device_name}/id/{id}": {
       "get": {
+        "operationId": "SystemImageBootHistoryGetById", 
         "parameters": [
           {
             "description": "name", 
@@ -10068,6 +10007,7 @@
     }, 
     "/api/v0.1/system/image/boot/{mac_address}": {
       "get": {
+        "operationId": "SystemImageBootGet", 
         "parameters": [
           {
             "description": "mac address", 
@@ -10093,15 +10033,7 @@
     }, 
     "/api/v0.1/system/image/provision": {
       "get": {
-        "parameters": [
-          {
-            "description": "name", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "SystemImageProvisionGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -10119,6 +10051,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageProvisionPost", 
         "parameters": [
           {
             "description": "SystemImageProvision object", 
@@ -10148,6 +10081,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageProvisionDelete", 
         "parameters": [
           {
             "description": "name", 
@@ -10171,6 +10105,7 @@
         ]
       }, 
       "get": {
+        "operationId": "SystemImageProvisionGetByName", 
         "parameters": [
           {
             "description": "name", 
@@ -10197,6 +10132,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageProvisionPut", 
         "parameters": [
           {
             "description": "name", 
@@ -10233,6 +10169,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageProvisionClonePost", 
         "parameters": [
           {
             "description": "source name", 
@@ -10282,6 +10219,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImageDelete", 
         "parameters": [
           {
             "description": "Device name", 
@@ -10305,6 +10243,7 @@
         ]
       }, 
       "get": {
+        "operationId": "SystemImageGetByDevice", 
         "parameters": [
           {
             "description": "Device name", 
@@ -10331,6 +10270,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemImagePut", 
         "parameters": [
           {
             "description": "Device name", 
@@ -10367,6 +10307,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "SystemProvisionPost", 
         "parameters": [
           {
             "description": "SystemProvision object", 
@@ -10393,6 +10334,7 @@
     }, 
     "/api/v0.1/traffic/bps/pop/{pop_name}": {
       "get": {
+        "operationId": "TrafficeBPSGet", 
         "parameters": [
           {
             "description": "pop name", 
@@ -10415,14 +10357,8 @@
     }, 
     "/api/v0.1/user/{username}/validation/history": {
       "get": {
+        "operationId": "ValidationHistoryGetByUsername", 
         "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "username", 
             "in": "path", 
@@ -10450,22 +10386,7 @@
     }, 
     "/api/v0.1/validation/history": {
       "get": {
-        "parameters": [
-          {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "username", 
-            "in": "path", 
-            "name": "username", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
+        "operationId": "ValidationHistoryGet", 
         "responses": {
           "200": {
             "description": "Success", 
@@ -10485,6 +10406,7 @@
     }, 
     "/api/v0.1/vlan": {
       "get": {
+        "operationId": "VlanGet", 
         "parameters": [
           {
             "description": "Device name", 
@@ -10492,13 +10414,6 @@
             "name": "device_name", 
             "required": false, 
             "type": "string"
-          }, 
-          {
-            "description": "Vlan number", 
-            "in": "path", 
-            "name": "num", 
-            "required": false, 
-            "type": "integer"
           }
         ], 
         "responses": {
@@ -10518,6 +10433,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanPost", 
         "parameters": [
           {
             "description": "Vlan object", 
@@ -10544,6 +10460,7 @@
     }, 
     "/api/v0.1/vlan/interface": {
       "get": {
+        "operationId": "VlanInterfaceGet", 
         "parameters": [
           {
             "description": "Device name", 
@@ -10551,13 +10468,6 @@
             "name": "device_name", 
             "required": false, 
             "type": "string"
-          }, 
-          {
-            "description": "VlanInterface number", 
-            "in": "path", 
-            "name": "num", 
-            "required": false, 
-            "type": "integer"
           }, 
           {
             "description": "VlanInterface port", 
@@ -10584,6 +10494,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "VlanInterfacePost", 
         "parameters": [
           {
             "description": "VlanInterface object", 
@@ -10610,14 +10521,8 @@
     }, 
     "/api/v0.1/ztp/device": {
       "get": {
+        "operationId": "ZtpDeviceGet", 
         "parameters": [
-          {
-            "description": "ZTP device serial number", 
-            "in": "path", 
-            "name": "serial_number", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "ZTP device uuid", 
             "in": "query", 
@@ -10679,6 +10584,7 @@
           "application/json"
         ], 
         "description": "ZTP device registration", 
+        "operationId": "ZtpDevicePost", 
         "parameters": [
           {
             "description": "ZTP device object", 
@@ -10705,6 +10611,7 @@
     }, 
     "/api/v0.1/ztp/device/{serial_number}": {
       "delete": {
+        "operationId": "ZtpDeviceDelete", 
         "parameters": [
           {
             "description": "ZTP device serial number", 
@@ -10728,6 +10635,7 @@
         ]
       }, 
       "get": {
+        "operationId": "ZtpDeviceGetBySerial", 
         "parameters": [
           {
             "description": "ZTP device serial number", 
@@ -10796,6 +10704,7 @@
         "consumes": [
           "application/json"
         ], 
+        "operationId": "ZtpDevicePut", 
         "parameters": [
           {
             "description": "ZTP device serial number", 
@@ -10821,7 +10730,7 @@
             }
           }
         }, 
-        "summary": "ZtpDeviceRoute.post", 
+        "summary": "ZtpDeviceRoute.put", 
         "tags": [
           "ZtpDevice"
         ]

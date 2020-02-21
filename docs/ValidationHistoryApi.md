@@ -4,13 +4,13 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_validation_history_get**](ValidationHistoryApi.md#api_v01_device_device_name_validation_history_get) | **GET** /api/v0.1/device/{device_name}/validation/history | ValidationHistoryRoute.get
-[**api_v01_user_username_validation_history_get**](ValidationHistoryApi.md#api_v01_user_username_validation_history_get) | **GET** /api/v0.1/user/{username}/validation/history | ValidationHistoryRoute.get
-[**api_v01_validation_history_get**](ValidationHistoryApi.md#api_v01_validation_history_get) | **GET** /api/v0.1/validation/history | ValidationHistoryRoute.get
+[**validation_history_get**](ValidationHistoryApi.md#validation_history_get) | **GET** /api/v0.1/validation/history | ValidationHistoryRoute.get
+[**validation_history_get_by_device**](ValidationHistoryApi.md#validation_history_get_by_device) | **GET** /api/v0.1/device/{device_name}/validation/history | ValidationHistoryRoute.get
+[**validation_history_get_by_username**](ValidationHistoryApi.md#validation_history_get_by_username) | **GET** /api/v0.1/user/{username}/validation/history | ValidationHistoryRoute.get
 
 
-# **api_v01_device_device_name_validation_history_get**
-> list[ValidationHistoryObject] api_v01_device_device_name_validation_history_get(device_name, username)
+# **validation_history_get**
+> list[ValidationHistoryObject] validation_history_get()
 
 ValidationHistoryRoute.get
 
@@ -30,23 +30,17 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = polarisgenclient.ValidationHistoryApi(polarisgenclient.ApiClient(configuration))
-device_name = 'device_name_example' # str | Device name
-username = 'username_example' # str | username
 
 try:
     # ValidationHistoryRoute.get
-    api_response = api_instance.api_v01_device_device_name_validation_history_get(device_name, username)
+    api_response = api_instance.validation_history_get()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ValidationHistoryApi->api_v01_device_device_name_validation_history_get: %s\n" % e)
+    print("Exception when calling ValidationHistoryApi->validation_history_get: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_name** | **str**| Device name | 
- **username** | **str**| username | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -63,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_user_username_validation_history_get**
-> list[ValidationHistoryObject] api_v01_user_username_validation_history_get(device_name, username)
+# **validation_history_get_by_device**
+> list[ValidationHistoryObject] validation_history_get_by_device(device_name)
 
 ValidationHistoryRoute.get
 
@@ -85,14 +79,13 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = polarisgenclient.ValidationHistoryApi(polarisgenclient.ApiClient(configuration))
 device_name = 'device_name_example' # str | Device name
-username = 'username_example' # str | username
 
 try:
     # ValidationHistoryRoute.get
-    api_response = api_instance.api_v01_user_username_validation_history_get(device_name, username)
+    api_response = api_instance.validation_history_get_by_device(device_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ValidationHistoryApi->api_v01_user_username_validation_history_get: %s\n" % e)
+    print("Exception when calling ValidationHistoryApi->validation_history_get_by_device: %s\n" % e)
 ```
 
 ### Parameters
@@ -100,7 +93,6 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **device_name** | **str**| Device name | 
- **username** | **str**| username | 
 
 ### Return type
 
@@ -117,8 +109,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_validation_history_get**
-> list[ValidationHistoryObject] api_v01_validation_history_get(device_name, username)
+# **validation_history_get_by_username**
+> list[ValidationHistoryObject] validation_history_get_by_username(username)
 
 ValidationHistoryRoute.get
 
@@ -138,22 +130,20 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = polarisgenclient.ValidationHistoryApi(polarisgenclient.ApiClient(configuration))
-device_name = 'device_name_example' # str | Device name
 username = 'username_example' # str | username
 
 try:
     # ValidationHistoryRoute.get
-    api_response = api_instance.api_v01_validation_history_get(device_name, username)
+    api_response = api_instance.validation_history_get_by_username(username)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ValidationHistoryApi->api_v01_validation_history_get: %s\n" % e)
+    print("Exception when calling ValidationHistoryApi->validation_history_get_by_username: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device_name** | **str**| Device name | 
  **username** | **str**| username | 
 
 ### Return type

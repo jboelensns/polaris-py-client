@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_system_provision_vm_post**](SystemProvisionVmApi.md#api_v01_system_provision_vm_post) | **POST** /api/v0.1/system/provision/vm | SystemProvisionRoute.post
+[**system_provision_post**](SystemProvisionVmApi.md#system_provision_post) | **POST** /api/v0.1/system/provision/vm | SystemProvisionRoute.post
 
 
-# **api_v01_system_provision_vm_post**
-> SystemProvisionObject api_v01_system_provision_vm_post(system_provision_params=system_provision_params)
+# **system_provision_post**
+> SystemProvisionObject system_provision_post(system_provision_params=system_provision_params)
 
 SystemProvisionRoute.post
 
@@ -32,10 +32,10 @@ system_provision_params = polarisgenclient.SystemProvisionObject() # SystemProvi
 
 try:
     # SystemProvisionRoute.post
-    api_response = api_instance.api_v01_system_provision_vm_post(system_provision_params=system_provision_params)
+    api_response = api_instance.system_provision_post(system_provision_params=system_provision_params)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SystemProvisionVmApi->api_v01_system_provision_vm_post: %s\n" % e)
+    print("Exception when calling SystemProvisionVmApi->system_provision_post: %s\n" % e)
 ```
 
 ### Parameters

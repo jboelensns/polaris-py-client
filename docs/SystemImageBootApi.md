@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_system_image_boot_mac_address_get**](SystemImageBootApi.md#api_v01_system_image_boot_mac_address_get) | **GET** /api/v0.1/system/image/boot/{mac_address} | SystemImageBootRoute.get
+[**system_image_boot_get**](SystemImageBootApi.md#system_image_boot_get) | **GET** /api/v0.1/system/image/boot/{mac_address} | SystemImageBootRoute.get
 
 
-# **api_v01_system_image_boot_mac_address_get**
-> SystemImageBootObject api_v01_system_image_boot_mac_address_get(mac_address)
+# **system_image_boot_get**
+> SystemImageBootObject system_image_boot_get(mac_address)
 
 SystemImageBootRoute.get
 
@@ -32,10 +32,10 @@ mac_address = 'mac_address_example' # str | mac address
 
 try:
     # SystemImageBootRoute.get
-    api_response = api_instance.api_v01_system_image_boot_mac_address_get(mac_address)
+    api_response = api_instance.system_image_boot_get(mac_address)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling SystemImageBootApi->api_v01_system_image_boot_mac_address_get: %s\n" % e)
+    print("Exception when calling SystemImageBootApi->system_image_boot_get: %s\n" % e)
 ```
 
 ### Parameters

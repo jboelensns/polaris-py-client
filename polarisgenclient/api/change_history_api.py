@@ -33,43 +33,41 @@ class ChangeHistoryApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_change_history_get(self, device_name, **kwargs):  # noqa: E501
+    def change_history_get(self, **kwargs):  # noqa: E501
         """ChangeHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_change_history_get(device_name, async_req=True)
+        >>> thread = api.change_history_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
         :return: list[ChangeHistoryObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_change_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.change_history_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_change_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.change_history_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_change_history_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def change_history_get_with_http_info(self, **kwargs):  # noqa: E501
         """ChangeHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_change_history_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.change_history_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
         :return: list[ChangeHistoryObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['device_name']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -80,20 +78,14 @@ class ChangeHistoryApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_change_history_get" % key
+                    " to method change_history_get" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_change_history_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
 
         query_params = []
 
@@ -122,12 +114,12 @@ class ChangeHistoryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_device_name_change_history_get(self, device_name, **kwargs):  # noqa: E501
+    def change_history_get_by_device_by_device(self, device_name, **kwargs):  # noqa: E501
         """ChangeHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_change_history_get(device_name, async_req=True)
+        >>> thread = api.change_history_get_by_device_by_device(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -138,17 +130,17 @@ class ChangeHistoryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_change_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.change_history_get_by_device_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_change_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.change_history_get_by_device_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_change_history_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def change_history_get_by_device_by_device_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """ChangeHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_change_history_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.change_history_get_by_device_by_device_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -169,14 +161,14 @@ class ChangeHistoryApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_change_history_get" % key
+                    " to method change_history_get_by_device_by_device" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_change_history_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `change_history_get_by_device_by_device`")  # noqa: E501
 
         collection_formats = {}
 

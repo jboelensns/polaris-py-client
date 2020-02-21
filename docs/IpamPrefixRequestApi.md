@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_ipam_prefix_request_post**](IpamPrefixRequestApi.md#api_v01_ipam_prefix_request_post) | **POST** /api/v0.1/ipam/prefix/request | IpamPrefixRequestRoute.post
+[**ipam_prefix_request_post**](IpamPrefixRequestApi.md#ipam_prefix_request_post) | **POST** /api/v0.1/ipam/prefix/request | IpamPrefixRequestRoute.post
 
 
-# **api_v01_ipam_prefix_request_post**
-> Prefix api_v01_ipam_prefix_request_post(body=body)
+# **ipam_prefix_request_post**
+> Prefix ipam_prefix_request_post(body=body)
 
 IpamPrefixRequestRoute.post
 
@@ -32,10 +32,10 @@ body = polarisgenclient.Body17() # Body17 | IPAM Prefix Request object. (optiona
 
 try:
     # IpamPrefixRequestRoute.post
-    api_response = api_instance.api_v01_ipam_prefix_request_post(body=body)
+    api_response = api_instance.ipam_prefix_request_post(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IpamPrefixRequestApi->api_v01_ipam_prefix_request_post: %s\n" % e)
+    print("Exception when calling IpamPrefixRequestApi->ipam_prefix_request_post: %s\n" % e)
 ```
 
 ### Parameters

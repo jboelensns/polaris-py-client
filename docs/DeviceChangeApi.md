@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_change_post**](DeviceChangeApi.md#api_v01_device_device_name_change_post) | **POST** /api/v0.1/device/{device_name}/change | DeviceChangeRoute.post
+[**device_change_post**](DeviceChangeApi.md#device_change_post) | **POST** /api/v0.1/device/{device_name}/change | DeviceChangeRoute.post
 
 
-# **api_v01_device_device_name_change_post**
-> DeviceChangeObject api_v01_device_device_name_change_post(device_name, body=body)
+# **device_change_post**
+> DeviceChangeObject device_change_post(device_name, body=body)
 
 DeviceChangeRoute.post
 
@@ -33,10 +33,10 @@ body = polarisgenclient.DeviceChangeObject() # DeviceChangeObject | DeviceChange
 
 try:
     # DeviceChangeRoute.post
-    api_response = api_instance.api_v01_device_device_name_change_post(device_name, body=body)
+    api_response = api_instance.device_change_post(device_name, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceChangeApi->api_v01_device_device_name_change_post: %s\n" % e)
+    print("Exception when calling DeviceChangeApi->device_change_post: %s\n" % e)
 ```
 
 ### Parameters

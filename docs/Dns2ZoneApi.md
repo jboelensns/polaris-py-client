@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_dns2_zone_get**](Dns2ZoneApi.md#api_v01_dns2_zone_get) | **GET** /api/v0.1/dns2/zone | Dns2ZoneRoute.get
-[**api_v01_dns2_zone_zone_id_get**](Dns2ZoneApi.md#api_v01_dns2_zone_zone_id_get) | **GET** /api/v0.1/dns2/zone/{zone_id} | Dns2ZoneRoute.get
+[**dns2_zone_route_get**](Dns2ZoneApi.md#dns2_zone_route_get) | **GET** /api/v0.1/dns2/zone | Dns2ZoneRoute.get
+[**dns2_zone_route_get_by_id**](Dns2ZoneApi.md#dns2_zone_route_get_by_id) | **GET** /api/v0.1/dns2/zone/{zone_id} | Dns2ZoneRoute.get
 
 
-# **api_v01_dns2_zone_get**
-> DnsZoneObject api_v01_dns2_zone_get(zone_id)
+# **dns2_zone_route_get**
+> DnsZoneObject dns2_zone_route_get()
 
 Dns2ZoneRoute.get
 
@@ -29,21 +29,17 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = polarisgenclient.Dns2ZoneApi(polarisgenclient.ApiClient(configuration))
-zone_id = 'zone_id_example' # str | 
 
 try:
     # Dns2ZoneRoute.get
-    api_response = api_instance.api_v01_dns2_zone_get(zone_id)
+    api_response = api_instance.dns2_zone_route_get()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling Dns2ZoneApi->api_v01_dns2_zone_get: %s\n" % e)
+    print("Exception when calling Dns2ZoneApi->dns2_zone_route_get: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **zone_id** | **str**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -60,8 +56,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_dns2_zone_zone_id_get**
-> DnsZoneObject api_v01_dns2_zone_zone_id_get(zone_id)
+# **dns2_zone_route_get_by_id**
+> DnsZoneObject dns2_zone_route_get_by_id(zone_id)
 
 Dns2ZoneRoute.get
 
@@ -85,10 +81,10 @@ zone_id = 'zone_id_example' # str |
 
 try:
     # Dns2ZoneRoute.get
-    api_response = api_instance.api_v01_dns2_zone_zone_id_get(zone_id)
+    api_response = api_instance.dns2_zone_route_get_by_id(zone_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling Dns2ZoneApi->api_v01_dns2_zone_zone_id_get: %s\n" % e)
+    print("Exception when calling Dns2ZoneApi->dns2_zone_route_get_by_id: %s\n" % e)
 ```
 
 ### Parameters

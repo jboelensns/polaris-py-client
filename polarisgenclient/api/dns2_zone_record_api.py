@@ -33,12 +33,12 @@ class Dns2ZoneRecordApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_dns2_zone_zone_id_records_get(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_record_get(self, zone_id, **kwargs):  # noqa: E501
         """Dns2ZoneRecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_zone_id_records_get(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_record_get(zone_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class Dns2ZoneRecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns2_zone_zone_id_records_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            return self.dns2_zone_record_get_with_http_info(zone_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns2_zone_zone_id_records_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            (data) = self.dns2_zone_record_get_with_http_info(zone_id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns2_zone_zone_id_records_get_with_http_info(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_record_get_with_http_info(self, zone_id, **kwargs):  # noqa: E501
         """Dns2ZoneRecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_zone_id_records_get_with_http_info(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_record_get_with_http_info(zone_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class Dns2ZoneRecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns2_zone_zone_id_records_get" % key
+                    " to method dns2_zone_record_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'zone_id' is set
         if ('zone_id' not in params or
                 params['zone_id'] is None):
-            raise ValueError("Missing the required parameter `zone_id` when calling `api_v01_dns2_zone_zone_id_records_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `zone_id` when calling `dns2_zone_record_get`")  # noqa: E501
 
         collection_formats = {}
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_gtm_wideip_alias_config_get**](GtmWideIpAliasConfigApi.md#api_v01_device_device_name_gtm_wideip_alias_config_get) | **GET** /api/v0.1/device/{device_name}/gtm/wideip/alias/config | GtmWideIpAliasConfigRoute.get
+[**gtm_wide_ip_alias_config_get**](GtmWideIpAliasConfigApi.md#gtm_wide_ip_alias_config_get) | **GET** /api/v0.1/device/{device_name}/gtm/wideip/alias/config | GtmWideIpAliasConfigRoute.get
 
 
-# **api_v01_device_device_name_gtm_wideip_alias_config_get**
-> GtmWideIpAliasConfigObject api_v01_device_device_name_gtm_wideip_alias_config_get(device_name)
+# **gtm_wide_ip_alias_config_get**
+> GtmWideIpAliasConfigObject gtm_wide_ip_alias_config_get(device_name)
 
 GtmWideIpAliasConfigRoute.get
 
@@ -32,10 +32,10 @@ device_name = 'device_name_example' # str | device name
 
 try:
     # GtmWideIpAliasConfigRoute.get
-    api_response = api_instance.api_v01_device_device_name_gtm_wideip_alias_config_get(device_name)
+    api_response = api_instance.gtm_wide_ip_alias_config_get(device_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling GtmWideIpAliasConfigApi->api_v01_device_device_name_gtm_wideip_alias_config_get: %s\n" % e)
+    print("Exception when calling GtmWideIpAliasConfigApi->gtm_wide_ip_alias_config_get: %s\n" % e)
 ```
 
 ### Parameters

@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_search_get**](SearchApi.md#api_v01_search_get) | **GET** /api/v0.1/search | SearchRoute.get
+[**search_get**](SearchApi.md#search_get) | **GET** /api/v0.1/search | SearchRoute.get
 
 
-# **api_v01_search_get**
-> api_v01_search_get(search_input)
+# **search_get**
+> search_get(search_input)
 
 SearchRoute.get
 
@@ -32,9 +32,9 @@ search_input = 'search_input_example' # str | Host, IP Address, or MAC
 
 try:
     # SearchRoute.get
-    api_instance.api_v01_search_get(search_input)
+    api_instance.search_get(search_input)
 except ApiException as e:
-    print("Exception when calling SearchApi->api_v01_search_get: %s\n" % e)
+    print("Exception when calling SearchApi->search_get: %s\n" % e)
 ```
 
 ### Parameters

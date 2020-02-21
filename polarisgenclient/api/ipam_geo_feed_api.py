@@ -33,12 +33,12 @@ class IpamGeoFeedApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_ipam_geo_feed_csv_delete(self, **kwargs):  # noqa: E501
+    def ipam_geo_feed_delete(self, **kwargs):  # noqa: E501
         """IpamGeoFeedRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_feed_csv_delete(async_req=True)
+        >>> thread = api.ipam_geo_feed_delete(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class IpamGeoFeedApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ipam_geo_feed_csv_delete_with_http_info(**kwargs)  # noqa: E501
+            return self.ipam_geo_feed_delete_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ipam_geo_feed_csv_delete_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.ipam_geo_feed_delete_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_ipam_geo_feed_csv_delete_with_http_info(self, **kwargs):  # noqa: E501
+    def ipam_geo_feed_delete_with_http_info(self, **kwargs):  # noqa: E501
         """IpamGeoFeedRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_feed_csv_delete_with_http_info(async_req=True)
+        >>> thread = api.ipam_geo_feed_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -78,7 +78,7 @@ class IpamGeoFeedApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_geo_feed_csv_delete" % key
+                    " to method ipam_geo_feed_delete" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -114,12 +114,12 @@ class IpamGeoFeedApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_ipam_geo_feed_csv_get(self, **kwargs):  # noqa: E501
+    def ipam_geo_feed_get(self, **kwargs):  # noqa: E501
         """IpamGeoFeedRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_feed_csv_get(async_req=True)
+        >>> thread = api.ipam_geo_feed_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -129,17 +129,17 @@ class IpamGeoFeedApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ipam_geo_feed_csv_get_with_http_info(**kwargs)  # noqa: E501
+            return self.ipam_geo_feed_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ipam_geo_feed_csv_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.ipam_geo_feed_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_ipam_geo_feed_csv_get_with_http_info(self, **kwargs):  # noqa: E501
+    def ipam_geo_feed_get_with_http_info(self, **kwargs):  # noqa: E501
         """IpamGeoFeedRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_feed_csv_get_with_http_info(async_req=True)
+        >>> thread = api.ipam_geo_feed_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -159,7 +159,7 @@ class IpamGeoFeedApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_geo_feed_csv_get" % key
+                    " to method ipam_geo_feed_get" % key
                 )
             params[key] = val
         del params['kwargs']

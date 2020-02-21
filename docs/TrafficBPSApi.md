@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_traffic_bps_pop_pop_name_get**](TrafficBPSApi.md#api_v01_traffic_bps_pop_pop_name_get) | **GET** /api/v0.1/traffic/bps/pop/{pop_name} | TrafficBPSRoute.get
+[**traffice_bps_get**](TrafficBPSApi.md#traffice_bps_get) | **GET** /api/v0.1/traffic/bps/pop/{pop_name} | TrafficBPSRoute.get
 
 
-# **api_v01_traffic_bps_pop_pop_name_get**
-> api_v01_traffic_bps_pop_pop_name_get(pop_name)
+# **traffice_bps_get**
+> traffice_bps_get(pop_name)
 
 TrafficBPSRoute.get
 
@@ -32,9 +32,9 @@ pop_name = 'pop_name_example' # str | pop name
 
 try:
     # TrafficBPSRoute.get
-    api_instance.api_v01_traffic_bps_pop_pop_name_get(pop_name)
+    api_instance.traffice_bps_get(pop_name)
 except ApiException as e:
-    print("Exception when calling TrafficBPSApi->api_v01_traffic_bps_pop_pop_name_get: %s\n" % e)
+    print("Exception when calling TrafficBPSApi->traffice_bps_get: %s\n" % e)
 ```
 
 ### Parameters

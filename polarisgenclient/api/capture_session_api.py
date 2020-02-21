@@ -33,109 +33,12 @@ class CaptureSessionApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_capture_session_device_name_get(self, device_name, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_get(device_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUIDv1 session id
-        :param str id: UUIDv1 id
-        :return: list[CaptureSessionObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_capture_session_device_name_get_with_http_info(device_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_capture_session_device_name_get_with_http_info(device_name, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_capture_session_device_name_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_get_with_http_info(device_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUIDv1 session id
-        :param str id: UUIDv1 id
-        :return: list[CaptureSessionObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_name', 'session_id', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_capture_session_device_name_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_capture_session_device_name_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
-
-        query_params = []
-        if 'session_id' in params:
-            query_params.append(('session_id', params['session_id']))  # noqa: E501
-        if 'id' in params:
-            query_params.append(('id', params['id']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/capture/session/{device_name}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='list[CaptureSessionObject]',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_capture_session_device_name_group_session_id_id_id_delete(self, device_name, session_id, id, **kwargs):  # noqa: E501
+    def capture_session_delete(self, device_name, session_id, id, **kwargs):  # noqa: E501
         """CaptureSessionRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_group_session_id_id_id_delete(device_name, session_id, id, async_req=True)
+        >>> thread = api.capture_session_delete(device_name, session_id, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -148,17 +51,17 @@ class CaptureSessionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_capture_session_device_name_group_session_id_id_id_delete_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+            return self.capture_session_delete_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_capture_session_device_name_group_session_id_id_id_delete_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+            (data) = self.capture_session_delete_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_capture_session_device_name_group_session_id_id_id_delete_with_http_info(self, device_name, session_id, id, **kwargs):  # noqa: E501
+    def capture_session_delete_with_http_info(self, device_name, session_id, id, **kwargs):  # noqa: E501
         """CaptureSessionRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_group_session_id_id_id_delete_with_http_info(device_name, session_id, id, async_req=True)
+        >>> thread = api.capture_session_delete_with_http_info(device_name, session_id, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -181,22 +84,22 @@ class CaptureSessionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_capture_session_device_name_group_session_id_id_id_delete" % key
+                    " to method capture_session_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_capture_session_device_name_group_session_id_id_id_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `capture_session_delete`")  # noqa: E501
         # verify the required parameter 'session_id' is set
         if ('session_id' not in params or
                 params['session_id'] is None):
-            raise ValueError("Missing the required parameter `session_id` when calling `api_v01_capture_session_device_name_group_session_id_id_id_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `session_id` when calling `capture_session_delete`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_capture_session_device_name_group_session_id_id_id_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `capture_session_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -239,49 +142,45 @@ class CaptureSessionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_capture_session_device_name_group_session_id_id_id_put(self, device_name, session_id, id, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.put  # noqa: E501
+    def capture_session_get(self, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_group_session_id_id_id_put(device_name, session_id, id, async_req=True)
+        >>> thread = api.capture_session_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUID1 string (required)
-        :param str id: UUID1 string (required)
-        :param CaptureSessionObjectPut body: CaptureSessionObjectPut
-        :return: CaptureSessionObject
+        :param str session_id: UUIDv1 session id
+        :param str id: UUIDv1 id
+        :return: list[CaptureSessionObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_capture_session_device_name_group_session_id_id_id_put_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+            return self.capture_session_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_capture_session_device_name_group_session_id_id_id_put_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+            (data) = self.capture_session_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_capture_session_device_name_group_session_id_id_id_put_with_http_info(self, device_name, session_id, id, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.put  # noqa: E501
+    def capture_session_get_with_http_info(self, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_device_name_group_session_id_id_id_put_with_http_info(device_name, session_id, id, async_req=True)
+        >>> thread = api.capture_session_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUID1 string (required)
-        :param str id: UUID1 string (required)
-        :param CaptureSessionObjectPut body: CaptureSessionObjectPut
-        :return: CaptureSessionObject
+        :param str session_id: UUIDv1 session id
+        :param str id: UUIDv1 id
+        :return: list[CaptureSessionObject]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['device_name', 'session_id', 'id', 'body']  # noqa: E501
+        all_params = ['session_id', 'id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -292,131 +191,14 @@ class CaptureSessionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_capture_session_device_name_group_session_id_id_id_put" % key
+                    " to method capture_session_get" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_capture_session_device_name_group_session_id_id_id_put`")  # noqa: E501
-        # verify the required parameter 'session_id' is set
-        if ('session_id' not in params or
-                params['session_id'] is None):
-            raise ValueError("Missing the required parameter `session_id` when calling `api_v01_capture_session_device_name_group_session_id_id_id_put`")  # noqa: E501
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_capture_session_device_name_group_session_id_id_id_put`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
-        if 'session_id' in params:
-            path_params['session_id'] = params['session_id']  # noqa: E501
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/capture/session/{device_name}/group/{session_id}/id/{id}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='CaptureSessionObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_capture_session_get(self, device_name, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_get(device_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUIDv1 session id
-        :param str id: UUIDv1 id
-        :return: list[CaptureSessionObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_capture_session_get_with_http_info(device_name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_capture_session_get_with_http_info(device_name, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_capture_session_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
-        """CaptureSessionRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_get_with_http_info(device_name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name (required)
-        :param str session_id: UUIDv1 session id
-        :param str id: UUIDv1 id
-        :return: list[CaptureSessionObject]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_name', 'session_id', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_capture_session_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_capture_session_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
 
         query_params = []
         if 'session_id' in params:
@@ -449,12 +231,109 @@ class CaptureSessionApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_capture_session_post(self, **kwargs):  # noqa: E501
+    def capture_session_get_by_device(self, device_name, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.capture_session_get_by_device(device_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name (required)
+        :param str session_id: UUIDv1 session id
+        :param str id: UUIDv1 id
+        :return: list[CaptureSessionObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.capture_session_get_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.capture_session_get_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
+            return data
+
+    def capture_session_get_by_device_with_http_info(self, device_name, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.capture_session_get_by_device_with_http_info(device_name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name (required)
+        :param str session_id: UUIDv1 session id
+        :param str id: UUIDv1 id
+        :return: list[CaptureSessionObject]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['device_name', 'session_id', 'id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method capture_session_get_by_device" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'device_name' is set
+        if ('device_name' not in params or
+                params['device_name'] is None):
+            raise ValueError("Missing the required parameter `device_name` when calling `capture_session_get_by_device`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'device_name' in params:
+            path_params['device_name'] = params['device_name']  # noqa: E501
+
+        query_params = []
+        if 'session_id' in params:
+            query_params.append(('session_id', params['session_id']))  # noqa: E501
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/capture/session/{device_name}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='list[CaptureSessionObject]',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def capture_session_post(self, **kwargs):  # noqa: E501
         """CaptureSessionRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_post(async_req=True)
+        >>> thread = api.capture_session_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -465,17 +344,17 @@ class CaptureSessionApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_capture_session_post_with_http_info(**kwargs)  # noqa: E501
+            return self.capture_session_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_capture_session_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.capture_session_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_capture_session_post_with_http_info(self, **kwargs):  # noqa: E501
+    def capture_session_post_with_http_info(self, **kwargs):  # noqa: E501
         """CaptureSessionRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_capture_session_post_with_http_info(async_req=True)
+        >>> thread = api.capture_session_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -496,7 +375,7 @@ class CaptureSessionApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_capture_session_post" % key
+                    " to method capture_session_post" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -524,6 +403,119 @@ class CaptureSessionApi(object):
 
         return self.api_client.call_api(
             '/api/v0.1/capture/session', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='CaptureSessionObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def capture_session_put(self, device_name, session_id, id, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.capture_session_put(device_name, session_id, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name (required)
+        :param str session_id: UUID1 string (required)
+        :param str id: UUID1 string (required)
+        :param CaptureSessionObjectPut body: CaptureSessionObjectPut
+        :return: CaptureSessionObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.capture_session_put_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.capture_session_put_with_http_info(device_name, session_id, id, **kwargs)  # noqa: E501
+            return data
+
+    def capture_session_put_with_http_info(self, device_name, session_id, id, **kwargs):  # noqa: E501
+        """CaptureSessionRoute.put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.capture_session_put_with_http_info(device_name, session_id, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name (required)
+        :param str session_id: UUID1 string (required)
+        :param str id: UUID1 string (required)
+        :param CaptureSessionObjectPut body: CaptureSessionObjectPut
+        :return: CaptureSessionObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['device_name', 'session_id', 'id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method capture_session_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'device_name' is set
+        if ('device_name' not in params or
+                params['device_name'] is None):
+            raise ValueError("Missing the required parameter `device_name` when calling `capture_session_put`")  # noqa: E501
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params or
+                params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `capture_session_put`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `capture_session_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'device_name' in params:
+            path_params['device_name'] = params['device_name']  # noqa: E501
+        if 'session_id' in params:
+            path_params['session_id'] = params['session_id']  # noqa: E501
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/capture/session/{device_name}/group/{session_id}/id/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

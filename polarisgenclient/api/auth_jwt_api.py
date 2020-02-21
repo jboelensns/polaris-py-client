@@ -33,12 +33,12 @@ class AuthJwtApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_auth_jwt_post(self, **kwargs):  # noqa: E501
+    def auth_jwt_post(self, **kwargs):  # noqa: E501
         """AuthJwt.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_auth_jwt_post(async_req=True)
+        >>> thread = api.auth_jwt_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class AuthJwtApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_auth_jwt_post_with_http_info(**kwargs)  # noqa: E501
+            return self.auth_jwt_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_auth_jwt_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.auth_jwt_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_auth_jwt_post_with_http_info(self, **kwargs):  # noqa: E501
+    def auth_jwt_post_with_http_info(self, **kwargs):  # noqa: E501
         """AuthJwt.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_auth_jwt_post_with_http_info(async_req=True)
+        >>> thread = api.auth_jwt_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,7 +80,7 @@ class AuthJwtApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_auth_jwt_post" % key
+                    " to method auth_jwt_post" % key
                 )
             params[key] = val
         del params['kwargs']

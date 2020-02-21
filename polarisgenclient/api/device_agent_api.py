@@ -33,13 +33,13 @@ class DeviceAgentApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_agent_post(self, device_name, **kwargs):  # noqa: E501
+    def device_agent_post(self, device_name, **kwargs):  # noqa: E501
         """DeviceAgentRoute.post  # noqa: E501
 
         Register device agent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_agent_post(device_name, async_req=True)
+        >>> thread = api.device_agent_post(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -51,18 +51,18 @@ class DeviceAgentApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_agent_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_agent_post_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_agent_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_agent_post_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_agent_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def device_agent_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """DeviceAgentRoute.post  # noqa: E501
 
         Register device agent  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_agent_post_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_agent_post_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -84,14 +84,14 @@ class DeviceAgentApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_agent_post" % key
+                    " to method device_agent_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_agent_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_agent_post`")  # noqa: E501
 
         collection_formats = {}
 

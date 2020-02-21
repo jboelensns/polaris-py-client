@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_validate_validate_name_get**](DeviceValidateApi.md#api_v01_device_device_name_validate_validate_name_get) | **GET** /api/v0.1/device/{device_name}/validate/{validate_name} | DeviceValidateRoute.get
+[**device_validate_get**](DeviceValidateApi.md#device_validate_get) | **GET** /api/v0.1/device/{device_name}/validate/{validate_name} | DeviceValidateRoute.get
 
 
-# **api_v01_device_device_name_validate_validate_name_get**
-> DeviceValidateObject api_v01_device_device_name_validate_validate_name_get(device_name, validate_name)
+# **device_validate_get**
+> DeviceValidateObject device_validate_get(device_name, validate_name)
 
 DeviceValidateRoute.get
 
@@ -33,10 +33,10 @@ validate_name = 'validate_name_example' # str | Validation name
 
 try:
     # DeviceValidateRoute.get
-    api_response = api_instance.api_v01_device_device_name_validate_validate_name_get(device_name, validate_name)
+    api_response = api_instance.device_validate_get(device_name, validate_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceValidateApi->api_v01_device_device_name_validate_validate_name_get: %s\n" % e)
+    print("Exception when calling DeviceValidateApi->device_validate_get: %s\n" % e)
 ```
 
 ### Parameters

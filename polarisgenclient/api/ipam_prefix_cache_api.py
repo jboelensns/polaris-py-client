@@ -33,12 +33,12 @@ class IpamPrefixCacheApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_ipam_prefix_cache_get(self, **kwargs):  # noqa: E501
+    def ipam_prefix_cache_get(self, **kwargs):  # noqa: E501
         """IpamPrefixCacheRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_prefix_cache_get(async_req=True)
+        >>> thread = api.ipam_prefix_cache_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -48,17 +48,17 @@ class IpamPrefixCacheApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ipam_prefix_cache_get_with_http_info(**kwargs)  # noqa: E501
+            return self.ipam_prefix_cache_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ipam_prefix_cache_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.ipam_prefix_cache_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_ipam_prefix_cache_get_with_http_info(self, **kwargs):  # noqa: E501
+    def ipam_prefix_cache_get_with_http_info(self, **kwargs):  # noqa: E501
         """IpamPrefixCacheRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_prefix_cache_get_with_http_info(async_req=True)
+        >>> thread = api.ipam_prefix_cache_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -78,7 +78,7 @@ class IpamPrefixCacheApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_prefix_cache_get" % key
+                    " to method ipam_prefix_cache_get" % key
                 )
             params[key] = val
         del params['kwargs']

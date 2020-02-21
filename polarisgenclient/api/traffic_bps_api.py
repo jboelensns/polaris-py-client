@@ -33,12 +33,12 @@ class TrafficBPSApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_traffic_bps_pop_pop_name_get(self, pop_name, **kwargs):  # noqa: E501
+    def traffice_bps_get(self, pop_name, **kwargs):  # noqa: E501
         """TrafficBPSRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_traffic_bps_pop_pop_name_get(pop_name, async_req=True)
+        >>> thread = api.traffice_bps_get(pop_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class TrafficBPSApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_traffic_bps_pop_pop_name_get_with_http_info(pop_name, **kwargs)  # noqa: E501
+            return self.traffice_bps_get_with_http_info(pop_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_traffic_bps_pop_pop_name_get_with_http_info(pop_name, **kwargs)  # noqa: E501
+            (data) = self.traffice_bps_get_with_http_info(pop_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_traffic_bps_pop_pop_name_get_with_http_info(self, pop_name, **kwargs):  # noqa: E501
+    def traffice_bps_get_with_http_info(self, pop_name, **kwargs):  # noqa: E501
         """TrafficBPSRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_traffic_bps_pop_pop_name_get_with_http_info(pop_name, async_req=True)
+        >>> thread = api.traffice_bps_get_with_http_info(pop_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class TrafficBPSApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_traffic_bps_pop_pop_name_get" % key
+                    " to method traffice_bps_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'pop_name' is set
         if ('pop_name' not in params or
                 params['pop_name'] is None):
-            raise ValueError("Missing the required parameter `pop_name` when calling `api_v01_traffic_bps_pop_pop_name_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `pop_name` when calling `traffice_bps_get`")  # noqa: E501
 
         collection_formats = {}
 

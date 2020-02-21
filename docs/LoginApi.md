@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_login_post**](LoginApi.md#api_v01_login_post) | **POST** /api/v0.1/login | LoginRoute.post
+[**login_post**](LoginApi.md#login_post) | **POST** /api/v0.1/login | LoginRoute.post
 
 
-# **api_v01_login_post**
-> LoginObject api_v01_login_post(body=body)
+# **login_post**
+> LoginObject login_post(body=body)
 
 LoginRoute.post
 
@@ -32,10 +32,10 @@ body = polarisgenclient.LoginObject() # LoginObject | Login object (optional)
 
 try:
     # LoginRoute.post
-    api_response = api_instance.api_v01_login_post(body=body)
+    api_response = api_instance.login_post(body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling LoginApi->api_v01_login_post: %s\n" % e)
+    print("Exception when calling LoginApi->login_post: %s\n" % e)
 ```
 
 ### Parameters

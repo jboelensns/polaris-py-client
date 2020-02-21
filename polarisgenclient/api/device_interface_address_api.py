@@ -33,12 +33,12 @@ class DeviceInterfaceAddressApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_ip_interface_get(self, device_name, **kwargs):  # noqa: E501
+    def device_interface_address_get(self, device_name, **kwargs):  # noqa: E501
         """DeviceInterfaceAddressRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_ip_interface_get(device_name, async_req=True)
+        >>> thread = api.device_interface_address_get(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class DeviceInterfaceAddressApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_ip_interface_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_interface_address_get_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_ip_interface_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_interface_address_get_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_ip_interface_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def device_interface_address_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """DeviceInterfaceAddressRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_ip_interface_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_interface_address_get_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,14 +82,14 @@ class DeviceInterfaceAddressApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_ip_interface_get" % key
+                    " to method device_interface_address_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_ip_interface_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_interface_address_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -130,12 +130,12 @@ class DeviceInterfaceAddressApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_ip_interface_get(self, device_name, **kwargs):  # noqa: E501
+    def device_interface_address_get_0(self, device_name, **kwargs):  # noqa: E501
         """DeviceInterfaceAddressRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ip_interface_get(device_name, async_req=True)
+        >>> thread = api.device_interface_address_get_0(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -147,17 +147,17 @@ class DeviceInterfaceAddressApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ip_interface_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_interface_address_get_0_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ip_interface_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_interface_address_get_0_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_ip_interface_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def device_interface_address_get_0_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """DeviceInterfaceAddressRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ip_interface_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_interface_address_get_0_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -179,14 +179,14 @@ class DeviceInterfaceAddressApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ip_interface_get" % key
+                    " to method device_interface_address_get_0" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_ip_interface_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_interface_address_get_0`")  # noqa: E501
 
         collection_formats = {}
 

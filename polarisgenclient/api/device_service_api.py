@@ -33,113 +33,12 @@ class DeviceServiceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_name_service_get(self, name, id, **kwargs):  # noqa: E501
-        """DeviceServiceRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_get(name, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: DeviceService name (required)
-        :param str id: DeviceService id (required)
-        :param str pop_name: DeviceService Pop name
-        :return: DeviceServiceObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_get_with_http_info(name, id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_device_name_service_get_with_http_info(name, id, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_device_name_service_get_with_http_info(self, name, id, **kwargs):  # noqa: E501
-        """DeviceServiceRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_get_with_http_info(name, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: DeviceService name (required)
-        :param str id: DeviceService id (required)
-        :param str pop_name: DeviceService Pop name
-        :return: DeviceServiceObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'id', 'pop_name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_get`")  # noqa: E501
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_device_name_service_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-        if 'id' in params:
-            path_params['id'] = params['id']  # noqa: E501
-
-        query_params = []
-        if 'pop_name' in params:
-            query_params.append(('pop_name', params['pop_name']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/device/{name}/service', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeviceServiceObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_device_name_service_id_delete(self, name, id, **kwargs):  # noqa: E501
+    def device_service_delete(self, name, id, **kwargs):  # noqa: E501
         """DeviceServiceRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_delete(name, id, async_req=True)
+        >>> thread = api.device_service_delete(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -151,17 +50,17 @@ class DeviceServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_id_delete_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.device_service_delete_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_name_service_id_delete_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.device_service_delete_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_name_service_id_delete_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def device_service_delete_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """DeviceServiceRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_delete_with_http_info(name, id, async_req=True)
+        >>> thread = api.device_service_delete_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -183,18 +82,18 @@ class DeviceServiceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_id_delete" % key
+                    " to method device_service_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_id_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `device_service_delete`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_device_name_service_id_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `device_service_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -235,12 +134,105 @@ class DeviceServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_name_service_id_get(self, name, id, **kwargs):  # noqa: E501
+    def device_service_get(self, name, **kwargs):  # noqa: E501
         """DeviceServiceRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_get(name, id, async_req=True)
+        >>> thread = api.device_service_get(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: DeviceService name (required)
+        :param str pop_name: DeviceService Pop name
+        :return: DeviceServiceObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.device_service_get_with_http_info(name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.device_service_get_with_http_info(name, **kwargs)  # noqa: E501
+            return data
+
+    def device_service_get_with_http_info(self, name, **kwargs):  # noqa: E501
+        """DeviceServiceRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_get_with_http_info(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: DeviceService name (required)
+        :param str pop_name: DeviceService Pop name
+        :return: DeviceServiceObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'pop_name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method device_service_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `device_service_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+        if 'pop_name' in params:
+            query_params.append(('pop_name', params['pop_name']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/device/{name}/service', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeviceServiceObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def device_service_get_by_id(self, name, id, **kwargs):  # noqa: E501
+        """DeviceServiceRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_get_by_id(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -253,17 +245,17 @@ class DeviceServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_id_get_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.device_service_get_by_id_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_name_service_id_get_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.device_service_get_by_id_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_name_service_id_get_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def device_service_get_by_id_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """DeviceServiceRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_get_with_http_info(name, id, async_req=True)
+        >>> thread = api.device_service_get_by_id_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -286,18 +278,18 @@ class DeviceServiceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_id_get" % key
+                    " to method device_service_get_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_id_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `device_service_get_by_id`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_device_name_service_id_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `device_service_get_by_id`")  # noqa: E501
 
         collection_formats = {}
 
@@ -336,12 +328,109 @@ class DeviceServiceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_name_service_id_put(self, name, id, **kwargs):  # noqa: E501
+    def device_service_post(self, name, **kwargs):  # noqa: E501
+        """DeviceServiceRoute.post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_post(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param DeviceServiceObject body: Service object
+        :return: DeviceServiceObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.device_service_post_with_http_info(name, **kwargs)  # noqa: E501
+        else:
+            (data) = self.device_service_post_with_http_info(name, **kwargs)  # noqa: E501
+            return data
+
+    def device_service_post_with_http_info(self, name, **kwargs):  # noqa: E501
+        """DeviceServiceRoute.post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.device_service_post_with_http_info(name, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: (required)
+        :param DeviceServiceObject body: Service object
+        :return: DeviceServiceObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method device_service_post" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `device_service_post`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/device/{name}/service', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='DeviceServiceObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def device_service_put(self, name, id, **kwargs):  # noqa: E501
         """DeviceServiceRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_put(name, id, async_req=True)
+        >>> thread = api.device_service_put(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -354,17 +443,17 @@ class DeviceServiceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_id_put_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.device_service_put_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_name_service_id_put_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.device_service_put_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_name_service_id_put_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def device_service_put_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """DeviceServiceRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_id_put_with_http_info(name, id, async_req=True)
+        >>> thread = api.device_service_put_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -387,18 +476,18 @@ class DeviceServiceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_id_put" % key
+                    " to method device_service_put" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_id_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `device_service_put`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_device_name_service_id_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `device_service_put`")  # noqa: E501
 
         collection_formats = {}
 
@@ -427,103 +516,6 @@ class DeviceServiceApi(object):
 
         return self.api_client.call_api(
             '/api/v0.1/device/{name}/service/{id}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DeviceServiceObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_device_name_service_post(self, name, **kwargs):  # noqa: E501
-        """DeviceServiceRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_post(name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param DeviceServiceObject body: Service object
-        :return: DeviceServiceObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_device_name_service_post_with_http_info(name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_device_name_service_post_with_http_info(name, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_device_name_service_post_with_http_info(self, name, **kwargs):  # noqa: E501
-        """DeviceServiceRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_name_service_post_with_http_info(name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: (required)
-        :param DeviceServiceObject body: Service object
-        :return: DeviceServiceObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_name_service_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_device_name_service_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/device/{name}/service', 'POST',
             path_params,
             query_params,
             header_params,

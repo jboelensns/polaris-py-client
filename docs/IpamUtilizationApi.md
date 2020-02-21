@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_ipam_prefix_utilization_get**](IpamUtilizationApi.md#api_v01_ipam_prefix_utilization_get) | **GET** /api/v0.1/ipam/prefix/utilization | IpamUtilizationRoute.post
+[**ipam_utilization_post**](IpamUtilizationApi.md#ipam_utilization_post) | **GET** /api/v0.1/ipam/prefix/utilization | IpamUtilizationRoute.post
 
 
-# **api_v01_ipam_prefix_utilization_get**
-> IpamUtilizationObject api_v01_ipam_prefix_utilization_get(prefix=prefix)
+# **ipam_utilization_post**
+> IpamUtilizationObject ipam_utilization_post(prefix=prefix)
 
 IpamUtilizationRoute.post
 
@@ -32,10 +32,10 @@ prefix = 'prefix_example' # str |  (optional)
 
 try:
     # IpamUtilizationRoute.post
-    api_response = api_instance.api_v01_ipam_prefix_utilization_get(prefix=prefix)
+    api_response = api_instance.ipam_utilization_post(prefix=prefix)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IpamUtilizationApi->api_v01_ipam_prefix_utilization_get: %s\n" % e)
+    print("Exception when calling IpamUtilizationApi->ipam_utilization_post: %s\n" % e)
 ```
 
 ### Parameters

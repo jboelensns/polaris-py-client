@@ -33,12 +33,12 @@ class HostBgpNeighborApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_host_bgp_neighbor_device_device_name_application_application_delete(self, device_name, application, id, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_delete(self, device_name, application, id, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_device_device_name_application_application_delete(device_name, application, id, async_req=True)
+        >>> thread = api.host_bgp_neighbor_delete(device_name, application, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -51,17 +51,17 @@ class HostBgpNeighborApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_host_bgp_neighbor_device_device_name_application_application_delete_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
+            return self.host_bgp_neighbor_delete_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_host_bgp_neighbor_device_device_name_application_application_delete_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
+            (data) = self.host_bgp_neighbor_delete_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_host_bgp_neighbor_device_device_name_application_application_delete_with_http_info(self, device_name, application, id, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_delete_with_http_info(self, device_name, application, id, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_device_device_name_application_application_delete_with_http_info(device_name, application, id, async_req=True)
+        >>> thread = api.host_bgp_neighbor_delete_with_http_info(device_name, application, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -84,22 +84,22 @@ class HostBgpNeighborApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_host_bgp_neighbor_device_device_name_application_application_delete" % key
+                    " to method host_bgp_neighbor_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `host_bgp_neighbor_delete`")  # noqa: E501
         # verify the required parameter 'application' is set
         if ('application' not in params or
                 params['application'] is None):
-            raise ValueError("Missing the required parameter `application` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `application` when calling `host_bgp_neighbor_delete`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `host_bgp_neighbor_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -138,117 +138,12 @@ class HostBgpNeighborApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_host_bgp_neighbor_device_device_name_application_application_put(self, device_name, application, id, **kwargs):  # noqa: E501
-        """HostBgpNeighborRoute.put  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_device_device_name_application_application_put(device_name, application, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name FQDN (required)
-        :param str application: Application name (required)
-        :param str id: HostBgpNeighbor UUIDv1 id (required)
-        :return: HostBgpNeighborObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_host_bgp_neighbor_device_device_name_application_application_put_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_host_bgp_neighbor_device_device_name_application_application_put_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_host_bgp_neighbor_device_device_name_application_application_put_with_http_info(self, device_name, application, id, **kwargs):  # noqa: E501
-        """HostBgpNeighborRoute.put  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_device_device_name_application_application_put_with_http_info(device_name, application, id, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str device_name: Device name FQDN (required)
-        :param str application: Application name (required)
-        :param str id: HostBgpNeighbor UUIDv1 id (required)
-        :return: HostBgpNeighborObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['device_name', 'application', 'id']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_host_bgp_neighbor_device_device_name_application_application_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_put`")  # noqa: E501
-        # verify the required parameter 'application' is set
-        if ('application' not in params or
-                params['application'] is None):
-            raise ValueError("Missing the required parameter `application` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_put`")  # noqa: E501
-        # verify the required parameter 'id' is set
-        if ('id' not in params or
-                params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_host_bgp_neighbor_device_device_name_application_application_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
-        if 'application' in params:
-            path_params['application'] = params['application']  # noqa: E501
-
-        query_params = []
-        if 'id' in params:
-            query_params.append(('id', params['id']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/host/bgp/neighbor/device/{device_name}/application/{application}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='HostBgpNeighborObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_host_bgp_neighbor_get(self, device_name, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_get(self, device_name, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_get(device_name, async_req=True)
+        >>> thread = api.host_bgp_neighbor_get(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -260,17 +155,17 @@ class HostBgpNeighborApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_host_bgp_neighbor_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.host_bgp_neighbor_get_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_host_bgp_neighbor_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.host_bgp_neighbor_get_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_host_bgp_neighbor_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.host_bgp_neighbor_get_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -292,14 +187,14 @@ class HostBgpNeighborApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_host_bgp_neighbor_get" % key
+                    " to method host_bgp_neighbor_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_host_bgp_neighbor_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `host_bgp_neighbor_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -336,12 +231,12 @@ class HostBgpNeighborApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_host_bgp_neighbor_post(self, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_post(self, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_post(async_req=True)
+        >>> thread = api.host_bgp_neighbor_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -352,17 +247,17 @@ class HostBgpNeighborApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_host_bgp_neighbor_post_with_http_info(**kwargs)  # noqa: E501
+            return self.host_bgp_neighbor_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_host_bgp_neighbor_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.host_bgp_neighbor_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_host_bgp_neighbor_post_with_http_info(self, **kwargs):  # noqa: E501
+    def host_bgp_neighbor_post_with_http_info(self, **kwargs):  # noqa: E501
         """HostBgpNeighborRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_host_bgp_neighbor_post_with_http_info(async_req=True)
+        >>> thread = api.host_bgp_neighbor_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -383,7 +278,7 @@ class HostBgpNeighborApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_host_bgp_neighbor_post" % key
+                    " to method host_bgp_neighbor_post" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -411,6 +306,111 @@ class HostBgpNeighborApi(object):
 
         return self.api_client.call_api(
             '/api/v0.1/host/bgp/neighbor', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='HostBgpNeighborObject',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def host_bgp_neighbor_put(self, device_name, application, id, **kwargs):  # noqa: E501
+        """HostBgpNeighborRoute.put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.host_bgp_neighbor_put(device_name, application, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name FQDN (required)
+        :param str application: Application name (required)
+        :param str id: HostBgpNeighbor UUIDv1 id (required)
+        :return: HostBgpNeighborObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.host_bgp_neighbor_put_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.host_bgp_neighbor_put_with_http_info(device_name, application, id, **kwargs)  # noqa: E501
+            return data
+
+    def host_bgp_neighbor_put_with_http_info(self, device_name, application, id, **kwargs):  # noqa: E501
+        """HostBgpNeighborRoute.put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.host_bgp_neighbor_put_with_http_info(device_name, application, id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str device_name: Device name FQDN (required)
+        :param str application: Application name (required)
+        :param str id: HostBgpNeighbor UUIDv1 id (required)
+        :return: HostBgpNeighborObject
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['device_name', 'application', 'id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method host_bgp_neighbor_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'device_name' is set
+        if ('device_name' not in params or
+                params['device_name'] is None):
+            raise ValueError("Missing the required parameter `device_name` when calling `host_bgp_neighbor_put`")  # noqa: E501
+        # verify the required parameter 'application' is set
+        if ('application' not in params or
+                params['application'] is None):
+            raise ValueError("Missing the required parameter `application` when calling `host_bgp_neighbor_put`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `host_bgp_neighbor_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'device_name' in params:
+            path_params['device_name'] = params['device_name']  # noqa: E501
+        if 'application' in params:
+            path_params['application'] = params['application']  # noqa: E501
+
+        query_params = []
+        if 'id' in params:
+            query_params.append(('id', params['id']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/host/bgp/neighbor/device/{device_name}/application/{application}', 'PUT',
             path_params,
             query_params,
             header_params,

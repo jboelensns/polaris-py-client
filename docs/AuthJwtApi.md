@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_auth_jwt_post**](AuthJwtApi.md#api_v01_auth_jwt_post) | **POST** /api/v0.1/auth/jwt | AuthJwt.post
+[**auth_jwt_post**](AuthJwtApi.md#auth_jwt_post) | **POST** /api/v0.1/auth/jwt | AuthJwt.post
 
 
-# **api_v01_auth_jwt_post**
-> api_v01_auth_jwt_post(token=token)
+# **auth_jwt_post**
+> auth_jwt_post(token=token)
 
 AuthJwt.post
 
@@ -26,9 +26,9 @@ token = polarisgenclient.Token() # Token | Validate JWT signature (optional)
 
 try:
     # AuthJwt.post
-    api_instance.api_v01_auth_jwt_post(token=token)
+    api_instance.auth_jwt_post(token=token)
 except ApiException as e:
-    print("Exception when calling AuthJwtApi->api_v01_auth_jwt_post: %s\n" % e)
+    print("Exception when calling AuthJwtApi->auth_jwt_post: %s\n" % e)
 ```
 
 ### Parameters

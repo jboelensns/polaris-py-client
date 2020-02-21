@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_arp_agent_post**](ArpAgentApi.md#api_v01_device_device_name_arp_agent_post) | **POST** /api/v0.1/device/{device_name}/arp/agent | ArpAgentRoute.post
+[**arp_agent_post**](ArpAgentApi.md#arp_agent_post) | **POST** /api/v0.1/device/{device_name}/arp/agent | ArpAgentRoute.post
 
 
-# **api_v01_device_device_name_arp_agent_post**
-> list[ArpAgentObject] api_v01_device_device_name_arp_agent_post(device_name, body=body)
+# **arp_agent_post**
+> list[ArpAgentObject] arp_agent_post(device_name, body=body)
 
 ArpAgentRoute.post
 
@@ -33,10 +33,10 @@ body = [polarisgenclient.ArpAgentObject()] # list[ArpAgentObject] | Array of ARP
 
 try:
     # ArpAgentRoute.post
-    api_response = api_instance.api_v01_device_device_name_arp_agent_post(device_name, body=body)
+    api_response = api_instance.arp_agent_post(device_name, body=body)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ArpAgentApi->api_v01_device_device_name_arp_agent_post: %s\n" % e)
+    print("Exception when calling ArpAgentApi->arp_agent_post: %s\n" % e)
 ```
 
 ### Parameters

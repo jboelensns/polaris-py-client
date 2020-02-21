@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_ipam_prefix_cache_get**](IpamPrefixCacheApi.md#api_v01_ipam_prefix_cache_get) | **GET** /api/v0.1/ipam/prefix/cache | IpamPrefixCacheRoute.get
+[**ipam_prefix_cache_get**](IpamPrefixCacheApi.md#ipam_prefix_cache_get) | **GET** /api/v0.1/ipam/prefix/cache | IpamPrefixCacheRoute.get
 
 
-# **api_v01_ipam_prefix_cache_get**
-> Prefix api_v01_ipam_prefix_cache_get()
+# **ipam_prefix_cache_get**
+> Prefix ipam_prefix_cache_get()
 
 IpamPrefixCacheRoute.get
 
@@ -31,10 +31,10 @@ api_instance = polarisgenclient.IpamPrefixCacheApi(polarisgenclient.ApiClient(co
 
 try:
     # IpamPrefixCacheRoute.get
-    api_response = api_instance.api_v01_ipam_prefix_cache_get()
+    api_response = api_instance.ipam_prefix_cache_get()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling IpamPrefixCacheApi->api_v01_ipam_prefix_cache_get: %s\n" % e)
+    print("Exception when calling IpamPrefixCacheApi->ipam_prefix_cache_get: %s\n" % e)
 ```
 
 ### Parameters

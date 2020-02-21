@@ -33,45 +33,47 @@ class DeviceApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_discover_post(self, device_name, **kwargs):  # noqa: E501
-        """DeviceRoute.post  # noqa: E501
+    def device_get(self, **kwargs):  # noqa: E501
+        """DeviceRoute.get  # noqa: E501
 
-        Dispatch real time Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_discover_post(device_name, async_req=True)
+        >>> thread = api.device_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device FQDN (required)
-        :return: None
+        :param str pop_name: Device POP
+        :param bool include_agent: Include agent
+        :param bool only_agent: Only provide agent based devices
+        :return: DeviceObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_discover_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_discover_post_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_discover_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
-        """DeviceRoute.post  # noqa: E501
+    def device_get_with_http_info(self, **kwargs):  # noqa: E501
+        """DeviceRoute.get  # noqa: E501
 
-        Dispatch real time Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_discover_post_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device FQDN (required)
-        :return: None
+        :param str pop_name: Device POP
+        :param bool include_agent: Include agent
+        :param bool only_agent: Only provide agent based devices
+        :return: DeviceObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['device_name']  # noqa: E501
+        all_params = ['pop_name', 'include_agent', 'only_agent']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -82,22 +84,22 @@ class DeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_discover_post" % key
+                    " to method device_get" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_discover_post`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
 
         query_params = []
+        if 'pop_name' in params:
+            query_params.append(('pop_name', params['pop_name']))  # noqa: E501
+        if 'include_agent' in params:
+            query_params.append(('include_agent', params['include_agent']))  # noqa: E501
+        if 'only_agent' in params:
+            query_params.append(('only_agent', params['only_agent']))  # noqa: E501
 
         header_params = {}
 
@@ -109,14 +111,14 @@ class DeviceApi(object):
         auth_settings = ['ApiKey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v0.1/device/{device_name}/discover', 'POST',
+            '/api/v0.1/device', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type=None,  # noqa: E501
+            response_type='DeviceObject',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -124,12 +126,12 @@ class DeviceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_device_name_get(self, device_name, **kwargs):  # noqa: E501
+    def device_get_by_name(self, device_name, **kwargs):  # noqa: E501
         """DeviceRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_get(device_name, async_req=True)
+        >>> thread = api.device_get_by_name(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -143,17 +145,17 @@ class DeviceApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_get_by_name_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_get_by_name_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def device_get_by_name_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """DeviceRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_get_by_name_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -177,14 +179,14 @@ class DeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_get" % key
+                    " to method device_get_by_name" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_get_by_name`")  # noqa: E501
 
         collection_formats = {}
 
@@ -225,49 +227,45 @@ class DeviceApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_device_get(self, device_name, **kwargs):  # noqa: E501
-        """DeviceRoute.get  # noqa: E501
+    def device_post(self, device_name, **kwargs):  # noqa: E501
+        """DeviceRoute.post  # noqa: E501
 
+        Dispatch real time Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_get(device_name, async_req=True)
+        >>> thread = api.device_post(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str device_name: Device FQDN (required)
-        :param str pop_name: Device POP
-        :param bool include_agent: Include agent
-        :param bool only_agent: Only provide agent based devices
-        :return: DeviceObject
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.device_post_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.device_post_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
-        """DeviceRoute.get  # noqa: E501
+    def device_post_with_http_info(self, device_name, **kwargs):  # noqa: E501
+        """DeviceRoute.post  # noqa: E501
 
+        Dispatch real time Device scan  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.device_post_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
         :param str device_name: Device FQDN (required)
-        :param str pop_name: Device POP
-        :param bool include_agent: Include agent
-        :param bool only_agent: Only provide agent based devices
-        :return: DeviceObject
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['device_name', 'pop_name', 'include_agent', 'only_agent']  # noqa: E501
+        all_params = ['device_name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -278,14 +276,14 @@ class DeviceApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_get" % key
+                    " to method device_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -294,12 +292,6 @@ class DeviceApi(object):
             path_params['device_name'] = params['device_name']  # noqa: E501
 
         query_params = []
-        if 'pop_name' in params:
-            query_params.append(('pop_name', params['pop_name']))  # noqa: E501
-        if 'include_agent' in params:
-            query_params.append(('include_agent', params['include_agent']))  # noqa: E501
-        if 'only_agent' in params:
-            query_params.append(('only_agent', params['only_agent']))  # noqa: E501
 
         header_params = {}
 
@@ -311,14 +303,14 @@ class DeviceApi(object):
         auth_settings = ['ApiKey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v0.1/device', 'GET',
+            '/api/v0.1/device/{device_name}/discover', 'POST',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='DeviceObject',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

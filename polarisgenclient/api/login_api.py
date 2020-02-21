@@ -33,12 +33,12 @@ class LoginApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_login_post(self, **kwargs):  # noqa: E501
+    def login_post(self, **kwargs):  # noqa: E501
         """LoginRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_login_post(async_req=True)
+        >>> thread = api.login_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class LoginApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_login_post_with_http_info(**kwargs)  # noqa: E501
+            return self.login_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_login_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.login_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_login_post_with_http_info(self, **kwargs):  # noqa: E501
+    def login_post_with_http_info(self, **kwargs):  # noqa: E501
         """LoginRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_login_post_with_http_info(async_req=True)
+        >>> thread = api.login_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,7 +80,7 @@ class LoginApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_login_post" % key
+                    " to method login_post" % key
                 )
             params[key] = val
         del params['kwargs']

@@ -33,12 +33,12 @@ class PopMetadataApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_pop_name_metadata_delete(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_delete(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_delete(name, async_req=True)
+        >>> thread = api.pop_metadata_delete(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class PopMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_pop_name_metadata_delete_with_http_info(name, **kwargs)  # noqa: E501
+            return self.pop_metadata_delete_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_pop_name_metadata_delete_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.pop_metadata_delete_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_pop_name_metadata_delete_with_http_info(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_delete_with_http_info(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_delete_with_http_info(name, async_req=True)
+        >>> thread = api.pop_metadata_delete_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class PopMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_pop_name_metadata_delete" % key
+                    " to method pop_metadata_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_pop_name_metadata_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `pop_metadata_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -122,12 +122,12 @@ class PopMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_pop_name_metadata_get(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_get(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_get(name, async_req=True)
+        >>> thread = api.pop_metadata_get(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -138,17 +138,17 @@ class PopMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_pop_name_metadata_get_with_http_info(name, **kwargs)  # noqa: E501
+            return self.pop_metadata_get_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_pop_name_metadata_get_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.pop_metadata_get_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_pop_name_metadata_get_with_http_info(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_get_with_http_info(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_get_with_http_info(name, async_req=True)
+        >>> thread = api.pop_metadata_get_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -169,14 +169,14 @@ class PopMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_pop_name_metadata_get" % key
+                    " to method pop_metadata_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_pop_name_metadata_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `pop_metadata_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -211,12 +211,12 @@ class PopMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_pop_name_metadata_post(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_post(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_post(name, async_req=True)
+        >>> thread = api.pop_metadata_post(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -228,17 +228,17 @@ class PopMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_pop_name_metadata_post_with_http_info(name, **kwargs)  # noqa: E501
+            return self.pop_metadata_post_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_pop_name_metadata_post_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.pop_metadata_post_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_pop_name_metadata_post_with_http_info(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_post_with_http_info(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_post_with_http_info(name, async_req=True)
+        >>> thread = api.pop_metadata_post_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -260,14 +260,14 @@ class PopMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_pop_name_metadata_post" % key
+                    " to method pop_metadata_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_pop_name_metadata_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `pop_metadata_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -308,12 +308,12 @@ class PopMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_pop_name_metadata_put(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_put(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_put(name, async_req=True)
+        >>> thread = api.pop_metadata_put(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -325,17 +325,17 @@ class PopMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_pop_name_metadata_put_with_http_info(name, **kwargs)  # noqa: E501
+            return self.pop_metadata_put_with_http_info(name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_pop_name_metadata_put_with_http_info(name, **kwargs)  # noqa: E501
+            (data) = self.pop_metadata_put_with_http_info(name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_pop_name_metadata_put_with_http_info(self, name, **kwargs):  # noqa: E501
+    def pop_metadata_put_with_http_info(self, name, **kwargs):  # noqa: E501
         """PopMetadataRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_pop_name_metadata_put_with_http_info(name, async_req=True)
+        >>> thread = api.pop_metadata_put_with_http_info(name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -357,14 +357,14 @@ class PopMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_pop_name_metadata_put" % key
+                    " to method pop_metadata_put" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_pop_name_metadata_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `pop_metadata_put`")  # noqa: E501
 
         collection_formats = {}
 

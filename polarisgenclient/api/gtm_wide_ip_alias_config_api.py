@@ -33,12 +33,12 @@ class GtmWideIpAliasConfigApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_gtm_wideip_alias_config_get(self, device_name, **kwargs):  # noqa: E501
+    def gtm_wide_ip_alias_config_get(self, device_name, **kwargs):  # noqa: E501
         """GtmWideIpAliasConfigRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_gtm_wideip_alias_config_get(device_name, async_req=True)
+        >>> thread = api.gtm_wide_ip_alias_config_get(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class GtmWideIpAliasConfigApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_gtm_wideip_alias_config_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.gtm_wide_ip_alias_config_get_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_gtm_wideip_alias_config_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.gtm_wide_ip_alias_config_get_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_gtm_wideip_alias_config_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def gtm_wide_ip_alias_config_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """GtmWideIpAliasConfigRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_gtm_wideip_alias_config_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.gtm_wide_ip_alias_config_get_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class GtmWideIpAliasConfigApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_gtm_wideip_alias_config_get" % key
+                    " to method gtm_wide_ip_alias_config_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_gtm_wideip_alias_config_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `gtm_wide_ip_alias_config_get`")  # noqa: E501
 
         collection_formats = {}
 

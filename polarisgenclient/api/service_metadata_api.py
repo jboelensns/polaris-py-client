@@ -33,12 +33,12 @@ class ServiceMetadataApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_service_name_id_id_metadata_delete(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_delete(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_delete(name, id, async_req=True)
+        >>> thread = api.service_metadata_delete(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class ServiceMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_service_name_id_id_metadata_delete_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.service_metadata_delete_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_service_name_id_id_metadata_delete_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.service_metadata_delete_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_service_name_id_id_metadata_delete_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_delete_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_delete_with_http_info(name, id, async_req=True)
+        >>> thread = api.service_metadata_delete_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,18 +82,18 @@ class ServiceMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_service_name_id_id_metadata_delete" % key
+                    " to method service_metadata_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_service_name_id_id_metadata_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `service_metadata_delete`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_service_name_id_id_metadata_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `service_metadata_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -130,12 +130,12 @@ class ServiceMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_service_name_id_id_metadata_get(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_get(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_get(name, id, async_req=True)
+        >>> thread = api.service_metadata_get(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -147,17 +147,17 @@ class ServiceMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_service_name_id_id_metadata_get_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.service_metadata_get_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_service_name_id_id_metadata_get_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.service_metadata_get_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_service_name_id_id_metadata_get_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_get_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_get_with_http_info(name, id, async_req=True)
+        >>> thread = api.service_metadata_get_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -179,18 +179,18 @@ class ServiceMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_service_name_id_id_metadata_get" % key
+                    " to method service_metadata_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_service_name_id_id_metadata_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `service_metadata_get`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_service_name_id_id_metadata_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `service_metadata_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -227,12 +227,12 @@ class ServiceMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_service_name_id_id_metadata_post(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_post(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_post(name, id, async_req=True)
+        >>> thread = api.service_metadata_post(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -245,17 +245,17 @@ class ServiceMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_service_name_id_id_metadata_post_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.service_metadata_post_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_service_name_id_id_metadata_post_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.service_metadata_post_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_service_name_id_id_metadata_post_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_post_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_post_with_http_info(name, id, async_req=True)
+        >>> thread = api.service_metadata_post_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -278,18 +278,18 @@ class ServiceMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_service_name_id_id_metadata_post" % key
+                    " to method service_metadata_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_service_name_id_id_metadata_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `service_metadata_post`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_service_name_id_id_metadata_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `service_metadata_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -332,12 +332,12 @@ class ServiceMetadataApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_service_name_id_id_metadata_put(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_put(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_put(name, id, async_req=True)
+        >>> thread = api.service_metadata_put(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -350,17 +350,17 @@ class ServiceMetadataApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_service_name_id_id_metadata_put_with_http_info(name, id, **kwargs)  # noqa: E501
+            return self.service_metadata_put_with_http_info(name, id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_service_name_id_id_metadata_put_with_http_info(name, id, **kwargs)  # noqa: E501
+            (data) = self.service_metadata_put_with_http_info(name, id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_service_name_id_id_metadata_put_with_http_info(self, name, id, **kwargs):  # noqa: E501
+    def service_metadata_put_with_http_info(self, name, id, **kwargs):  # noqa: E501
         """ServiceMetadataRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_service_name_id_id_metadata_put_with_http_info(name, id, async_req=True)
+        >>> thread = api.service_metadata_put_with_http_info(name, id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -383,18 +383,18 @@ class ServiceMetadataApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_service_name_id_id_metadata_put" % key
+                    " to method service_metadata_put" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_service_name_id_id_metadata_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `service_metadata_put`")  # noqa: E501
         # verify the required parameter 'id' is set
         if ('id' not in params or
                 params['id'] is None):
-            raise ValueError("Missing the required parameter `id` when calling `api_v01_service_name_id_id_metadata_put`")  # noqa: E501
+            raise ValueError("Missing the required parameter `id` when calling `service_metadata_put`")  # noqa: E501
 
         collection_formats = {}
 

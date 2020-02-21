@@ -33,190 +33,12 @@ class IpamGeoIpApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_gtm_dc_get(self, hostname, **kwargs):  # noqa: E501
-        """GtmRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_dc_get(hostname, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str hostname: datacenter name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_gtm_dc_get_with_http_info(hostname, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_gtm_dc_get_with_http_info(hostname, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_gtm_dc_get_with_http_info(self, hostname, **kwargs):  # noqa: E501
-        """GtmRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_dc_get_with_http_info(hostname, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str hostname: datacenter name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['hostname']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_dc_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'hostname' is set
-        if ('hostname' not in params or
-                params['hostname'] is None):
-            raise ValueError("Missing the required parameter `hostname` when calling `api_v01_gtm_dc_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'hostname' in params:
-            path_params['hostname'] = params['hostname']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/gtm/dc', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_gtm_dc_hostname_get(self, hostname, **kwargs):  # noqa: E501
-        """GtmRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_dc_hostname_get(hostname, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str hostname: datacenter name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_gtm_dc_hostname_get_with_http_info(hostname, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_gtm_dc_hostname_get_with_http_info(hostname, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_gtm_dc_hostname_get_with_http_info(self, hostname, **kwargs):  # noqa: E501
-        """GtmRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_dc_hostname_get_with_http_info(hostname, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str hostname: datacenter name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['hostname']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_dc_hostname_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'hostname' is set
-        if ('hostname' not in params or
-                params['hostname'] is None):
-            raise ValueError("Missing the required parameter `hostname` when calling `api_v01_gtm_dc_hostname_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'hostname' in params:
-            path_params['hostname'] = params['hostname']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/gtm/dc/{hostname}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_gtm_geoip_hostname_get(self, hostname, **kwargs):  # noqa: E501
+    def gtm_geo_ip_get(self, hostname, **kwargs):  # noqa: E501
         """GtmGeoIpRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_geoip_hostname_get(hostname, async_req=True)
+        >>> thread = api.gtm_geo_ip_get(hostname, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -227,17 +49,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_geoip_hostname_get_with_http_info(hostname, **kwargs)  # noqa: E501
+            return self.gtm_geo_ip_get_with_http_info(hostname, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_geoip_hostname_get_with_http_info(hostname, **kwargs)  # noqa: E501
+            (data) = self.gtm_geo_ip_get_with_http_info(hostname, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_geoip_hostname_get_with_http_info(self, hostname, **kwargs):  # noqa: E501
+    def gtm_geo_ip_get_with_http_info(self, hostname, **kwargs):  # noqa: E501
         """GtmGeoIpRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_geoip_hostname_get_with_http_info(hostname, async_req=True)
+        >>> thread = api.gtm_geo_ip_get_with_http_info(hostname, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -258,14 +80,14 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_geoip_hostname_get" % key
+                    " to method gtm_geo_ip_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'hostname' is set
         if ('hostname' not in params or
                 params['hostname'] is None):
-            raise ValueError("Missing the required parameter `hostname` when calling `api_v01_gtm_geoip_hostname_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `hostname` when calling `gtm_geo_ip_get`")  # noqa: E501
 
         collection_formats = {}
 
@@ -300,12 +122,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_geoip_hostname_post(self, hostname, **kwargs):  # noqa: E501
+    def gtm_geo_ip_post(self, hostname, **kwargs):  # noqa: E501
         """GtmGeoIpRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_geoip_hostname_post(hostname, async_req=True)
+        >>> thread = api.gtm_geo_ip_post(hostname, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -316,17 +138,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_geoip_hostname_post_with_http_info(hostname, **kwargs)  # noqa: E501
+            return self.gtm_geo_ip_post_with_http_info(hostname, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_geoip_hostname_post_with_http_info(hostname, **kwargs)  # noqa: E501
+            (data) = self.gtm_geo_ip_post_with_http_info(hostname, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_geoip_hostname_post_with_http_info(self, hostname, **kwargs):  # noqa: E501
+    def gtm_geo_ip_post_with_http_info(self, hostname, **kwargs):  # noqa: E501
         """GtmGeoIpRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_geoip_hostname_post_with_http_info(hostname, async_req=True)
+        >>> thread = api.gtm_geo_ip_post_with_http_info(hostname, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -347,14 +169,14 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_geoip_hostname_post" % key
+                    " to method gtm_geo_ip_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'hostname' is set
         if ('hostname' not in params or
                 params['hostname'] is None):
-            raise ValueError("Missing the required parameter `hostname` when calling `api_v01_gtm_geoip_hostname_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `hostname` when calling `gtm_geo_ip_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -389,12 +211,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_region_get(self, **kwargs):  # noqa: E501
-        """GtmRegionRoute.get  # noqa: E501
+    def gtm_get(self, **kwargs):  # noqa: E501
+        """GtmRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_get(async_req=True)
+        >>> thread = api.gtm_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -404,17 +226,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_region_get_with_http_info(**kwargs)  # noqa: E501
+            return self.gtm_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_region_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.gtm_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_region_get_with_http_info(self, **kwargs):  # noqa: E501
-        """GtmRegionRoute.get  # noqa: E501
+    def gtm_get_with_http_info(self, **kwargs):  # noqa: E501
+        """GtmRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_get_with_http_info(async_req=True)
+        >>> thread = api.gtm_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -434,7 +256,177 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_region_get" % key
+                    " to method gtm_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/gtm/dc', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def gtm_get_by_name(self, hostname, **kwargs):  # noqa: E501
+        """GtmRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_get_by_name(hostname, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str hostname: datacenter name (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.gtm_get_by_name_with_http_info(hostname, **kwargs)  # noqa: E501
+        else:
+            (data) = self.gtm_get_by_name_with_http_info(hostname, **kwargs)  # noqa: E501
+            return data
+
+    def gtm_get_by_name_with_http_info(self, hostname, **kwargs):  # noqa: E501
+        """GtmRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_get_by_name_with_http_info(hostname, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str hostname: datacenter name (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['hostname']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method gtm_get_by_name" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'hostname' is set
+        if ('hostname' not in params or
+                params['hostname'] is None):
+            raise ValueError("Missing the required parameter `hostname` when calling `gtm_get_by_name`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'hostname' in params:
+            path_params['hostname'] = params['hostname']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/gtm/dc/{hostname}', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def gtm_region_get(self, **kwargs):  # noqa: E501
+        """GtmRegionRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_region_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.gtm_region_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.gtm_region_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def gtm_region_get_with_http_info(self, **kwargs):  # noqa: E501
+        """GtmRegionRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_region_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method gtm_region_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -470,12 +462,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_region_resolve_country_get(self, country, state, **kwargs):  # noqa: E501
-        """GtmRegionRoute.post  # noqa: E501
+    def gtm_region_get_resolve_by_state(self, country, state, **kwargs):  # noqa: E501
+        """GtmRegionResolveRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_resolve_country_get(country, state, async_req=True)
+        >>> thread = api.gtm_region_get_resolve_by_state(country, state, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -487,17 +479,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_region_resolve_country_get_with_http_info(country, state, **kwargs)  # noqa: E501
+            return self.gtm_region_get_resolve_by_state_with_http_info(country, state, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_region_resolve_country_get_with_http_info(country, state, **kwargs)  # noqa: E501
+            (data) = self.gtm_region_get_resolve_by_state_with_http_info(country, state, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_region_resolve_country_get_with_http_info(self, country, state, **kwargs):  # noqa: E501
-        """GtmRegionRoute.post  # noqa: E501
+    def gtm_region_get_resolve_by_state_with_http_info(self, country, state, **kwargs):  # noqa: E501
+        """GtmRegionResolveRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_resolve_country_get_with_http_info(country, state, async_req=True)
+        >>> thread = api.gtm_region_get_resolve_by_state_with_http_info(country, state, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -519,115 +511,18 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_region_resolve_country_get" % key
+                    " to method gtm_region_get_resolve_by_state" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'country' is set
         if ('country' not in params or
                 params['country'] is None):
-            raise ValueError("Missing the required parameter `country` when calling `api_v01_gtm_region_resolve_country_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `country` when calling `gtm_region_get_resolve_by_state`")  # noqa: E501
         # verify the required parameter 'state' is set
         if ('state' not in params or
                 params['state'] is None):
-            raise ValueError("Missing the required parameter `state` when calling `api_v01_gtm_region_resolve_country_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'country' in params:
-            path_params['country'] = params['country']  # noqa: E501
-        if 'state' in params:
-            path_params['state'] = params['state']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/gtm/region/resolve/{country}', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_gtm_region_resolve_country_state_get(self, country, state, **kwargs):  # noqa: E501
-        """GtmRegionRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_resolve_country_state_get(country, state, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str country: 2-letter Country code (required)
-        :param str state: optional State or Province name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_gtm_region_resolve_country_state_get_with_http_info(country, state, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_gtm_region_resolve_country_state_get_with_http_info(country, state, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_gtm_region_resolve_country_state_get_with_http_info(self, country, state, **kwargs):  # noqa: E501
-        """GtmRegionRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_region_resolve_country_state_get_with_http_info(country, state, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str country: 2-letter Country code (required)
-        :param str state: optional State or Province name (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['country', 'state']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_region_resolve_country_state_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'country' is set
-        if ('country' not in params or
-                params['country'] is None):
-            raise ValueError("Missing the required parameter `country` when calling `api_v01_gtm_region_resolve_country_state_get`")  # noqa: E501
-        # verify the required parameter 'state' is set
-        if ('state' not in params or
-                params['state'] is None):
-            raise ValueError("Missing the required parameter `state` when calling `api_v01_gtm_region_resolve_country_state_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `state` when calling `gtm_region_get_resolve_by_state`")  # noqa: E501
 
         collection_formats = {}
 
@@ -664,45 +559,43 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_topo_create_post(self, **kwargs):  # noqa: E501
-        """GtmTopologyRoute.post  # noqa: E501
+    def gtm_region_resolve_get(self, country, **kwargs):  # noqa: E501
+        """GtmRegionResolveRoute.get  # noqa: E501
 
-        Create a new topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_create_post(async_req=True)
+        >>> thread = api.gtm_region_resolve_get(country, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body14 body: topo object
-        :return: object
+        :param str country: 2-letter Country code (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_topo_create_post_with_http_info(**kwargs)  # noqa: E501
+            return self.gtm_region_resolve_get_with_http_info(country, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_topo_create_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.gtm_region_resolve_get_with_http_info(country, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_topo_create_post_with_http_info(self, **kwargs):  # noqa: E501
-        """GtmTopologyRoute.post  # noqa: E501
+    def gtm_region_resolve_get_with_http_info(self, country, **kwargs):  # noqa: E501
+        """GtmRegionResolveRoute.get  # noqa: E501
 
-        Create a new topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_create_post_with_http_info(async_req=True)
+        >>> thread = api.gtm_region_resolve_get_with_http_info(country, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param Body14 body: topo object
-        :return: object
+        :param str country: 2-letter Country code (required)
+        :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body']  # noqa: E501
+        all_params = ['country']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -713,14 +606,20 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_topo_create_post" % key
+                    " to method gtm_region_resolve_get" % key
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'country' is set
+        if ('country' not in params or
+                params['country'] is None):
+            raise ValueError("Missing the required parameter `country` when calling `gtm_region_resolve_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'country' in params:
+            path_params['country'] = params['country']  # noqa: E501
 
         query_params = []
 
@@ -730,24 +629,18 @@ class IpamGeoIpApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
         # Authentication setting
         auth_settings = ['ApiKey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v0.1/gtm/topo/create', 'POST',
+            '/api/v0.1/gtm/region/resolve/{country}', 'GET',
             path_params,
             query_params,
             header_params,
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='object',  # noqa: E501
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),
@@ -755,13 +648,13 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_topo_delete_post(self, **kwargs):  # noqa: E501
-        """GtmTopologyDeleteRoute.post  # noqa: E501
+    def gtm_topology_delete(self, **kwargs):  # noqa: E501
+        """GtmTopologyRoute.delete  # noqa: E501
 
         Remove topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_delete_post(async_req=True)
+        >>> thread = api.gtm_topology_delete(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -772,18 +665,18 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_topo_delete_post_with_http_info(**kwargs)  # noqa: E501
+            return self.gtm_topology_delete_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_topo_delete_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.gtm_topology_delete_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_topo_delete_post_with_http_info(self, **kwargs):  # noqa: E501
-        """GtmTopologyDeleteRoute.post  # noqa: E501
+    def gtm_topology_delete_with_http_info(self, **kwargs):  # noqa: E501
+        """GtmTopologyRoute.delete  # noqa: E501
 
         Remove topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_delete_post_with_http_info(async_req=True)
+        >>> thread = api.gtm_topology_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -804,7 +697,7 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_topo_delete_post" % key
+                    " to method gtm_topology_delete" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -846,12 +739,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_topo_get(self, **kwargs):  # noqa: E501
+    def gtm_topology_get(self, **kwargs):  # noqa: E501
         """GtmTopologyRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_get(async_req=True)
+        >>> thread = api.gtm_topology_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -861,17 +754,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_topo_get_with_http_info(**kwargs)  # noqa: E501
+            return self.gtm_topology_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_topo_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.gtm_topology_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_topo_get_with_http_info(self, **kwargs):  # noqa: E501
+    def gtm_topology_get_with_http_info(self, **kwargs):  # noqa: E501
         """GtmTopologyRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_topo_get_with_http_info(async_req=True)
+        >>> thread = api.gtm_topology_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -891,7 +784,7 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_topo_get" % key
+                    " to method gtm_topology_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -927,43 +820,45 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_wideip_get(self, wideip, **kwargs):  # noqa: E501
-        """GtmWideIpRoute.get  # noqa: E501
+    def gtm_topology_post(self, **kwargs):  # noqa: E501
+        """GtmTopologyRoute.post  # noqa: E501
 
+        Create a new topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_wideip_get(wideip, async_req=True)
+        >>> thread = api.gtm_topology_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str wideip: wideip hostname (required)
-        :return: None
+        :param Body14 body: topo object
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_wideip_get_with_http_info(wideip, **kwargs)  # noqa: E501
+            return self.gtm_topology_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_wideip_get_with_http_info(wideip, **kwargs)  # noqa: E501
+            (data) = self.gtm_topology_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_wideip_get_with_http_info(self, wideip, **kwargs):  # noqa: E501
-        """GtmWideIpRoute.get  # noqa: E501
+    def gtm_topology_post_with_http_info(self, **kwargs):  # noqa: E501
+        """GtmTopologyRoute.post  # noqa: E501
 
+        Create a new topology record  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_wideip_get_with_http_info(wideip, async_req=True)
+        >>> thread = api.gtm_topology_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str wideip: wideip hostname (required)
-        :return: None
+        :param Body14 body: topo object
+        :return: object
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['wideip']  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -974,20 +869,101 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_wideip_get" % key
+                    " to method gtm_topology_post" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'wideip' is set
-        if ('wideip' not in params or
-                params['wideip'] is None):
-            raise ValueError("Missing the required parameter `wideip` when calling `api_v01_gtm_wideip_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'wideip' in params:
-            path_params['wideip'] = params['wideip']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/gtm/topo/create', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='object',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def gtm_wide_ip_get(self, **kwargs):  # noqa: E501
+        """GtmWideIpRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_wide_ip_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.gtm_wide_ip_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.gtm_wide_ip_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def gtm_wide_ip_get_with_http_info(self, **kwargs):  # noqa: E501
+        """GtmWideIpRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gtm_wide_ip_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method gtm_wide_ip_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
 
         query_params = []
 
@@ -1016,12 +992,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_gtm_wideip_wideip_get(self, wideip, **kwargs):  # noqa: E501
+    def gtm_wide_ip_get_by_ip(self, wideip, **kwargs):  # noqa: E501
         """GtmWideIpRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_wideip_wideip_get(wideip, async_req=True)
+        >>> thread = api.gtm_wide_ip_get_by_ip(wideip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1032,17 +1008,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_gtm_wideip_wideip_get_with_http_info(wideip, **kwargs)  # noqa: E501
+            return self.gtm_wide_ip_get_by_ip_with_http_info(wideip, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_gtm_wideip_wideip_get_with_http_info(wideip, **kwargs)  # noqa: E501
+            (data) = self.gtm_wide_ip_get_by_ip_with_http_info(wideip, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_gtm_wideip_wideip_get_with_http_info(self, wideip, **kwargs):  # noqa: E501
+    def gtm_wide_ip_get_by_ip_with_http_info(self, wideip, **kwargs):  # noqa: E501
         """GtmWideIpRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_gtm_wideip_wideip_get_with_http_info(wideip, async_req=True)
+        >>> thread = api.gtm_wide_ip_get_by_ip_with_http_info(wideip, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1063,14 +1039,14 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_gtm_wideip_wideip_get" % key
+                    " to method gtm_wide_ip_get_by_ip" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'wideip' is set
         if ('wideip' not in params or
                 params['wideip'] is None):
-            raise ValueError("Missing the required parameter `wideip` when calling `api_v01_gtm_wideip_wideip_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `wideip` when calling `gtm_wide_ip_get_by_ip`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1105,12 +1081,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_ipam_geo_provider_get(self, **kwargs):  # noqa: E501
+    def ipam_geo_provider_get(self, **kwargs):  # noqa: E501
         """IpamGeoProviderRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_get(async_req=True)
+        >>> thread = api.ipam_geo_provider_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1120,17 +1096,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ipam_geo_provider_get_with_http_info(**kwargs)  # noqa: E501
+            return self.ipam_geo_provider_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ipam_geo_provider_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.ipam_geo_provider_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_ipam_geo_provider_get_with_http_info(self, **kwargs):  # noqa: E501
+    def ipam_geo_provider_get_with_http_info(self, **kwargs):  # noqa: E501
         """IpamGeoProviderRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_get_with_http_info(async_req=True)
+        >>> thread = api.ipam_geo_provider_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1150,7 +1126,7 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_geo_provider_get" % key
+                    " to method ipam_geo_provider_get" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -1186,12 +1162,12 @@ class IpamGeoIpApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_ipam_geo_provider_name_resolve_ip_network_post(self, name, ip, network, **kwargs):  # noqa: E501
+    def ipam_geo_provider_post(self, name, ip, network, **kwargs):  # noqa: E501
         """IpamGeoProviderRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_name_resolve_ip_network_post(name, ip, network, async_req=True)
+        >>> thread = api.ipam_geo_provider_post(name, ip, network, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1204,17 +1180,17 @@ class IpamGeoIpApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_ipam_geo_provider_name_resolve_ip_network_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
+            return self.ipam_geo_provider_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_ipam_geo_provider_name_resolve_ip_network_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
+            (data) = self.ipam_geo_provider_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_ipam_geo_provider_name_resolve_ip_network_post_with_http_info(self, name, ip, network, **kwargs):  # noqa: E501
+    def ipam_geo_provider_post_with_http_info(self, name, ip, network, **kwargs):  # noqa: E501
         """IpamGeoProviderRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_name_resolve_ip_network_post_with_http_info(name, ip, network, async_req=True)
+        >>> thread = api.ipam_geo_provider_post_with_http_info(name, ip, network, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -1237,127 +1213,22 @@ class IpamGeoIpApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_geo_provider_name_resolve_ip_network_post" % key
+                    " to method ipam_geo_provider_post" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_ipam_geo_provider_name_resolve_ip_network_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `name` when calling `ipam_geo_provider_post`")  # noqa: E501
         # verify the required parameter 'ip' is set
         if ('ip' not in params or
                 params['ip'] is None):
-            raise ValueError("Missing the required parameter `ip` when calling `api_v01_ipam_geo_provider_name_resolve_ip_network_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `ip` when calling `ipam_geo_provider_post`")  # noqa: E501
         # verify the required parameter 'network' is set
         if ('network' not in params or
                 params['network'] is None):
-            raise ValueError("Missing the required parameter `network` when calling `api_v01_ipam_geo_provider_name_resolve_ip_network_post`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-        if 'ip' in params:
-            path_params['ip'] = params['ip']  # noqa: E501
-        if 'network' in params:
-            path_params['network'] = params['network']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/ipam/geo/provider/{name}/resolve/{ip}/{network}', 'POST',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_ipam_geo_provider_name_resolve_ip_post(self, name, ip, network, **kwargs):  # noqa: E501
-        """IpamGeoProviderRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_name_resolve_ip_post(name, ip, network, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: GeoIp provider name (required)
-        :param str ip: ip (required)
-        :param str network: IP or CIDR to resolve (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_ipam_geo_provider_name_resolve_ip_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_ipam_geo_provider_name_resolve_ip_post_with_http_info(name, ip, network, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_ipam_geo_provider_name_resolve_ip_post_with_http_info(self, name, ip, network, **kwargs):  # noqa: E501
-        """IpamGeoProviderRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_ipam_geo_provider_name_resolve_ip_post_with_http_info(name, ip, network, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str name: GeoIp provider name (required)
-        :param str ip: ip (required)
-        :param str network: IP or CIDR to resolve (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['name', 'ip', 'network']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_ipam_geo_provider_name_resolve_ip_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `api_v01_ipam_geo_provider_name_resolve_ip_post`")  # noqa: E501
-        # verify the required parameter 'ip' is set
-        if ('ip' not in params or
-                params['ip'] is None):
-            raise ValueError("Missing the required parameter `ip` when calling `api_v01_ipam_geo_provider_name_resolve_ip_post`")  # noqa: E501
-        # verify the required parameter 'network' is set
-        if ('network' not in params or
-                params['network'] is None):
-            raise ValueError("Missing the required parameter `network` when calling `api_v01_ipam_geo_provider_name_resolve_ip_post`")  # noqa: E501
+            raise ValueError("Missing the required parameter `network` when calling `ipam_geo_provider_post`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1382,6 +1253,111 @@ class IpamGeoIpApi(object):
 
         return self.api_client.call_api(
             '/api/v0.1/ipam/geo/provider/{name}/resolve/{ip}', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def ipam_geo_provider_post_by_network(self, name, ip, network, **kwargs):  # noqa: E501
+        """IpamGeoProviderRoute.post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ipam_geo_provider_post_by_network(name, ip, network, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: GeoIp provider name (required)
+        :param str ip: ip (required)
+        :param str network: IP or CIDR to resolve (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.ipam_geo_provider_post_by_network_with_http_info(name, ip, network, **kwargs)  # noqa: E501
+        else:
+            (data) = self.ipam_geo_provider_post_by_network_with_http_info(name, ip, network, **kwargs)  # noqa: E501
+            return data
+
+    def ipam_geo_provider_post_by_network_with_http_info(self, name, ip, network, **kwargs):  # noqa: E501
+        """IpamGeoProviderRoute.post  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.ipam_geo_provider_post_by_network_with_http_info(name, ip, network, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str name: GeoIp provider name (required)
+        :param str ip: ip (required)
+        :param str network: IP or CIDR to resolve (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['name', 'ip', 'network']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method ipam_geo_provider_post_by_network" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'name' is set
+        if ('name' not in params or
+                params['name'] is None):
+            raise ValueError("Missing the required parameter `name` when calling `ipam_geo_provider_post_by_network`")  # noqa: E501
+        # verify the required parameter 'ip' is set
+        if ('ip' not in params or
+                params['ip'] is None):
+            raise ValueError("Missing the required parameter `ip` when calling `ipam_geo_provider_post_by_network`")  # noqa: E501
+        # verify the required parameter 'network' is set
+        if ('network' not in params or
+                params['network'] is None):
+            raise ValueError("Missing the required parameter `network` when calling `ipam_geo_provider_post_by_network`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'name' in params:
+            path_params['name'] = params['name']  # noqa: E501
+        if 'ip' in params:
+            path_params['ip'] = params['ip']  # noqa: E501
+        if 'network' in params:
+            path_params['network'] = params['network']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/ipam/geo/provider/{name}/resolve/{ip}/{network}', 'POST',
             path_params,
             query_params,
             header_params,

@@ -33,43 +33,41 @@ class Dns2ZoneApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_dns2_zone_get(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_route_get(self, **kwargs):  # noqa: E501
         """Dns2ZoneRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_get(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_route_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str zone_id: (required)
         :return: DnsZoneObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns2_zone_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            return self.dns2_zone_route_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns2_zone_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            (data) = self.dns2_zone_route_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns2_zone_get_with_http_info(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_route_get_with_http_info(self, **kwargs):  # noqa: E501
         """Dns2ZoneRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_get_with_http_info(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_route_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str zone_id: (required)
         :return: DnsZoneObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['zone_id']  # noqa: E501
+        all_params = []  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -80,20 +78,14 @@ class Dns2ZoneApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns2_zone_get" % key
+                    " to method dns2_zone_route_get" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'zone_id' is set
-        if ('zone_id' not in params or
-                params['zone_id'] is None):
-            raise ValueError("Missing the required parameter `zone_id` when calling `api_v01_dns2_zone_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'zone_id' in params:
-            path_params['zone_id'] = params['zone_id']  # noqa: E501
 
         query_params = []
 
@@ -126,12 +118,12 @@ class Dns2ZoneApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_dns2_zone_zone_id_get(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_route_get_by_id(self, zone_id, **kwargs):  # noqa: E501
         """Dns2ZoneRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_zone_id_get(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_route_get_by_id(zone_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -142,17 +134,17 @@ class Dns2ZoneApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns2_zone_zone_id_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            return self.dns2_zone_route_get_by_id_with_http_info(zone_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns2_zone_zone_id_get_with_http_info(zone_id, **kwargs)  # noqa: E501
+            (data) = self.dns2_zone_route_get_by_id_with_http_info(zone_id, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns2_zone_zone_id_get_with_http_info(self, zone_id, **kwargs):  # noqa: E501
+    def dns2_zone_route_get_by_id_with_http_info(self, zone_id, **kwargs):  # noqa: E501
         """Dns2ZoneRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns2_zone_zone_id_get_with_http_info(zone_id, async_req=True)
+        >>> thread = api.dns2_zone_route_get_by_id_with_http_info(zone_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -173,14 +165,14 @@ class Dns2ZoneApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns2_zone_zone_id_get" % key
+                    " to method dns2_zone_route_get_by_id" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'zone_id' is set
         if ('zone_id' not in params or
                 params['zone_id'] is None):
-            raise ValueError("Missing the required parameter `zone_id` when calling `api_v01_dns2_zone_zone_id_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `zone_id` when calling `dns2_zone_route_get_by_id`")  # noqa: E501
 
         collection_formats = {}
 

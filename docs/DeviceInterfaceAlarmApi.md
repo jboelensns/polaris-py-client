@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_interface_alarm_get**](DeviceInterfaceAlarmApi.md#api_v01_device_device_name_interface_alarm_get) | **GET** /api/v0.1/device/{device_name}/interface/alarm | DeviceInterfaceAlarmRoute.get
-[**api_v01_interface_alarm_get**](DeviceInterfaceAlarmApi.md#api_v01_interface_alarm_get) | **GET** /api/v0.1/interface/alarm | DeviceInterfaceAlarmRoute.get
+[**device_interface_alarm_get**](DeviceInterfaceAlarmApi.md#device_interface_alarm_get) | **GET** /api/v0.1/interface/alarm | DeviceInterfaceAlarmRoute.get
+[**device_interface_alarm_get_by_device**](DeviceInterfaceAlarmApi.md#device_interface_alarm_get_by_device) | **GET** /api/v0.1/device/{device_name}/interface/alarm | DeviceInterfaceAlarmRoute.get
 
 
-# **api_v01_device_device_name_interface_alarm_get**
-> DeviceInterfaceAlarmObject api_v01_device_device_name_interface_alarm_get(device_name)
+# **device_interface_alarm_get**
+> DeviceInterfaceAlarmObject device_interface_alarm_get()
 
 DeviceInterfaceAlarmRoute.get
 
@@ -29,21 +29,17 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = polarisgenclient.DeviceInterfaceAlarmApi(polarisgenclient.ApiClient(configuration))
-device_name = 'device_name_example' # str | Device FQDN
 
 try:
     # DeviceInterfaceAlarmRoute.get
-    api_response = api_instance.api_v01_device_device_name_interface_alarm_get(device_name)
+    api_response = api_instance.device_interface_alarm_get()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceInterfaceAlarmApi->api_v01_device_device_name_interface_alarm_get: %s\n" % e)
+    print("Exception when calling DeviceInterfaceAlarmApi->device_interface_alarm_get: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device_name** | **str**| Device FQDN | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -60,8 +56,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_interface_alarm_get**
-> DeviceInterfaceAlarmObject api_v01_interface_alarm_get(device_name)
+# **device_interface_alarm_get_by_device**
+> DeviceInterfaceAlarmObject device_interface_alarm_get_by_device(device_name)
 
 DeviceInterfaceAlarmRoute.get
 
@@ -85,10 +81,10 @@ device_name = 'device_name_example' # str | Device FQDN
 
 try:
     # DeviceInterfaceAlarmRoute.get
-    api_response = api_instance.api_v01_interface_alarm_get(device_name)
+    api_response = api_instance.device_interface_alarm_get_by_device(device_name)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceInterfaceAlarmApi->api_v01_interface_alarm_get: %s\n" % e)
+    print("Exception when calling DeviceInterfaceAlarmApi->device_interface_alarm_get_by_device: %s\n" % e)
 ```
 
 ### Parameters

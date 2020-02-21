@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_ip_interface_get**](DeviceInterfaceAddressApi.md#api_v01_device_device_name_ip_interface_get) | **GET** /api/v0.1/device/{device_name}/ip/interface | DeviceInterfaceAddressRoute.get
-[**api_v01_ip_interface_get**](DeviceInterfaceAddressApi.md#api_v01_ip_interface_get) | **GET** /api/v0.1/ip/interface | DeviceInterfaceAddressRoute.get
+[**device_interface_address_get**](DeviceInterfaceAddressApi.md#device_interface_address_get) | **GET** /api/v0.1/device/{device_name}/ip/interface | DeviceInterfaceAddressRoute.get
+[**device_interface_address_get_0**](DeviceInterfaceAddressApi.md#device_interface_address_get_0) | **GET** /api/v0.1/ip/interface | DeviceInterfaceAddressRoute.get
 
 
-# **api_v01_device_device_name_ip_interface_get**
-> DeviceInterfaceAddressObject api_v01_device_device_name_ip_interface_get(device_name, ip_address=ip_address)
+# **device_interface_address_get**
+> DeviceInterfaceAddressObject device_interface_address_get(device_name, ip_address=ip_address)
 
 DeviceInterfaceAddressRoute.get
 
@@ -34,10 +34,10 @@ ip_address = 'ip_address_example' # str | IP Address (optional)
 
 try:
     # DeviceInterfaceAddressRoute.get
-    api_response = api_instance.api_v01_device_device_name_ip_interface_get(device_name, ip_address=ip_address)
+    api_response = api_instance.device_interface_address_get(device_name, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceInterfaceAddressApi->api_v01_device_device_name_ip_interface_get: %s\n" % e)
+    print("Exception when calling DeviceInterfaceAddressApi->device_interface_address_get: %s\n" % e)
 ```
 
 ### Parameters
@@ -62,8 +62,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_ip_interface_get**
-> DeviceInterfaceAddressObject api_v01_ip_interface_get(device_name, ip_address=ip_address)
+# **device_interface_address_get_0**
+> DeviceInterfaceAddressObject device_interface_address_get_0(device_name, ip_address=ip_address)
 
 DeviceInterfaceAddressRoute.get
 
@@ -88,10 +88,10 @@ ip_address = 'ip_address_example' # str | IP Address (optional)
 
 try:
     # DeviceInterfaceAddressRoute.get
-    api_response = api_instance.api_v01_ip_interface_get(device_name, ip_address=ip_address)
+    api_response = api_instance.device_interface_address_get_0(device_name, ip_address=ip_address)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DeviceInterfaceAddressApi->api_v01_ip_interface_get: %s\n" % e)
+    print("Exception when calling DeviceInterfaceAddressApi->device_interface_address_get_0: %s\n" % e)
 ```
 
 ### Parameters

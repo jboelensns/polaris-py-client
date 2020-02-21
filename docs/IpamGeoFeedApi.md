@@ -4,12 +4,12 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_ipam_geo_feed_csv_delete**](IpamGeoFeedApi.md#api_v01_ipam_geo_feed_csv_delete) | **DELETE** /api/v0.1/ipam/geo/feed.csv | IpamGeoFeedRoute.delete
-[**api_v01_ipam_geo_feed_csv_get**](IpamGeoFeedApi.md#api_v01_ipam_geo_feed_csv_get) | **GET** /api/v0.1/ipam/geo/feed.csv | IpamGeoFeedRoute.get
+[**ipam_geo_feed_delete**](IpamGeoFeedApi.md#ipam_geo_feed_delete) | **DELETE** /api/v0.1/ipam/geo/feed.csv | IpamGeoFeedRoute.delete
+[**ipam_geo_feed_get**](IpamGeoFeedApi.md#ipam_geo_feed_get) | **GET** /api/v0.1/ipam/geo/feed.csv | IpamGeoFeedRoute.get
 
 
-# **api_v01_ipam_geo_feed_csv_delete**
-> api_v01_ipam_geo_feed_csv_delete()
+# **ipam_geo_feed_delete**
+> ipam_geo_feed_delete()
 
 IpamGeoFeedRoute.delete
 
@@ -32,9 +32,9 @@ api_instance = polarisgenclient.IpamGeoFeedApi(polarisgenclient.ApiClient(config
 
 try:
     # IpamGeoFeedRoute.delete
-    api_instance.api_v01_ipam_geo_feed_csv_delete()
+    api_instance.ipam_geo_feed_delete()
 except ApiException as e:
-    print("Exception when calling IpamGeoFeedApi->api_v01_ipam_geo_feed_csv_delete: %s\n" % e)
+    print("Exception when calling IpamGeoFeedApi->ipam_geo_feed_delete: %s\n" % e)
 ```
 
 ### Parameters
@@ -55,8 +55,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **api_v01_ipam_geo_feed_csv_get**
-> api_v01_ipam_geo_feed_csv_get()
+# **ipam_geo_feed_get**
+> ipam_geo_feed_get()
 
 IpamGeoFeedRoute.get
 
@@ -79,9 +79,9 @@ api_instance = polarisgenclient.IpamGeoFeedApi(polarisgenclient.ApiClient(config
 
 try:
     # IpamGeoFeedRoute.get
-    api_instance.api_v01_ipam_geo_feed_csv_get()
+    api_instance.ipam_geo_feed_get()
 except ApiException as e:
-    print("Exception when calling IpamGeoFeedApi->api_v01_ipam_geo_feed_csv_get: %s\n" % e)
+    print("Exception when calling IpamGeoFeedApi->ipam_geo_feed_get: %s\n" % e)
 ```
 
 ### Parameters

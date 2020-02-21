@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_monitoring_duplicate_ip_get**](DuplicateIpMonitoringApi.md#api_v01_monitoring_duplicate_ip_get) | **GET** /api/v0.1/monitoring/duplicate/ip | DuplicateIpMonitoringRoute.get
+[**duplicate_ip_monitoring_get**](DuplicateIpMonitoringApi.md#duplicate_ip_monitoring_get) | **GET** /api/v0.1/monitoring/duplicate/ip | DuplicateIpMonitoringRoute.get
 
 
-# **api_v01_monitoring_duplicate_ip_get**
-> DuplicateIpMonitoringObject api_v01_monitoring_duplicate_ip_get()
+# **duplicate_ip_monitoring_get**
+> DuplicateIpMonitoringObject duplicate_ip_monitoring_get()
 
 DuplicateIpMonitoringRoute.get
 
@@ -31,10 +31,10 @@ api_instance = polarisgenclient.DuplicateIpMonitoringApi(polarisgenclient.ApiCli
 
 try:
     # DuplicateIpMonitoringRoute.get
-    api_response = api_instance.api_v01_monitoring_duplicate_ip_get()
+    api_response = api_instance.duplicate_ip_monitoring_get()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling DuplicateIpMonitoringApi->api_v01_monitoring_duplicate_ip_get: %s\n" % e)
+    print("Exception when calling DuplicateIpMonitoringApi->duplicate_ip_monitoring_get: %s\n" % e)
 ```
 
 ### Parameters

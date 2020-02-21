@@ -33,12 +33,12 @@ class DnsHOSTRecordApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_dns_record_host_fqdn_delete(self, fqdn, **kwargs):  # noqa: E501
+    def dns_host_record_delete(self, fqdn, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_delete(fqdn, async_req=True)
+        >>> thread = api.dns_host_record_delete(fqdn, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -49,17 +49,17 @@ class DnsHOSTRecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns_record_host_fqdn_delete_with_http_info(fqdn, **kwargs)  # noqa: E501
+            return self.dns_host_record_delete_with_http_info(fqdn, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns_record_host_fqdn_delete_with_http_info(fqdn, **kwargs)  # noqa: E501
+            (data) = self.dns_host_record_delete_with_http_info(fqdn, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns_record_host_fqdn_delete_with_http_info(self, fqdn, **kwargs):  # noqa: E501
+    def dns_host_record_delete_with_http_info(self, fqdn, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.delete  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_delete_with_http_info(fqdn, async_req=True)
+        >>> thread = api.dns_host_record_delete_with_http_info(fqdn, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -80,14 +80,14 @@ class DnsHOSTRecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_record_host_fqdn_delete" % key
+                    " to method dns_host_record_delete" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'fqdn' is set
         if ('fqdn' not in params or
                 params['fqdn'] is None):
-            raise ValueError("Missing the required parameter `fqdn` when calling `api_v01_dns_record_host_fqdn_delete`")  # noqa: E501
+            raise ValueError("Missing the required parameter `fqdn` when calling `dns_host_record_delete`")  # noqa: E501
 
         collection_formats = {}
 
@@ -122,12 +122,101 @@ class DnsHOSTRecordApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_dns_record_host_fqdn_get(self, fqdn, **kwargs):  # noqa: E501
+    def dns_host_record_get(self, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_get(fqdn, async_req=True)
+        >>> thread = api.dns_host_record_get(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str ipv4addr: ipv4 address
+        :param str ipv6addr: ipv6 address
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.dns_host_record_get_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.dns_host_record_get_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def dns_host_record_get_with_http_info(self, **kwargs):  # noqa: E501
+        """DnsHOSTRecordRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dns_host_record_get_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str ipv4addr: ipv4 address
+        :param str ipv6addr: ipv6 address
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['ipv4addr', 'ipv6addr']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method dns_host_record_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'ipv4addr' in params:
+            query_params.append(('ipv4addr', params['ipv4addr']))  # noqa: E501
+        if 'ipv6addr' in params:
+            query_params.append(('ipv6addr', params['ipv6addr']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/dns/record/host', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def dns_host_record_get_by_fqdn(self, fqdn, **kwargs):  # noqa: E501
+        """DnsHOSTRecordRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dns_host_record_get_by_fqdn(fqdn, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -140,17 +229,17 @@ class DnsHOSTRecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns_record_host_fqdn_get_with_http_info(fqdn, **kwargs)  # noqa: E501
+            return self.dns_host_record_get_by_fqdn_with_http_info(fqdn, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns_record_host_fqdn_get_with_http_info(fqdn, **kwargs)  # noqa: E501
+            (data) = self.dns_host_record_get_by_fqdn_with_http_info(fqdn, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns_record_host_fqdn_get_with_http_info(self, fqdn, **kwargs):  # noqa: E501
+    def dns_host_record_get_by_fqdn_with_http_info(self, fqdn, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_get_with_http_info(fqdn, async_req=True)
+        >>> thread = api.dns_host_record_get_by_fqdn_with_http_info(fqdn, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -173,14 +262,14 @@ class DnsHOSTRecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_record_host_fqdn_get" % key
+                    " to method dns_host_record_get_by_fqdn" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'fqdn' is set
         if ('fqdn' not in params or
                 params['fqdn'] is None):
-            raise ValueError("Missing the required parameter `fqdn` when calling `api_v01_dns_record_host_fqdn_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `fqdn` when calling `dns_host_record_get_by_fqdn`")  # noqa: E501
 
         collection_formats = {}
 
@@ -219,206 +308,12 @@ class DnsHOSTRecordApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_dns_record_host_fqdn_put(self, fqdn, **kwargs):  # noqa: E501
+    def dns_host_record_post(self, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_put(fqdn, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fqdn: fqdn (required)
-        :param Body10 body: Dns object
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_dns_record_host_fqdn_put_with_http_info(fqdn, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_dns_record_host_fqdn_put_with_http_info(fqdn, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_dns_record_host_fqdn_put_with_http_info(self, fqdn, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_fqdn_put_with_http_info(fqdn, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fqdn: fqdn (required)
-        :param Body10 body: Dns object
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['fqdn', 'body']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_record_host_fqdn_put" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'fqdn' is set
-        if ('fqdn' not in params or
-                params['fqdn'] is None):
-            raise ValueError("Missing the required parameter `fqdn` when calling `api_v01_dns_record_host_fqdn_put`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'fqdn' in params:
-            path_params['fqdn'] = params['fqdn']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/dns/record/host/{fqdn}', 'PUT',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_dns_record_host_get(self, fqdn, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_get(fqdn, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fqdn: fqdn (required)
-        :param str ipv4addr: ipv4 address
-        :param str ipv6addr: ipv6 address
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_v01_dns_record_host_get_with_http_info(fqdn, **kwargs)  # noqa: E501
-        else:
-            (data) = self.api_v01_dns_record_host_get_with_http_info(fqdn, **kwargs)  # noqa: E501
-            return data
-
-    def api_v01_dns_record_host_get_with_http_info(self, fqdn, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.get  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_get_with_http_info(fqdn, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str fqdn: fqdn (required)
-        :param str ipv4addr: ipv4 address
-        :param str ipv6addr: ipv6 address
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['fqdn', 'ipv4addr', 'ipv6addr']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_record_host_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'fqdn' is set
-        if ('fqdn' not in params or
-                params['fqdn'] is None):
-            raise ValueError("Missing the required parameter `fqdn` when calling `api_v01_dns_record_host_get`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'fqdn' in params:
-            path_params['fqdn'] = params['fqdn']  # noqa: E501
-
-        query_params = []
-        if 'ipv4addr' in params:
-            query_params.append(('ipv4addr', params['ipv4addr']))  # noqa: E501
-        if 'ipv6addr' in params:
-            query_params.append(('ipv6addr', params['ipv6addr']))  # noqa: E501
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/dns/record/host', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type=None,  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def api_v01_dns_record_host_post(self, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.post  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_post(async_req=True)
+        >>> thread = api.dns_host_record_post(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -429,17 +324,17 @@ class DnsHOSTRecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns_record_host_post_with_http_info(**kwargs)  # noqa: E501
+            return self.dns_host_record_post_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns_record_host_post_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.dns_host_record_post_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns_record_host_post_with_http_info(self, **kwargs):  # noqa: E501
+    def dns_host_record_post_with_http_info(self, **kwargs):  # noqa: E501
         """DnsHOSTRecordRoute.post  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_record_host_post_with_http_info(async_req=True)
+        >>> thread = api.dns_host_record_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -460,7 +355,7 @@ class DnsHOSTRecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_record_host_post" % key
+                    " to method dns_host_record_post" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -502,12 +397,109 @@ class DnsHOSTRecordApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def api_v01_dns_zone_reverse_get(self, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.get  # noqa: E501
+    def dns_host_record_put(self, fqdn, **kwargs):  # noqa: E501
+        """DnsHOSTRecordRoute.put  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_zone_reverse_get(async_req=True)
+        >>> thread = api.dns_host_record_put(fqdn, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fqdn: fqdn (required)
+        :param Body10 body: Dns object
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.dns_host_record_put_with_http_info(fqdn, **kwargs)  # noqa: E501
+        else:
+            (data) = self.dns_host_record_put_with_http_info(fqdn, **kwargs)  # noqa: E501
+            return data
+
+    def dns_host_record_put_with_http_info(self, fqdn, **kwargs):  # noqa: E501
+        """DnsHOSTRecordRoute.put  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dns_host_record_put_with_http_info(fqdn, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str fqdn: fqdn (required)
+        :param Body10 body: Dns object
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['fqdn', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method dns_host_record_put" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'fqdn' is set
+        if ('fqdn' not in params or
+                params['fqdn'] is None):
+            raise ValueError("Missing the required parameter `fqdn` when calling `dns_host_record_put`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'fqdn' in params:
+            path_params['fqdn'] = params['fqdn']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['ApiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/api/v0.1/dns/record/host/{fqdn}', 'PUT',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def dns_reverse_record_get(self, **kwargs):  # noqa: E501
+        """DnsReverseRecordRoute.get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.dns_reverse_record_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -519,17 +511,17 @@ class DnsHOSTRecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_dns_zone_reverse_get_with_http_info(**kwargs)  # noqa: E501
+            return self.dns_reverse_record_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_dns_zone_reverse_get_with_http_info(**kwargs)  # noqa: E501
+            (data) = self.dns_reverse_record_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def api_v01_dns_zone_reverse_get_with_http_info(self, **kwargs):  # noqa: E501
-        """DnsHOSTRecordRoute.get  # noqa: E501
+    def dns_reverse_record_get_with_http_info(self, **kwargs):  # noqa: E501
+        """DnsReverseRecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_dns_zone_reverse_get_with_http_info(async_req=True)
+        >>> thread = api.dns_reverse_record_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -551,7 +543,7 @@ class DnsHOSTRecordApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_dns_zone_reverse_get" % key
+                    " to method dns_reverse_record_get" % key
                 )
             params[key] = val
         del params['kwargs']

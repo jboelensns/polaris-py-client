@@ -33,12 +33,12 @@ class DeviceValidateApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def api_v01_device_device_name_validate_validate_name_get(self, device_name, validate_name, **kwargs):  # noqa: E501
+    def device_validate_get(self, device_name, validate_name, **kwargs):  # noqa: E501
         """DeviceValidateRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_validate_validate_name_get(device_name, validate_name, async_req=True)
+        >>> thread = api.device_validate_get(device_name, validate_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -50,17 +50,17 @@ class DeviceValidateApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.api_v01_device_device_name_validate_validate_name_get_with_http_info(device_name, validate_name, **kwargs)  # noqa: E501
+            return self.device_validate_get_with_http_info(device_name, validate_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.api_v01_device_device_name_validate_validate_name_get_with_http_info(device_name, validate_name, **kwargs)  # noqa: E501
+            (data) = self.device_validate_get_with_http_info(device_name, validate_name, **kwargs)  # noqa: E501
             return data
 
-    def api_v01_device_device_name_validate_validate_name_get_with_http_info(self, device_name, validate_name, **kwargs):  # noqa: E501
+    def device_validate_get_with_http_info(self, device_name, validate_name, **kwargs):  # noqa: E501
         """DeviceValidateRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_v01_device_device_name_validate_validate_name_get_with_http_info(device_name, validate_name, async_req=True)
+        >>> thread = api.device_validate_get_with_http_info(device_name, validate_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -82,18 +82,18 @@ class DeviceValidateApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method api_v01_device_device_name_validate_validate_name_get" % key
+                    " to method device_validate_get" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `api_v01_device_device_name_validate_validate_name_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `device_validate_get`")  # noqa: E501
         # verify the required parameter 'validate_name' is set
         if ('validate_name' not in params or
                 params['validate_name'] is None):
-            raise ValueError("Missing the required parameter `validate_name` when calling `api_v01_device_device_name_validate_validate_name_get`")  # noqa: E501
+            raise ValueError("Missing the required parameter `validate_name` when calling `device_validate_get`")  # noqa: E501
 
         collection_formats = {}
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**api_v01_device_device_name_bulk_sync_post**](DeviceBulkApi.md#api_v01_device_device_name_bulk_sync_post) | **POST** /api/v0.1/device/{device_name}/bulk/sync | DeviceBulkSyncRoute.post
+[**device_bulk_sync_post**](DeviceBulkApi.md#device_bulk_sync_post) | **POST** /api/v0.1/device/{device_name}/bulk/sync | DeviceBulkSyncRoute.post
 
 
-# **api_v01_device_device_name_bulk_sync_post**
-> api_v01_device_device_name_bulk_sync_post(device_name)
+# **device_bulk_sync_post**
+> device_bulk_sync_post(device_name)
 
 DeviceBulkSyncRoute.post
 
@@ -34,9 +34,9 @@ device_name = 'device_name_example' # str | Device FQDN
 
 try:
     # DeviceBulkSyncRoute.post
-    api_instance.api_v01_device_device_name_bulk_sync_post(device_name)
+    api_instance.device_bulk_sync_post(device_name)
 except ApiException as e:
-    print("Exception when calling DeviceBulkApi->api_v01_device_device_name_bulk_sync_post: %s\n" % e)
+    print("Exception when calling DeviceBulkApi->device_bulk_sync_post: %s\n" % e)
 ```
 
 ### Parameters
