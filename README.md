@@ -55,7 +55,7 @@ sudo ./validate.sh https://api.polaris.nskope.net/apispec_1.json
 Removes all of the generated code
 
 ```
-.: **[clean.sh](clean.sh)**
+sudo ./clean.sh
 ```
 
 ## Samples
