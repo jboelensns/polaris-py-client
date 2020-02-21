@@ -2368,6 +2368,8 @@
   "paths": {
     "/api/v0.1/admin/api/history": {
       "get": {
+        "description": "Returns a list of api events<br/>", 
+        "operationId": "ApiHistoryGet", 
         "parameters": [
           {
             "description": "IP Address", 

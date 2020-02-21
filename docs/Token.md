@@ -1,0 +1,10 @@
+# Token
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**jwt** | **str** | A signed JWT header string. | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
