@@ -50,7 +50,7 @@ sudo ./validate.sh http://localhost:8989/apispec_1.json
 sudo ./validate.sh https://api.polaris.nskope.net/apispec_1.json
 ```
 
-.: **clean.sh**
+.: **[clean.sh](clean.sh)**
 
 Removes all of the generated code
 
@@ -65,8 +65,3 @@ Two helper files have been included in order to make constructing clients able t
 .: **[sample_client.py](sample_client.py)**
 
 This client illustrates the usage of the helpers to create an ArpClient and get a list of arp records.
-
-
-
-
-
