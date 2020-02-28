@@ -4529,7 +4529,7 @@
         "consumes": [
           "application/json"
         ], 
-        "operationId": "DeviceInterfaceAddressGet", 
+        "operationId": "DeviceInterfaceAddressGetByDevice", 
         "parameters": [
           {
             "description": "Device FQDN", 
@@ -7219,13 +7219,6 @@
         ], 
         "operationId": "DeviceInterfaceAddressGet", 
         "parameters": [
-          {
-            "description": "Device FQDN", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
           {
             "description": "IP Address", 
             "in": "query", 
