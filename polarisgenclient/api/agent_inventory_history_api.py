@@ -130,16 +130,15 @@ class AgentInventoryHistoryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def agent_inventory_history_get(self, device_name, **kwargs):  # noqa: E501
+    def agent_inventory_history_get(self, **kwargs):  # noqa: E501
         """AgentInventoryHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_inventory_history_get(device_name, async_req=True)
+        >>> thread = api.agent_inventory_history_get(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
         :param str gt_id: Paginate greater than id
         :param str lt_id: Paginate greater than id
         :param int limit: Limit results to N records
@@ -149,21 +148,20 @@ class AgentInventoryHistoryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.agent_inventory_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.agent_inventory_history_get_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.agent_inventory_history_get_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.agent_inventory_history_get_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def agent_inventory_history_get_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def agent_inventory_history_get_with_http_info(self, **kwargs):  # noqa: E501
         """AgentInventoryHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_inventory_history_get_with_http_info(device_name, async_req=True)
+        >>> thread = api.agent_inventory_history_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str device_name: Device name (required)
         :param str gt_id: Paginate greater than id
         :param str lt_id: Paginate greater than id
         :param int limit: Limit results to N records
@@ -172,7 +170,7 @@ class AgentInventoryHistoryApi(object):
                  returns the request thread.
         """
 
-        all_params = ['device_name', 'gt_id', 'lt_id', 'limit']  # noqa: E501
+        all_params = ['gt_id', 'lt_id', 'limit']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -187,16 +185,10 @@ class AgentInventoryHistoryApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'device_name' is set
-        if ('device_name' not in params or
-                params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `agent_inventory_history_get`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
-        if 'device_name' in params:
-            path_params['device_name'] = params['device_name']  # noqa: E501
 
         query_params = []
         if 'gt_id' in params:
@@ -231,12 +223,12 @@ class AgentInventoryHistoryApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def agent_inventory_history_get_0(self, device_name, **kwargs):  # noqa: E501
+    def agent_inventory_history_get_by_device(self, device_name, **kwargs):  # noqa: E501
         """AgentInventoryHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_inventory_history_get_0(device_name, async_req=True)
+        >>> thread = api.agent_inventory_history_get_by_device(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -250,17 +242,17 @@ class AgentInventoryHistoryApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.agent_inventory_history_get_0_with_http_info(device_name, **kwargs)  # noqa: E501
+            return self.agent_inventory_history_get_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
         else:
-            (data) = self.agent_inventory_history_get_0_with_http_info(device_name, **kwargs)  # noqa: E501
+            (data) = self.agent_inventory_history_get_by_device_with_http_info(device_name, **kwargs)  # noqa: E501
             return data
 
-    def agent_inventory_history_get_0_with_http_info(self, device_name, **kwargs):  # noqa: E501
+    def agent_inventory_history_get_by_device_with_http_info(self, device_name, **kwargs):  # noqa: E501
         """AgentInventoryHistoryRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.agent_inventory_history_get_0_with_http_info(device_name, async_req=True)
+        >>> thread = api.agent_inventory_history_get_by_device_with_http_info(device_name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
@@ -284,14 +276,14 @@ class AgentInventoryHistoryApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method agent_inventory_history_get_0" % key
+                    " to method agent_inventory_history_get_by_device" % key
                 )
             params[key] = val
         del params['kwargs']
         # verify the required parameter 'device_name' is set
         if ('device_name' not in params or
                 params['device_name'] is None):
-            raise ValueError("Missing the required parameter `device_name` when calling `agent_inventory_history_get_0`")  # noqa: E501
+            raise ValueError("Missing the required parameter `device_name` when calling `agent_inventory_history_get_by_device`")  # noqa: E501
 
         collection_formats = {}
 

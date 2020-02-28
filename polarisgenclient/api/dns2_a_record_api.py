@@ -33,226 +33,16 @@ class Dns2ARecordApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def dns2_a_record_delete(self, zone, name, **kwargs):  # noqa: E501
-        """Dns2ARecordRoute.delete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_delete(zone, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str zone: zone for record (required)
-        :param str name: name for fqdn (required)
-        :return: DnsRecordObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.dns2_a_record_delete_with_http_info(zone, name, **kwargs)  # noqa: E501
-        else:
-            (data) = self.dns2_a_record_delete_with_http_info(zone, name, **kwargs)  # noqa: E501
-            return data
-
-    def dns2_a_record_delete_with_http_info(self, zone, name, **kwargs):  # noqa: E501
-        """Dns2ARecordRoute.delete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_delete_with_http_info(zone, name, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str zone: zone for record (required)
-        :param str name: name for fqdn (required)
-        :return: DnsRecordObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['zone', 'name']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method dns2_a_record_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'zone' is set
-        if ('zone' not in params or
-                params['zone'] is None):
-            raise ValueError("Missing the required parameter `zone` when calling `dns2_a_record_delete`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `dns2_a_record_delete`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'zone' in params:
-            path_params['zone'] = params['zone']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/dns2/record/{zone}/{name}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DnsRecordObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def dns2_a_record_delete_by_ip(self, zone, name, type, ip, **kwargs):  # noqa: E501
-        """Dns2ARecordRoute.delete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_delete_by_ip(zone, name, type, ip, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str zone: zone for record (required)
-        :param str name: name for fqdn (required)
-        :param str type: type of record to delete (required)
-        :param str ip: ip address (required)
-        :return: DnsRecordObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.dns2_a_record_delete_by_ip_with_http_info(zone, name, type, ip, **kwargs)  # noqa: E501
-        else:
-            (data) = self.dns2_a_record_delete_by_ip_with_http_info(zone, name, type, ip, **kwargs)  # noqa: E501
-            return data
-
-    def dns2_a_record_delete_by_ip_with_http_info(self, zone, name, type, ip, **kwargs):  # noqa: E501
-        """Dns2ARecordRoute.delete  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_delete_by_ip_with_http_info(zone, name, type, ip, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str zone: zone for record (required)
-        :param str name: name for fqdn (required)
-        :param str type: type of record to delete (required)
-        :param str ip: ip address (required)
-        :return: DnsRecordObject
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['zone', 'name', 'type', 'ip']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method dns2_a_record_delete_by_ip" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'zone' is set
-        if ('zone' not in params or
-                params['zone'] is None):
-            raise ValueError("Missing the required parameter `zone` when calling `dns2_a_record_delete_by_ip`")  # noqa: E501
-        # verify the required parameter 'name' is set
-        if ('name' not in params or
-                params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `dns2_a_record_delete_by_ip`")  # noqa: E501
-        # verify the required parameter 'type' is set
-        if ('type' not in params or
-                params['type'] is None):
-            raise ValueError("Missing the required parameter `type` when calling `dns2_a_record_delete_by_ip`")  # noqa: E501
-        # verify the required parameter 'ip' is set
-        if ('ip' not in params or
-                params['ip'] is None):
-            raise ValueError("Missing the required parameter `ip` when calling `dns2_a_record_delete_by_ip`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-        if 'zone' in params:
-            path_params['zone'] = params['zone']  # noqa: E501
-        if 'name' in params:
-            path_params['name'] = params['name']  # noqa: E501
-        if 'type' in params:
-            path_params['type'] = params['type']  # noqa: E501
-        if 'ip' in params:
-            path_params['ip'] = params['ip']  # noqa: E501
-
-        query_params = []
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # Authentication setting
-        auth_settings = ['ApiKey']  # noqa: E501
-
-        return self.api_client.call_api(
-            '/api/v0.1/dns2/record/{zone}/{name}/{type}/{ip}', 'DELETE',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='DnsRecordObject',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
-    def dns2_a_record_get(self, zone, name, **kwargs):  # noqa: E501
+    def dns2_a_record_get(self, fqdn, name, **kwargs):  # noqa: E501
         """Dns2ARecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_get(zone, name, async_req=True)
+        >>> thread = api.dns2_a_record_get(fqdn, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str zone: fqdn (required)
+        :param str fqdn: fqdn (required)
         :param str name: name (required)
         :return: DnsRecordObject
                  If the method is called asynchronously,
@@ -260,28 +50,28 @@ class Dns2ARecordApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.dns2_a_record_get_with_http_info(zone, name, **kwargs)  # noqa: E501
+            return self.dns2_a_record_get_with_http_info(fqdn, name, **kwargs)  # noqa: E501
         else:
-            (data) = self.dns2_a_record_get_with_http_info(zone, name, **kwargs)  # noqa: E501
+            (data) = self.dns2_a_record_get_with_http_info(fqdn, name, **kwargs)  # noqa: E501
             return data
 
-    def dns2_a_record_get_with_http_info(self, zone, name, **kwargs):  # noqa: E501
+    def dns2_a_record_get_with_http_info(self, fqdn, name, **kwargs):  # noqa: E501
         """Dns2ARecordRoute.get  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.dns2_a_record_get_with_http_info(zone, name, async_req=True)
+        >>> thread = api.dns2_a_record_get_with_http_info(fqdn, name, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str zone: fqdn (required)
+        :param str fqdn: fqdn (required)
         :param str name: name (required)
         :return: DnsRecordObject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['zone', 'name']  # noqa: E501
+        all_params = ['fqdn', 'name']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -296,10 +86,10 @@ class Dns2ARecordApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'zone' is set
-        if ('zone' not in params or
-                params['zone'] is None):
-            raise ValueError("Missing the required parameter `zone` when calling `dns2_a_record_get`")  # noqa: E501
+        # verify the required parameter 'fqdn' is set
+        if ('fqdn' not in params or
+                params['fqdn'] is None):
+            raise ValueError("Missing the required parameter `fqdn` when calling `dns2_a_record_get`")  # noqa: E501
         # verify the required parameter 'name' is set
         if ('name' not in params or
                 params['name'] is None):
@@ -308,8 +98,8 @@ class Dns2ARecordApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'zone' in params:
-            path_params['zone'] = params['zone']  # noqa: E501
+        if 'fqdn' in params:
+            path_params['fqdn'] = params['fqdn']  # noqa: E501
         if 'name' in params:
             path_params['name'] = params['name']  # noqa: E501
 
@@ -325,7 +115,7 @@ class Dns2ARecordApi(object):
         auth_settings = ['ApiKey']  # noqa: E501
 
         return self.api_client.call_api(
-            '/api/v0.1/dns2/record/{zone}/{name}', 'GET',
+            '/api/v0.1/dns2/record/{fqdn}', 'GET',
             path_params,
             query_params,
             header_params,

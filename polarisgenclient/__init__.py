@@ -43,7 +43,6 @@ from polarisgenclient.api.device_service_discover_api import DeviceServiceDiscov
 from polarisgenclient.api.device_validate_api import DeviceValidateApi
 from polarisgenclient.api.dhcp_helper_process_api import DhcpHelperProcessApi
 from polarisgenclient.api.dns2_a_record_api import Dns2ARecordApi
-from polarisgenclient.api.dns2_record_api import Dns2RecordApi
 from polarisgenclient.api.dns2_zone_api import Dns2ZoneApi
 from polarisgenclient.api.dns2_zone_record_api import Dns2ZoneRecordApi
 from polarisgenclient.api.dns_aaaa_record_api import DnsAAAARecordApi
@@ -146,8 +145,6 @@ from polarisgenclient.models.device_service_discover_object import DeviceService
 from polarisgenclient.models.device_service_object import DeviceServiceObject
 from polarisgenclient.models.device_validate_object import DeviceValidateObject
 from polarisgenclient.models.dhcp_helper_process_object import DhcpHelperProcessObject
-from polarisgenclient.models.dns_record_object import DnsRecordObject
-from polarisgenclient.models.dns_records_content_list_object import DnsRecordsContentListObject
 from polarisgenclient.models.dns_zone_object import DnsZoneObject
 from polarisgenclient.models.dns_zone_record_list_object import DnsZoneRecordListObject
 from polarisgenclient.models.dns_zone_record_object import DnsZoneRecordObject

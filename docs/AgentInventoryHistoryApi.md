@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**agent_inventory_history_delete**](AgentInventoryHistoryApi.md#agent_inventory_history_delete) | **DELETE** /api/v0.1/agent/inventory/history/id/{id} | AgentInventoryHistoryRoute.delete
 [**agent_inventory_history_get**](AgentInventoryHistoryApi.md#agent_inventory_history_get) | **GET** /api/v0.1/agent/inventory/history | AgentInventoryHistoryRoute.get
-[**agent_inventory_history_get_0**](AgentInventoryHistoryApi.md#agent_inventory_history_get_0) | **GET** /api/v0.1/device/{device_name}/agent/inventory/history | AgentInventoryHistoryRoute.get
+[**agent_inventory_history_get_by_device**](AgentInventoryHistoryApi.md#agent_inventory_history_get_by_device) | **GET** /api/v0.1/device/{device_name}/agent/inventory/history | AgentInventoryHistoryRoute.get
 [**agent_inventory_history_post**](AgentInventoryHistoryApi.md#agent_inventory_history_post) | **POST** /api/v0.1/agent/inventory/history | AgentInventoryHistoryRoute.post
 [**agent_inventory_history_put**](AgentInventoryHistoryApi.md#agent_inventory_history_put) | **PUT** /api/v0.1/agent/inventory/history/id/{id} | AgentInventoryHistoryRoute.put
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **agent_inventory_history_get**
-> list[AgentInventoryHistoryObject] agent_inventory_history_get(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
+> list[AgentInventoryHistoryObject] agent_inventory_history_get(gt_id=gt_id, lt_id=lt_id, limit=limit)
 
 AgentInventoryHistoryRoute.get
 
@@ -86,14 +86,13 @@ configuration.api_key['X-Polaris-Signed'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = polarisgenclient.AgentInventoryHistoryApi(polarisgenclient.ApiClient(configuration))
-device_name = 'device_name_example' # str | Device name
 gt_id = 'gt_id_example' # str | Paginate greater than id (optional)
 lt_id = 'lt_id_example' # str | Paginate greater than id (optional)
 limit = 56 # int | Limit results to N records (optional)
 
 try:
     # AgentInventoryHistoryRoute.get
-    api_response = api_instance.agent_inventory_history_get(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
+    api_response = api_instance.agent_inventory_history_get(gt_id=gt_id, lt_id=lt_id, limit=limit)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AgentInventoryHistoryApi->agent_inventory_history_get: %s\n" % e)
@@ -103,7 +102,6 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device_name** | **str**| Device name | 
  **gt_id** | **str**| Paginate greater than id | [optional] 
  **lt_id** | **str**| Paginate greater than id | [optional] 
  **limit** | **int**| Limit results to N records | [optional] 
@@ -123,8 +121,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **agent_inventory_history_get_0**
-> list[AgentInventoryHistoryObject] agent_inventory_history_get_0(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
+# **agent_inventory_history_get_by_device**
+> list[AgentInventoryHistoryObject] agent_inventory_history_get_by_device(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
 
 AgentInventoryHistoryRoute.get
 
@@ -151,10 +149,10 @@ limit = 56 # int | Limit results to N records (optional)
 
 try:
     # AgentInventoryHistoryRoute.get
-    api_response = api_instance.agent_inventory_history_get_0(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
+    api_response = api_instance.agent_inventory_history_get_by_device(device_name, gt_id=gt_id, lt_id=lt_id, limit=limit)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling AgentInventoryHistoryApi->agent_inventory_history_get_0: %s\n" % e)
+    print("Exception when calling AgentInventoryHistoryApi->agent_inventory_history_get_by_device: %s\n" % e)
 ```
 
 ### Parameters

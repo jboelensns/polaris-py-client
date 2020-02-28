@@ -956,69 +956,6 @@
       ], 
       "type": "object"
     }, 
-    "DnsRecordObject": {
-      "properties": {
-        "name": {
-          "description": "dns record name", 
-          "example": "foo.example.org.", 
-          "type": "string"
-        }, 
-        "preserve_existing_records": {
-          "default": true, 
-          "description": "if name has existing records, preserve instead of replace", 
-          "type": "boolean"
-        }, 
-        "records": {
-          "description": "array of records", 
-          "items": {
-            "$ref": "#/definitions/DnsRecordsContentListObject"
-          }, 
-          "type": "array"
-        }, 
-        "ttl": {
-          "default": 3600, 
-          "description": "time to live", 
-          "example": 300, 
-          "type": "integer"
-        }, 
-        "type": {
-          "description": "dns record type", 
-          "enum": [
-            "A", 
-            "AAAA", 
-            "CNAME", 
-            "SOA", 
-            "NS", 
-            "SRV", 
-            "TXT"
-          ], 
-          "type": "string"
-        }
-      }, 
-      "required": [
-        "name", 
-        "type", 
-        "records"
-      ], 
-      "type": "object"
-    }, 
-    "DnsRecordsContentListObject": {
-      "properties": {
-        "content": {
-          "description": "dns content", 
-          "example": "10.131.8.42", 
-          "type": "string"
-        }, 
-        "disabled": {
-          "description": "content enabled/disabled", 
-          "type": "boolean"
-        }
-      }, 
-      "required": [
-        "content"
-      ], 
-      "type": "object"
-    }, 
     "DnsZoneObject": {
       "properties": {
         "dnssec": {
@@ -2453,13 +2390,6 @@
         "operationId": "AgentInventoryHistoryGet", 
         "parameters": [
           {
-            "description": "Device name", 
-            "in": "path", 
-            "name": "device_name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
             "description": "Paginate greater than id", 
             "in": "query", 
             "name": "gt_id", 
@@ -3696,7 +3626,7 @@
     }, 
     "/api/v0.1/device/{device_name}/agent/inventory/history": {
       "get": {
-        "operationId": "AgentInventoryHistoryGet", 
+        "operationId": "AgentInventoryHistoryGetByDevice", 
         "parameters": [
           {
             "description": "Device name", 
@@ -6475,45 +6405,14 @@
         ]
       }
     }, 
-    "/api/v0.1/dns2/record/{zone}/{name}": {
-      "delete": {
-        "operationId": "Dns2ARecordDelete", 
-        "parameters": [
-          {
-            "description": "zone for record", 
-            "in": "path", 
-            "name": "zone", 
-            "required": true, 
-            "type": "string"
-          }, 
-          {
-            "description": "name for fqdn", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
-        "responses": {
-          "200": {
-            "description": "Success", 
-            "schema": {
-              "$ref": "#/definitions/DnsRecordObject"
-            }
-          }
-        }, 
-        "summary": "Dns2ARecordRoute.delete", 
-        "tags": [
-          "Dns2ARecord"
-        ]
-      }, 
+    "/api/v0.1/dns2/record/{fqdn}": {
       "get": {
         "operationId": "Dns2ARecordGet", 
         "parameters": [
           {
             "description": "fqdn", 
             "in": "path", 
-            "name": "zone", 
+            "name": "fqdn", 
             "required": false, 
             "type": "string"
           }, 
@@ -6534,85 +6433,6 @@
           }
         }, 
         "summary": "Dns2ARecordRoute.get", 
-        "tags": [
-          "Dns2ARecord"
-        ]
-      }, 
-      "post": {
-        "consumes": [
-          "application/json"
-        ], 
-        "operationId": "Dns2RecordPost", 
-        "parameters": [
-          {
-            "in": "path", 
-            "name": "zone", 
-            "required": true, 
-            "type": "string"
-          }, 
-          {
-            "in": "path", 
-            "name": "name", 
-            "required": true, 
-            "type": "string"
-          }
-        ], 
-        "responses": {
-          "200": {
-            "description": "Success", 
-            "schema": {
-              "$ref": "#/definitions/DnsRecordObject"
-            }
-          }
-        }, 
-        "summary": "Dns2RecordRoute.post", 
-        "tags": [
-          "Dns2Record"
-        ]
-      }
-    }, 
-    "/api/v0.1/dns2/record/{zone}/{name}/{type}/{ip}": {
-      "delete": {
-        "operationId": "Dns2ARecordDeleteByIp", 
-        "parameters": [
-          {
-            "description": "zone for record", 
-            "in": "path", 
-            "name": "zone", 
-            "required": true, 
-            "type": "string"
-          }, 
-          {
-            "description": "name for fqdn", 
-            "in": "path", 
-            "name": "name", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "type of record to delete", 
-            "in": "path", 
-            "name": "type", 
-            "required": false, 
-            "type": "string"
-          }, 
-          {
-            "description": "ip address", 
-            "in": "path", 
-            "name": "ip", 
-            "required": false, 
-            "type": "string"
-          }
-        ], 
-        "responses": {
-          "200": {
-            "description": "Success", 
-            "schema": {
-              "$ref": "#/definitions/DnsRecordObject"
-            }
-          }
-        }, 
-        "summary": "Dns2ARecordRoute.delete", 
         "tags": [
           "Dns2ARecord"
         ]
@@ -8192,7 +8012,7 @@
     }, 
     "/api/v0.1/ipam/profile/{name}": {
       "get": {
-        "operationId": "IpamPoolGet", 
+        "operationId": "IpamProfileGet", 
         "parameters": [
           {
             "description": "IPAM profile name", 
@@ -8207,7 +8027,7 @@
             "description": "Success"
           }
         }, 
-        "summary": "IpamPoolRoute.get", 
+        "summary": "IpamProfileRoute.get", 
         "tags": [
           "IpamProfile"
         ]

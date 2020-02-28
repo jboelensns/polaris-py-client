@@ -30,7 +30,6 @@ from polarisgenclient.api.device_service_discover_api import DeviceServiceDiscov
 from polarisgenclient.api.device_validate_api import DeviceValidateApi
 from polarisgenclient.api.dhcp_helper_process_api import DhcpHelperProcessApi
 from polarisgenclient.api.dns2_a_record_api import Dns2ARecordApi
-from polarisgenclient.api.dns2_record_api import Dns2RecordApi
 from polarisgenclient.api.dns2_zone_api import Dns2ZoneApi
 from polarisgenclient.api.dns2_zone_record_api import Dns2ZoneRecordApi
 from polarisgenclient.api.dns_aaaa_record_api import DnsAAAARecordApi
